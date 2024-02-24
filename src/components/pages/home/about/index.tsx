@@ -11,7 +11,7 @@ export function About() {
           <h1 className='uppercase col-span-8'>
             Get to{' '}
             <Image
-              src={'/images/about.png'}
+              src={'/images/ui/about/about-heading.png'}
               className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto'
               alt='about'
               width={100}
