@@ -26,7 +26,7 @@
         "useKeyWithMouseEvents": "off"
       }
     },
-    "ignore": ["src/exceptions/errors.ts", "eblaze-about.jsx"]
+    "ignore": ["src/exceptions/errors.ts"]
   },
   "formatter": {
     "ignore": ["configuration-schema.json"],
