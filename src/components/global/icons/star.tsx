@@ -7,7 +7,7 @@ export default function Star({ className, ...props }: ComponentPropsWithoutRef<'
       <title>Navigate</title>
       <path
         d='m15.272 22.192-5.688 7.632-5.688-4.464L9.8 17.44.296 14.416l2.376-6.768 9 2.952V.736h7.272V10.6l9-2.952 2.376 6.768-9.504 3.024 5.904 7.92-5.688 4.464z'
-        fill='#000'
+        fill='#fff'
       />
     </svg>
   );
