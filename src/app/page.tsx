@@ -1,3 +1,4 @@
+import { Contact } from '@/components/pages/contact';
 import { Events } from '@/components/pages/events';
 import { About } from '@/components/pages/home/about';
 
@@ -9,10 +10,11 @@ export default function Page() {
       </section>
       <About />
       <Events />
-      <section className='sticky top-0 bg-blue-200'>
+      <Contact />
+      <section className='relative z-20 bg-blue-200'>
         <div className='min-h-screen'>hello</div>
       </section>
-      <section className='sticky top-0 bg-blue-200'>
+      <section className='relative z-20 bg-blue-200'>
         <div className='min-h-screen'>hello</div>
       </section>
     </main>
