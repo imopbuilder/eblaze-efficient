@@ -1,3 +1,4 @@
+import { Events } from '@/components/pages/events';
 import { About } from '@/components/pages/home/about';
 
 export default function Page() {
@@ -7,6 +8,7 @@ export default function Page() {
         <div className='min-h-screen'>hello</div>
       </section>
       <About />
+      <Events />
       <section className='sticky top-0 bg-blue-200'>
         <div className='min-h-screen'>hello</div>
       </section>
