@@ -90,7 +90,7 @@
 	}
 
 	h1 {
-		@apply text-[24vw] font-light text-center;
+		@apply md:text-[7rem] font-light sm:text-[5rem] text-[4rem];
 	}
 }
 

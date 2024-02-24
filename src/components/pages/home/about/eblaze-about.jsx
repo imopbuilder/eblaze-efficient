@@ -236,16 +236,17 @@ export function EblazeSphere() {
     if (hasRun.current) createSphere();
 
     return () => {
-      // hasRun.current = false;
+      hasRun.current = false;
       console.log('return');
-
-      Render.stop(render);
-      World.clear(engine.current.world);
-      Engine.clear(engine.current);
-      render.canvas.remove();
-      render.canvas = null;
-      render.context = null;
-      render.textures = {};
+      if (render !== undefined) {
+        Render.stop(render);
+        World.clear(engine.current.world);
+        Engine.clear(engine.current);
+        render.canvas.remove();
+        render.canvas = null;
+        render.context = null;
+        render.textures = {};
+      }
       window.removeEventListener('resize', handleResize);
     };
   }, []);
