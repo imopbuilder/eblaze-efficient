@@ -9,8 +9,8 @@ export function HeroSection() {
     <section className='bg-primary-color text-background sticky top-0'>
       <div className='mx-5 min-h-[120vh]'>
         <div className='py-24'>
-          <div className='h-screen'>
-            <Paragraph className='text-sm sm:text-lg font-semibold text-background'>Spark Your Passion</Paragraph>
+          <div className='min-h-rvh'>
+            <Paragraph className='text-sm sm:text-lg font-semibold text-background sm:pb-0 pb-4'>Spark Your Passion</Paragraph>
             <Paragraph className='text-background xl:text-[7rem] lg:text-[6rem] md:text-[5rem] font-light text-[3.5rem] mb-8'>
               Join Our{' '}
               <Image
