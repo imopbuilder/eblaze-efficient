@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { NavHelperBackgrounds, NavMenuBtn } from './client';
+import { AppProgress, NavHelperBackgrounds, NavMenuBtn } from './client';
 
 export function Header() {
   return (
@@ -15,7 +15,8 @@ export function Header() {
             />
           </Link>
         </div>
-        <div>
+        <div className='flex items-center justify-center gap-8'>
+          <AppProgress />
           <NavMenuBtn />
         </div>
       </div>

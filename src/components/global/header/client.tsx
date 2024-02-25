@@ -3,12 +3,24 @@
 import { useNav } from '@/client/store/use-nav';
 import { APP_LINKS } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Fragment, MouseEvent } from 'react';
+import { Fragment, MouseEvent, useState } from 'react';
 import { background, blur, height, opacity, translate } from './variants';
+
+export function AppProgress() {
+  const { scrollYProgress } = useScroll();
+  const [percentage, setPercentage] = useState(0);
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => setPercentage(Math.floor(latest * 100)));
+
+  return (
+    <motion.p className='text-sm font-medium' variants={opacity} initial='initial' animate={percentage < 9 ? 'closed' : 'open'}>
+      {percentage}%
+    </motion.p>
+  );
+}
 
 export function NavMenuBtn() {
   const open = useNav((state) => state.open);

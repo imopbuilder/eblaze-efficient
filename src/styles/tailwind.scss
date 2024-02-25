@@ -80,6 +80,26 @@
 		color: hsl(var(--background));
 		background-color: hsl(var(--foreground));
 	}
+
+	::-webkit-scrollbar {
+		display: none;
+		width: 0px;
+	}
+
+	::-webkit-scrollbar-track {
+		display: none;
+		width: 0px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		display: none;
+		width: 0px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		display: none;
+		width: 0px;
+	}
 }
 
 @layer base {

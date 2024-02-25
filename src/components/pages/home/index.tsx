@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export function HeroSection() {
   return (
-    <section className='bg-primary-color text-background sticky top-0'>
+    <section className='bg-primary-color text-background sticky top-[56px]'>
       <div className='mx-5 min-h-[120vh]'>
         <div className='py-24'>
           <div className='min-h-rvh'>
