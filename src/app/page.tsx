@@ -1,4 +1,5 @@
 import { Footer } from '@/components/global/footer';
+import { Header } from '@/components/global/header';
 import { About } from '@/components/pages/about';
 import { Contact, Location } from '@/components/pages/contact';
 import { Events } from '@/components/pages/events';
@@ -8,6 +9,7 @@ import { Fragment } from 'react';
 export default function Page() {
   return (
     <Fragment>
+      <Header />
       <main>
         <HeroSection />
         <About />
