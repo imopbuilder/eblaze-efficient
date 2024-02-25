@@ -38,9 +38,7 @@ export function NavHelperBackgrounds() {
         initial='initial'
         animate={open ? 'open' : 'closed'}
         className='bg-background opacity-70 h-full w-full absolute left-0 top-full px-5'
-      >
-        hello
-      </motion.div>
+      />
       <AnimatePresence mode='wait'>{open && <Nav />}</AnimatePresence>
     </Fragment>
   );
