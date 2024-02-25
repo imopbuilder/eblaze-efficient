@@ -7,7 +7,7 @@ import { Fragment } from 'react';
 export default function Page() {
   return (
     <Fragment>
-      <main className=''>
+      <main>
         <section className='sticky top-0 bg-blue-200'>
           <div className='min-h-screen'>hello</div>
         </section>
