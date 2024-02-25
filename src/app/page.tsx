@@ -1,7 +1,7 @@
 import { Footer } from '@/components/global/footer';
+import { About } from '@/components/pages/about';
 import { Contact } from '@/components/pages/contact';
 import { Events } from '@/components/pages/events';
-import { About } from '@/components/pages/home/about';
 import { Fragment } from 'react';
 
 export default function Page() {
