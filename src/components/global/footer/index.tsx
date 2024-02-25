@@ -7,10 +7,10 @@ import Arrow from '../icons/arrow';
 
 export function Footer() {
   return (
-    <footer className='relative z-20 mx-5'>
+    <footer className='relative z-20 sm:mx-5 mx-3'>
       <div className='rounded-lg bg-primary-color'>
         <div>
-          <p className='uppercase text-[20vw] font-extrabold text-center bg-[linear-gradient(transparent_35%,hsl(var(--background))_35%)] bg-clip-text text-transparent -translate-y-[36%]'>
+          <p className='uppercase text-[20vw] font-light text-center bg-[linear-gradient(transparent_35%,hsl(var(--background))_35%)] bg-clip-text text-transparent -translate-y-[36%]'>
             Eblaze
           </p>
         </div>
@@ -34,7 +34,7 @@ function SocialLinks() {
             <Link
               href={href}
               className={
-                'group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full lg:text-6xl text-4xl font-bold capitalize'
+                'group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full lg:text-6xl text-4xl font-light capitalize'
               }
               target='_blank'
               rel='noreferrer'
@@ -60,7 +60,7 @@ function Sitemap() {
           <li key={id} className='border-t-2 group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500 last:rounded-b-md'>
             <Link
               href={href}
-              className='group inline-flex items-center justify-between text-muted p-5 w-full lg:text-6xl text-4xl font-bold capitalize'
+              className='group inline-flex items-center justify-between text-muted p-5 w-full lg:text-6xl text-4xl font-light capitalize'
               scroll={false}
             >
               {label}
