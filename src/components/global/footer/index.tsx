@@ -4,17 +4,17 @@ import { APP_LINKS } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
 import Link from 'next/link';
 import Arrow from '../icons/arrow';
+import { FooterIntro } from './client';
 
 export function Footer() {
   return (
-    <footer className='relative z-20 sm:mx-5 mx-3'>
+    <footer className='relative z-20 sm:mx-5 mx-3 overflow-hidden'>
       <div className='rounded-lg bg-primary-color'>
-        <div>
-          <p className='uppercase text-[20vw] font-light text-center bg-[linear-gradient(transparent_35%,hsl(var(--background))_35%)] bg-clip-text text-transparent -translate-y-[36%]'>
-            Eblaze
-          </p>
+        <div className='pt-20'>
+          <FooterIntro />
         </div>
         <div>
+          <Workspace />
           <SocialLinks />
           <Sitemap />
         </div>
@@ -24,9 +24,34 @@ export function Footer() {
   );
 }
 
-function SocialLinks() {
+function Workspace() {
   return (
     <div className='pt-20'>
+      <p className='text-xs p-5 text-background font-bold'>Workshop</p>
+      <ul className='group/ul'>
+        <li className='border-t-2 group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500'>
+          <Link
+            href={'/register'}
+            className={
+              'group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full lg:text-6xl text-4xl font-light capitalize'
+            }
+            target='_blank'
+            rel='noreferrer'
+          >
+            Register
+            <span>
+              <ArrowLink />
+            </span>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+function SocialLinks() {
+  return (
+    <div className='pt-80'>
       <p className='text-xs p-5 text-background font-bold'>Socials</p>
       <ul className='group/ul'>
         {CONTACT.map(({ id, social, href }) => (
