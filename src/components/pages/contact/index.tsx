@@ -77,7 +77,7 @@ export function Location() {
                 <Link
                   href={'/'}
                   type='button'
-                  className='group bg-foreground w-full flex items-end justify-between rounded-lg overflow-hidden text-background p-5 isolate relative before:absolute before:bg-primary-color before:inset-0 before:-translate-y-full hover:before:-translate-y-0 before:duration-300'
+                  className='group bg-off-black w-full flex items-end justify-between rounded-lg overflow-hidden text-background p-5 isolate relative before:absolute before:bg-primary-color before:inset-0 before:-translate-y-full hover:before:-translate-y-0 before:duration-300'
                 >
                   <span className='relative z-20'>
                     Explore
@@ -101,7 +101,7 @@ export function Location() {
                 <Link
                   href={'/'}
                   type='button'
-                  className='group bg-foreground w-full flex items-end justify-between rounded-lg overflow-hidden text-background p-5 isolate relative before:absolute before:bg-primary-color before:inset-0 before:-translate-y-full hover:before:-translate-y-0 before:duration-300'
+                  className='group bg-off-black w-full flex items-end justify-between rounded-lg overflow-hidden text-background p-5 isolate relative before:absolute before:bg-primary-color before:inset-0 before:-translate-y-full hover:before:-translate-y-0 before:duration-300'
                 >
                   <span className='relative z-20'>
                     Join
