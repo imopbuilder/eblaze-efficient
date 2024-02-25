@@ -13,7 +13,7 @@ export function Contact() {
           <h1 className='uppercase md:text-[7rem] sm:text-[5rem] text-[4rem]'>
             Get in{' '}
             <Image
-              src={'/images/ui/contact/contact-heading.png'}
+              src={'/images/ui/app/contact-heading.svg'}
               className='inline-block md:w-[9rem] sm:w-[6rem] w-[4rem] h-auto  relative -top-2'
               alt='about'
               width={100}
@@ -54,7 +54,7 @@ export function Location() {
           <h1 className='uppercase col-span-8'>
             Join our{' '}
             <Image
-              src={'/images/ui/location/location-heading.png'}
+              src={'/images/ui/app/location-heading.svg'}
               className='inline-block md:w-[9rem] sm:w-[6rem] w-[3.7rem] h-auto relative -top-2'
               alt='about'
               width={100}

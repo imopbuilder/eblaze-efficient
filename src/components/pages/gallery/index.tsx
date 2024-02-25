@@ -10,7 +10,7 @@ export function Gallery() {
             <h1 className='uppercase col-span-8'>
               Explore{' '}
               <Image
-                src={'/images/ui/gallery/gallery-heading.png'}
+                src={'/images/ui/app/gallery-heading.svg'}
                 className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto relative -top-2'
                 alt='about'
                 width={100}

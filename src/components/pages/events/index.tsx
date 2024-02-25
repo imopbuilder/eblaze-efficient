@@ -11,7 +11,7 @@ export function Events() {
           <h1 className='uppercase col-span-8'>
             Unified{' '}
             <Image
-              src={'/images/ui/events/event-heading.png'}
+              src={'/images/ui/app/event-heading.svg'}
               className='inline-block md:w-[9rem] sm:w-[6rem] w-[4rem] h-auto relative -top-2'
               alt='about'
               width={100}
