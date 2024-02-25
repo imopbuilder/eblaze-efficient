@@ -1,7 +1,8 @@
 import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
 import Arrow from '@/components/global/icons/arrow';
-import { CONTACT } from '@/constants/contact';
+import { REGISTRATION_ROUTE } from '@/constants/app';
+import { CONTACT, LOCATION } from '@/constants/contact';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -75,7 +76,7 @@ export function Location() {
             <div>
               <Paragraph className='mb-3.5 sm:text-lg font-medium text-sm relative z-50'>
                 <Link
-                  href={'/'}
+                  href={LOCATION.venue.href}
                   type='button'
                   className='group bg-off-black w-full flex items-end justify-between rounded-lg overflow-hidden text-background p-5 isolate relative before:absolute before:bg-primary-color before:inset-0 before:-translate-y-full hover:before:-translate-y-0 before:duration-300'
                 >
@@ -99,7 +100,7 @@ export function Location() {
             <div>
               <Paragraph className='mb-3.5 sm:text-lg font-medium text-sm relative z-50'>
                 <Link
-                  href={'/'}
+                  href={REGISTRATION_ROUTE.href}
                   type='button'
                   className='group bg-off-black w-full flex items-end justify-between rounded-lg overflow-hidden text-background p-5 isolate relative before:absolute before:bg-primary-color before:inset-0 before:-translate-y-full hover:before:-translate-y-0 before:duration-300'
                 >

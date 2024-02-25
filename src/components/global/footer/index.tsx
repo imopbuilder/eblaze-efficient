@@ -1,6 +1,6 @@
 import Star from '@/components/global/icons/star';
 import { Button } from '@/components/ui/button';
-import { APP_LINKS } from '@/constants/app';
+import { APP_LINKS, REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
 import Link from 'next/link';
 import Arrow from '../icons/arrow';
@@ -31,14 +31,14 @@ function Workspace() {
       <ul className='group/ul'>
         <li className='border-t-2 group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500'>
           <Link
-            href={'/register'}
+            href={REGISTRATION_ROUTE.href}
             className={
               'group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full lg:text-6xl text-4xl font-light capitalize'
             }
             target='_blank'
             rel='noreferrer'
           >
-            Register
+            {REGISTRATION_ROUTE.label}
             <span>
               <ArrowLink />
             </span>

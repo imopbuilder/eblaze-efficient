@@ -12,3 +12,10 @@ export const CONTACT = [
     href: 'https://www.instagram.com/e_blaze_2k24',
   },
 ];
+
+export const LOCATION = {
+  venue: {
+    href: 'https://maps.app.goo.gl/YqaxNhC5YueRB9N17',
+    label: 'Venue',
+  },
+};

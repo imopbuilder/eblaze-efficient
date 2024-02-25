@@ -3,6 +3,12 @@ export const APP = {
   template: 'Eblaze',
 };
 
+export const REGISTRATION_ROUTE = {
+  id: 'rr1',
+  label: 'Register',
+  href: '/users/registration',
+};
+
 export const APP_LINKS = [
   {
     id: 'ap1',

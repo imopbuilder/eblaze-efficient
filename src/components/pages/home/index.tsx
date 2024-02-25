@@ -1,6 +1,7 @@
 import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
 import Arrow from '@/components/global/icons/arrow';
+import { REGISTRATION_ROUTE } from '@/constants/app';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -35,9 +36,9 @@ export function HeroSection() {
               and Gatherings
             </Paragraph>
             <Line className='text-background stroke-2' />
-            <Link href={'/'} className='group inline-flex w-full py-5 px-3 items-center justify-between relative z-50'>
+            <Link href={REGISTRATION_ROUTE.href} className='group inline-flex w-full py-5 px-3 items-center justify-between relative z-50'>
               <span>
-                <Paragraph className='text-background font-bold text-lg'>Register</Paragraph>
+                <Paragraph className='text-background font-bold text-lg'>{REGISTRATION_ROUTE.label}</Paragraph>
               </span>
               <ArrowLink />
             </Link>
