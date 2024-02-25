@@ -77,7 +77,7 @@ function Sitemap() {
 
 function FooterOutro() {
   return (
-    <div className='bg-background text-sm sm:py-5 py-5 px-2 font-light text-primary-color flex sm:items-center items-start justify-between sm:flex-row flex-col'>
+    <div className='bg-background text-sm sm:py-5 py-3 px-2 font-light text-primary-color flex sm:items-center items-start justify-between sm:flex-row flex-col'>
       <p>
         Crafted by{' '}
         <Button className='group p-0 text-primary-color font-medium' variant='link'>
