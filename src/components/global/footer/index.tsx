@@ -86,7 +86,6 @@ function Sitemap() {
             <Link
               href={href}
               className='group inline-flex items-center justify-between text-muted p-5 w-full lg:text-6xl text-4xl font-light capitalize'
-              scroll={false}
             >
               {label}
               <span className='rotate-0 group-hover:rotate-[360deg] duration-1000 origin-center h-10 flex items-center justify-center'>
