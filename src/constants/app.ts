@@ -1,3 +1,8 @@
+export const APP = {
+  default: 'Eblaze',
+  template: 'Eblaze',
+};
+
 export const APP_LINKS = [
   {
     id: 'ap1',
