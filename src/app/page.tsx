@@ -1,6 +1,6 @@
 import { Footer } from '@/components/global/footer';
 import { About } from '@/components/pages/about';
-import { Contact } from '@/components/pages/contact';
+import { Contact, Location } from '@/components/pages/contact';
 import { Events } from '@/components/pages/events';
 import { Fragment } from 'react';
 
@@ -13,6 +13,7 @@ export default function Page() {
         </section>
         <About />
         <Events />
+        <Location />
         <Contact />
         <Footer />
       </main>
