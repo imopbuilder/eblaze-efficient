@@ -5,7 +5,7 @@ import { AppProgress, NavHelperBackgrounds, NavMenuBtn } from './client';
 export function Header() {
   return (
     <header className='bg-primary-color text-background sticky top-0 w-full z-20'>
-      <div className='px-5 h-14 flex items-center justify-between relative'>
+      <div className='md:px-5 px-3 h-14 flex items-center justify-between relative'>
         <div className='w-full'>
           <Link href={'/'} className='inline-flex items-center justify-start font-medium gap-2.5'>
             <span className='size-8 inline-flex items-center justify-center bg-background rounded-full'>
