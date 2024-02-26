@@ -29,9 +29,9 @@ export function NavMenuBtn() {
   return (
     <button type='button' className='flex items-center justify-center' onClick={() => setOpen()}>
       <div className='flex items-center justify-center font-medium uppercase text-sm'>
-        <div data-nav={open} className='flex flex-col gap-1 items-center justify-center mr-5 relative'>
+        <div data-nav={open} className='flex flex-col gap-1 items-center justify-center md:mr-5 mr-3 relative'>
           <motion.span
-            className='w-6 h-0.5 bg-background inline-block origin-left rounded-full'
+            className='w-3 h-0.5 bg-background inline-block origin-left rounded-full self-start'
             variants={scale}
             initial='initial'
             animate={open ? 'min' : 'max'}
@@ -45,7 +45,7 @@ export function NavMenuBtn() {
             data-nav={open}
           />
           <motion.span
-            className='w-6 h-0.5 bg-background inline-block origin-right rounded-full'
+            className='w-3 h-0.5 bg-background inline-block origin-right rounded-full self-end'
             variants={scale}
             initial='initial'
             animate={open ? 'min' : 'max'}

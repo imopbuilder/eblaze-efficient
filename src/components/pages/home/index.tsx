@@ -9,14 +9,16 @@ export function HeroSection() {
   return (
     <section className='bg-primary-color text-background sticky top-[56px]'>
       <div className='mx-5 min-h-[120vh]'>
-        <div className='py-24'>
+        <div className='sm:py-24 py-[84px]'>
           <div className='min-h-rvh'>
-            <Paragraph className='text-sm sm:text-lg font-semibold text-background sm:pb-0 pb-4'>Spark Your Passion</Paragraph>
-            <Paragraph className='text-background xl:text-[7rem] lg:text-[6rem] md:text-[5rem] font-light text-[3.5rem] mb-8'>
+            <Paragraph className='text-sm sm:text-lg font-semibold text-background sm:pb-0 pb-4' parentClassName='relative md:top-3 sm:top-1 top-3'>
+              Spark Your Passion
+            </Paragraph>
+            <Paragraph className='text-background xl:text-[7rem] lg:text-[6rem] md:text-[5rem] font-light text-[3.5rem] mb-8 lg:pt-0 md:pt-3 sm:pt-4 pt-4'>
               Join Our{' '}
               <Image
                 src={'/images/ui/app/hero-section.png'}
-                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[80px] h-auto animate-move-ease'
+                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[70px] h-auto animate-move-ease'
                 width={100}
                 height={100}
                 alt='hero-rocket'
@@ -26,7 +28,7 @@ export function HeroSection() {
               Electrifying Lineup of Events{' '}
               <Image
                 src={'/images/ui/app/hero-section-2.png'}
-                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[80px] h-auto animate-move-ease'
+                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[70px] h-auto animate-move-ease'
                 width={100}
                 height={100}
                 alt='hero-rocket'

@@ -9,14 +9,16 @@ const anim: Variants = {
   enter: (i) => ({ y: '0', transition: { duration: 0.75, ease: [0.33, 1, 0.68, 1], delay: 0.075 * i } }),
 };
 
-interface ParagraphProps extends ComponentPropsWithoutRef<typeof motion.p> {}
+interface ParagraphProps extends ComponentPropsWithoutRef<typeof motion.p> {
+  parentClassName?: string;
+}
 
-export default function Paragraph({ className, children, ...props }: ParagraphProps) {
+export default function Paragraph({ className, children, parentClassName, ...props }: ParagraphProps) {
   const container = useRef<HTMLDivElement>(null);
   const inView = useInView(container, { once: true, amount: 0.75 });
 
   return (
-    <div ref={container} className='overflow-hidden'>
+    <div ref={container} className={cn('overflow-hidden', parentClassName)}>
       <motion.p variants={anim} initial='initial' animate={inView ? 'enter' : ''} className={cn('text-foreground text-sm', className)} {...props}>
         {children}
       </motion.p>
