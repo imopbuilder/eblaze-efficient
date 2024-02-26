@@ -1,6 +1,6 @@
 import Star from '@/components/global/icons/star';
 import { Button } from '@/components/ui/button';
-import { APP_LINKS, REGISTRATION_ROUTE } from '@/constants/app';
+import { APP_LINKS, PROFILE, REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
 import Link from 'next/link';
 import Arrow from '../icons/arrow';
@@ -105,9 +105,9 @@ function FooterOutro() {
       <p>
         Crafted by{' '}
         <Button className='group p-0 text-primary-color font-medium' variant='link'>
-          <Link href={'https://github.com/rahu1gg'} className='inline-flex items-center justify-start' target='_blank' rel='noreferrer'>
-            Rahul Palamarthi
-            <span className='bg-primary-color mx-3 inline-flex items-center justify-center text-background rounded-full size-5 overflow-hidden group-hover:size-16 duration-300'>
+          <Link href={PROFILE.social} className='inline-flex items-center justify-start' target='_blank' rel='noreferrer'>
+            {PROFILE.label}
+            <span className='bg-primary-color mx-2 inline-flex items-center justify-center text-background rounded-full size-5 overflow-hidden group-hover:size-16 duration-300'>
               <Arrow className='-translate-x-10 translate-y-10 duration-300 group-hover:translate-x-0 group-hover:translate-y-0 size-4' />
             </span>
           </Link>

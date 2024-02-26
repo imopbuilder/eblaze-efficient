@@ -48,3 +48,9 @@ export const APP_LINKS: AppLink[] = [
     src: 'contact-heading.svg',
   },
 ];
+
+export const PROFILE = {
+  id: 'rahul_palamarthi',
+  label: 'Rahul Palamarthi',
+  social: 'https://www.linkedin.com/in/rahul-palamarthi',
+};
