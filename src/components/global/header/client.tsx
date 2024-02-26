@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Fragment, MouseEvent, useState } from 'react';
-import { background, blur, height, opacity, translate } from './variants';
+import { background, blur, height, opacity, scale, translate } from './variants';
 
 export function AppProgress() {
   const { scrollYProgress } = useScroll();
@@ -28,13 +28,37 @@ export function NavMenuBtn() {
 
   return (
     <button type='button' className='flex items-center justify-center' onClick={() => setOpen()}>
-      <div className='flex items-center justify-center relative font-medium uppercase text-sm'>
-        <motion.p variants={opacity} animate={!open ? 'open' : 'closed'}>
-          Menu
-        </motion.p>
-        <motion.p className='absolute' initial='closed' variants={opacity} animate={open ? 'open' : 'closed'}>
-          Close
-        </motion.p>
+      <div className='flex items-center justify-center font-medium uppercase text-sm'>
+        <div data-nav={open} className='flex flex-col gap-1 items-center justify-center mr-5 relative'>
+          <motion.span
+            className='w-6 h-0.5 bg-background inline-block origin-left rounded-full'
+            variants={scale}
+            initial='initial'
+            animate={open ? 'min' : 'max'}
+          />
+          <motion.span
+            className='w-6 h-0.5 bg-background inline-block origin-center rounded-full data-[nav=true]:-rotate-[495deg] data-[nav=true]:delay-1000 duration-1000'
+            data-nav={open}
+          />
+          <motion.span
+            className='w-6 h-0.5 bg-background inline-block origin-center rounded-full absolute data-[nav=true]:-rotate-[405deg] data-[nav=true]:delay-1000 duration-1000'
+            data-nav={open}
+          />
+          <motion.span
+            className='w-6 h-0.5 bg-background inline-block origin-right rounded-full'
+            variants={scale}
+            initial='initial'
+            animate={open ? 'min' : 'max'}
+          />
+        </div>
+        <div className='flex items-center justify-center relative'>
+          <motion.p variants={opacity} animate={!open ? 'open' : 'closed'}>
+            Menu
+          </motion.p>
+          <motion.p className='absolute' initial='closed' variants={opacity} animate={open ? 'open' : 'closed'}>
+            Close
+          </motion.p>
+        </div>
       </div>
     </button>
   );

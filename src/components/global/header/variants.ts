@@ -75,3 +75,18 @@ export const translate = {
     transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: i[1] },
   }),
 };
+
+export const scale = {
+  initial: {
+    scaleX: 0,
+    transition: { ...transition, delay: 1 },
+  },
+  max: {
+    scaleX: 1,
+    transition: { ...transition, delay: 1 },
+  },
+  min: {
+    scaleX: 0,
+    transition,
+  },
+};
