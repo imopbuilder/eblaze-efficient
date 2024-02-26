@@ -33,7 +33,6 @@ export function Registrations() {
 
 function RegistrationContent() {
   const STATUS = process.env.REGISTRATION_STATUS;
-  console.log('STATUS: ', STATUS);
 
   if (STATUS === 'CLOSED')
     return (
