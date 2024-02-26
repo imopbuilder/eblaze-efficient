@@ -7,7 +7,7 @@ import { ResponsiveEventGuidelines } from './client';
 
 export function Events() {
   return (
-    <section className='bg-background relative z-10 py-14'>
+    <section className='bg-background relative z-10 py-14' vaul-drawer-wrapper=''>
       <div className='mx-5'>
         <div className='grid grid-cols-8'>
           <h1 className='uppercase col-span-8'>

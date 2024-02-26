@@ -29,13 +29,13 @@ import { Button } from '@/components/ui/button';
 import { GuidelinesContent } from './guidelines';
 
 export function ResponsiveEventGuidelines({ title, lead, guidelines, note }: Event) {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery('(min-width: 640px)');
 
   if (isDesktop)
     return (
       <Dialog>
         <DialogTrigger asChild>
-          <Button className='gap-8 bg-off-black sm:w-max w-full justify-between'>
+          <Button className='gap-8 bg-off-black sm:w-max w-full justify-between relative z-50'>
             <span>Guidelines</span>
             <NotepadText size={16} />
           </Button>
@@ -69,7 +69,7 @@ export function ResponsiveEventGuidelines({ title, lead, guidelines, note }: Eve
           <NotepadText size={16} />
         </Button>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className='border-0'>
         <DrawerHeader className='text-left'>
           <DrawerTitle className='text-primary-color'>{title}</DrawerTitle>
           <DrawerDescription className='pb-2'>
