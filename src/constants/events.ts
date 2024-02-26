@@ -1,4 +1,14 @@
-export const EVENTS = [
+export type Event = {
+  id: string;
+  title: string;
+  description: string[];
+  image: { src: string; alt: string };
+  lead: string;
+  guidelines: string[];
+  note?: string[];
+};
+
+export const EVENTS: Event[] = [
   {
     id: 'e1',
     title: 'Event 1',
@@ -9,6 +19,9 @@ export const EVENTS = [
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
+    lead: 'Anil Kumar',
+    guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
+    note: ['The evaluation criteria is based on how you actually approach the problem statement.'],
   },
   {
     id: 'e2',
@@ -20,6 +33,8 @@ export const EVENTS = [
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
+    lead: 'Anil Kumar',
+    guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
   },
   {
     id: 'e3',
@@ -31,6 +46,8 @@ export const EVENTS = [
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
+    lead: 'Anil Kumar',
+    guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
   },
   {
     id: 'e4',
@@ -42,6 +59,8 @@ export const EVENTS = [
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
+    lead: 'Anil Kumar',
+    guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
   },
   {
     id: 'e5',
@@ -53,7 +72,7 @@ export const EVENTS = [
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
+    lead: 'Anil Kumar',
+    guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
   },
 ];
-
-export type Event = typeof EVENTS;

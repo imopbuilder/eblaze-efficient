@@ -1,7 +1,9 @@
 import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
+
 import { EVENTS, Event } from '@/constants/events';
 import Image from 'next/image';
+import { ResponsiveEventGuidelines } from './client';
 
 export function Events() {
   return (
@@ -32,7 +34,9 @@ export function Events() {
   );
 }
 
-function EventCard({ title, description, image }: Event[number]) {
+function EventCard(event: Event) {
+  const { title, description, image } = event;
+
   return (
     <div className='min-h-screen'>
       <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3 grid-row'>
@@ -41,7 +45,7 @@ function EventCard({ title, description, image }: Event[number]) {
           <Line className='text-primary-color' />
         </div>
         <div className='md:col-span-4 col-span-8'>
-          <div>
+          <div className='sm:pt-0 pt-3'>
             {description.map((val, index) => (
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
               <Paragraph key={index} className='mb-3.5 sm:text-lg font-medium text-sm'>
@@ -62,6 +66,9 @@ function EventCard({ title, description, image }: Event[number]) {
               unoptimized
             />
           </Paragraph>
+        </div>
+        <div className='sm:col-start-3 col-start-1 sm:col-span-4 col-span-8'>
+          <ResponsiveEventGuidelines {...event} />
         </div>
       </div>
     </div>
