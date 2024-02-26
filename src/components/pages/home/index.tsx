@@ -38,7 +38,18 @@ export function HeroSection() {
             <Line className='text-background stroke-2' />
             <Link href={REGISTRATION_ROUTE.href} className='group inline-flex w-full py-5 px-3 items-center justify-between relative z-50'>
               <span>
-                <Paragraph className='text-background font-bold text-lg'>{REGISTRATION_ROUTE.label}</Paragraph>
+                <Paragraph className='text-background font-bold text-lg flex items-center justify-start gap-1'>
+                  {REGISTRATION_ROUTE.label} to Eblaze{' '}
+                  <Image
+                    src='/images/ui/app/logo.png'
+                    className='bg-background inline-block rounded-full p-1 size-8 ml-1'
+                    width='25'
+                    height='25'
+                    alt='Logo'
+                    loading='lazy'
+                    unoptimized
+                  />{' '}
+                </Paragraph>
               </span>
               <ArrowLink />
             </Link>
