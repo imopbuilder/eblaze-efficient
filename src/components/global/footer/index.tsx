@@ -8,7 +8,7 @@ import { FooterIntro } from './client';
 
 export function Footer() {
   return (
-    <footer className='relative z-20 sm:mx-5 mx-3 overflow-hidden'>
+    <footer className='relative z-20 sm:px-5 px-3 sm:pt-5 pt-3 overflow-hidden bg-background'>
       <div className='rounded-lg bg-primary-color'>
         <div className='pt-20'>
           <FooterIntro />

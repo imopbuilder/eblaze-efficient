@@ -7,8 +7,8 @@ import { ResponsiveEventGuidelines } from './client';
 
 export function Events() {
   return (
-    <section className='bg-background relative z-10 py-14' vaul-drawer-wrapper=''>
-      <div className='mx-5'>
+    <section className='bg-primary-color relative z-10'>
+      <div className='px-5 py-14 bg-background' vaul-drawer-wrapper=''>
         <div className='grid grid-cols-8'>
           <h1 className='uppercase col-span-8'>
             Unified{' '}
