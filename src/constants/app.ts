@@ -7,9 +7,16 @@ export const REGISTRATION_ROUTE = {
   id: 'rr1',
   label: 'Register',
   href: '/users/registration',
+  src: 'registration-heading.svg',
 };
 
-export const APP_LINKS = [
+export type AppLink = {
+  id: string;
+  label: string;
+  href: string;
+  src: string;
+};
+export const APP_LINKS: AppLink[] = [
   {
     id: 'ap1',
     label: 'Home',

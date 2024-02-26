@@ -1,7 +1,7 @@
 'use client';
 
 import { useNav } from '@/client/store/use-nav';
-import { APP_LINKS } from '@/constants/app';
+import { APP_LINKS, REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import Image from 'next/image';
@@ -87,7 +87,7 @@ function NavBody() {
 
   return (
     <div className='flex flex-wrap mt-10 lg:mt-20 lg:max-w '>
-      {APP_LINKS.map(({ id, label, href }, index) => {
+      {[...APP_LINKS, REGISTRATION_ROUTE].map(({ id, label, href }, index) => {
         return (
           <Link key={id} href={href} onClick={(e) => handleClick(e, index, href)}>
             <motion.p
@@ -140,7 +140,7 @@ function NavFooter() {
 
 function NavImage() {
   const selectedLink = useNav((state) => state.selectedLink);
-  const src = APP_LINKS[selectedLink.index].src;
+  const src = [...APP_LINKS, REGISTRATION_ROUTE][selectedLink.index].src;
 
   return (
     <motion.div
