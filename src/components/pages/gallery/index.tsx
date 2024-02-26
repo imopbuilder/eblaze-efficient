@@ -11,7 +11,7 @@ export function Gallery() {
               Explore{' '}
               <Image
                 src={'/images/ui/app/gallery-heading.svg'}
-                className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto relative -top-2'
+                className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto relative -top-2 animate-move-ease'
                 alt='about'
                 width={100}
                 height={100}

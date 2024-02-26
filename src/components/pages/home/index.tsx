@@ -16,7 +16,7 @@ export function HeroSection() {
               Join Our{' '}
               <Image
                 src={'/images/ui/app/hero-section.png'}
-                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[80px] h-auto'
+                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[80px] h-auto animate-move-ease'
                 width={100}
                 height={100}
                 alt='hero-rocket'
@@ -26,7 +26,7 @@ export function HeroSection() {
               Electrifying Lineup of Events{' '}
               <Image
                 src={'/images/ui/app/hero-section-2.png'}
-                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[80px] h-auto'
+                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[80px] h-auto animate-move-ease'
                 width={100}
                 height={100}
                 alt='hero-rocket'

@@ -12,7 +12,7 @@ export function About() {
             Get to{' '}
             <Image
               src={'/images/ui/app/about-heading.svg'}
-              className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto'
+              className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto animate-move-ease'
               alt='about'
               width={100}
               height={100}

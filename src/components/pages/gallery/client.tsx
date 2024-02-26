@@ -64,7 +64,7 @@ export function GalleryParallax() {
             // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             <motion.div key={index} style={{ scale }} className={`w-full h-full absolute top-0 flex items-center justify-center ${styles.el}`}>
               <div className={`relative w-[25vw] h-[25vh] ${styles.imageContainer}`}>
-                <Image className={'object-cover'} src={src} fill alt='image' placeholder='blur' />
+                <Image className='object-cover' src={src} fill alt='image' placeholder='blur' />
               </div>
             </motion.div>
           );

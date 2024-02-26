@@ -66,10 +66,16 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'move-ease': {
+          '0%': { transform: 'translateY(0) rotate(3deg)' },
+          '50%': { transform: 'translateY(-15px) rotate(-5deg)' },
+          '100%': { transform: 'translateY(0) rotate(3deg)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'move-ease': 'move-ease 5s ease-in-out infinite alternate',
       },
       minHeight: {
         rvh: 'calc(100vh - 56px)',

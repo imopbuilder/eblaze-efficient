@@ -149,7 +149,7 @@ function NavImage() {
       animate={selectedLink.isActive ? 'open' : 'closed'}
       className='lg:block hidden w-[500px] h-full relative bg-background rounded-md'
     >
-      <Image src={`/images/ui/app/${src}`} className='w-full ' width={100} height={100} alt='image' loading='lazy' unoptimized />
+      <Image src={`/images/ui/app/${src}`} className='w-full animate-move-ease' width={100} height={100} alt='image' loading='lazy' unoptimized />
     </motion.div>
   );
 }
