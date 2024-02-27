@@ -17,7 +17,7 @@ export function AppProgress() {
   useMotionValueEvent(scrollYProgress, 'change', (latest) => setPercentage(Math.floor(latest * 100)));
 
   return (
-    <motion.p className='text-sm font-medium' variants={opacity} initial='initial' animate={percentage < 9 ? 'closed' : 'open'}>
+    <motion.p className='text-sm font-medium tabular-nums' variants={opacity} initial='initial' animate={percentage < 9 ? 'closed' : 'open'}>
       {percentage}%
     </motion.p>
   );
@@ -130,7 +130,7 @@ function NavBody() {
   }
 
   return (
-    <div className='flex flex-wrap mt-10 lg:mt-20 lg:max-w '>
+    <div className='flex flex-wrap mt-10 lg:mt-20 lg:max-w'>
       {[...APP_LINKS, REGISTRATION_ROUTE].map(({ id, label, href }, index) => {
         return (
           <Link key={id} href={href} onClick={(e) => handleClick(e, index, href)}>
