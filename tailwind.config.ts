@@ -80,6 +80,10 @@ const config = {
       minHeight: {
         rvh: 'calc(100vh - 56px)',
       },
+      fontFamily: {
+        inter: 'var(--font-inter)',
+        nunito: 'var(--font-nunito)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

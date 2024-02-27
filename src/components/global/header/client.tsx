@@ -59,7 +59,7 @@ export function NavMenuBtn() {
           />
         </div>
         <div className='flex items-center justify-center relative'>
-          <motion.p variants={opacity} animate={!open ? 'open' : 'closed'}>
+          <motion.p variants={opacity} initial='initial' animate={!open ? 'open' : 'closed'}>
             Menu
           </motion.p>
           <motion.p className='absolute' initial='closed' variants={opacity} animate={open ? 'open' : 'closed'}>
@@ -135,7 +135,7 @@ function NavBody() {
         return (
           <Link key={id} href={href} onClick={(e) => handleClick(e, index, href)}>
             <motion.p
-              className='text-[32px] lg:text-[5vw] flex overflow-hidden pr-[30px] lg:pr-[2vw] pt-[10px] m-0'
+              className='text-[32px] font-inter lg:text-[5vw] flex overflow-hidden pr-[30px] lg:pr-[2vw] pt-[10px] m-0'
               onMouseOver={() => {
                 updateSelectedLink({ isActive: true, index });
               }}

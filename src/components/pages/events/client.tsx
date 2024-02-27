@@ -42,7 +42,7 @@ export function ResponsiveEventGuidelines({ title, lead, guidelines, note }: Eve
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className='text-primary-color'>{title}</DialogTitle>
+            <DialogTitle className='text-primary-color  font-inter'>{title}</DialogTitle>
             <DialogDescription className='pb-2'>
               Lead by <span className='capitalize font-medium'>{lead}</span>
             </DialogDescription>
@@ -71,7 +71,7 @@ export function ResponsiveEventGuidelines({ title, lead, guidelines, note }: Eve
       </DrawerTrigger>
       <DrawerContent className='border-0'>
         <DrawerHeader className='text-left'>
-          <DrawerTitle className='text-primary-color'>{title}</DrawerTitle>
+          <DrawerTitle className='text-primary-color font-inter'>{title}</DrawerTitle>
           <DrawerDescription className='pb-2'>
             Lead by <span className='capitalize font-medium'>{lead}</span>
           </DrawerDescription>

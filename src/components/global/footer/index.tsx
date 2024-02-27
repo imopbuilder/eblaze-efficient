@@ -33,7 +33,7 @@ function Workspace() {
           <Link
             href={REGISTRATION_ROUTE.href}
             className={
-              'group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full lg:text-6xl text-4xl font-light capitalize'
+              'group inline-flex items-center justify-between text-muted bg-primary-color p-5 font-inter w-full lg:text-6xl text-4xl font-light capitalize'
             }
             target='_blank'
             rel='noreferrer'
@@ -55,7 +55,7 @@ function SocialLinks() {
       <p className='text-xs p-5 text-background font-bold'>Socials</p>
       <ul className='group/ul'>
         {CONTACT.map(({ id, social, href }) => (
-          <li key={id} className='border-t-2 group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500'>
+          <li key={id} className='border-t-2 group-hover/ul:blur-[6px] font-inter group-hover/ul:hover:blur-0 duration-500'>
             <Link
               href={href}
               className={
@@ -82,7 +82,7 @@ function Sitemap() {
       <p className='text-xs px-5 pb-5 pt-80 text-background font-bold'>Site map</p>
       <ul className='group/ul'>
         {APP_LINKS.map(({ id, label, href }) => (
-          <li key={id} className='border-t-2 group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500 last:rounded-b-md'>
+          <li key={id} className='border-t-2 group-hover/ul:blur-[6px] font-inter group-hover/ul:hover:blur-0 duration-500 last:rounded-b-md'>
             <Link
               href={href}
               className='group inline-flex items-center justify-between text-muted p-5 w-full lg:text-6xl text-4xl font-light capitalize'
