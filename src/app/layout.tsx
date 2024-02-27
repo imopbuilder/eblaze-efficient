@@ -1,3 +1,4 @@
+import StickyCursor from '@/components/global/sticky-cursor';
 import { APP } from '@/constants/app';
 import '@/styles/main.scss';
 import type { Metadata } from 'next';
@@ -37,7 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${nunito.className} ${nunito.variable} ${clashDisplay.variable}`}>{children}</body>
+      <body className={`${nunito.className} ${nunito.variable} ${clashDisplay.variable} group/body`}>
+        {children}
+        <StickyCursor />
+      </body>
     </html>
   );
 }

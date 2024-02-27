@@ -116,8 +116,6 @@
 	}
 }
 
-@layer utilities {
-	.clip-circle {
-		clip-path: circle(50%);
-	}
-}
+// body:has(a:hover, button:hover) #cursor {
+// 	transition-timing-function: ease;
+// }
