@@ -24,7 +24,7 @@ export function FooterIntro() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', transform ? '-100%' : '-120%']);
 
   return (
-    <motion.p ref={container} style={{ y }} className='uppercase text-[20vw] font-inter font-light text-center text-background'>
+    <motion.p ref={container} style={{ y }} className='uppercase text-[20vw] font-clash-display font-normal text-center text-background'>
       Eblaze
     </motion.p>
   );

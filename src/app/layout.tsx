@@ -1,10 +1,26 @@
 import { APP } from '@/constants/app';
 import '@/styles/main.scss';
 import type { Metadata } from 'next';
-import { Inter, Nunito } from 'next/font/google';
+import { Nunito } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const nunito = Nunito({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--font-nunito' });
+
+const clashDisplay = localFont({
+  src: [
+    {
+      path: '../lib/assets/clash-display-light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../lib/assets/clash-display-regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-clash-display',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -21,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${nunito.className} ${inter.variable} ${nunito.variable}`}>{children}</body>
+      <body className={`${nunito.className} ${nunito.variable} ${clashDisplay.variable}`}>{children}</body>
     </html>
   );
 }

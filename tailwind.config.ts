@@ -81,7 +81,7 @@ const config = {
         rvh: 'calc(100vh - 56px)',
       },
       fontFamily: {
-        inter: 'var(--font-inter)',
+        'clash-display': 'var(--font-clash-display)',
         nunito: 'var(--font-nunito)',
       },
     },

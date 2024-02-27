@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export function Registrations() {
   return (
-    <section className='sticky top-[56px]'>
+    <section className='sticky top-[56px] py-14'>
       <div className='md:px-5 px-3 min-h-screen'>
         <div className='grid grid-cols-8'>
           <h1 className='uppercase col-span-8'>

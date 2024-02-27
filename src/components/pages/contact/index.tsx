@@ -27,7 +27,7 @@ export function Contact() {
             <Link href={'/'} className='flex items-end justify-start h-full relative md:-top-9 sm:-top-7 -top-5'>
               <Arrow className='text-primary-color sm:size-10 size-6' />
             </Link>
-            <h1 className='uppercase md:text-[7rem] sm:text-[5rem] text-[3.3rem]'>Touch</h1>
+            <h1 className='uppercase md:text-[7rem] sm:text-[5rem] text-[4rem]'>Touch</h1>
           </div>
         </div>
         <div>

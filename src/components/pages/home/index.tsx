@@ -14,7 +14,7 @@ export function HeroSection() {
             <Paragraph className='text-sm sm:text-lg font-semibold text-background sm:pb-0 pb-4' parentClassName='relative md:top-3 sm:top-1 top-3'>
               Spark Your Passion
             </Paragraph>
-            <Paragraph className='text-background xl:text-[7rem] font-inter lg:text-[6rem] md:text-[5rem] font-light text-[3.5rem] mb-8 lg:pt-0 md:pt-3 sm:pt-4 pt-4'>
+            <Paragraph className='text-background xl:text-[7rem] font-clash-display lg:text-[6rem] md:text-[5rem] font-normal text-[3.5rem] mb-8 lg:pt-0 md:pt-3 sm:pt-4 pt-4'>
               Join Our{' '}
               <Image
                 src={'/images/ui/app/hero-section.png'}

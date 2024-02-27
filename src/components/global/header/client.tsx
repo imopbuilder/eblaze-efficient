@@ -135,7 +135,7 @@ function NavBody() {
         return (
           <Link key={id} href={href} onClick={(e) => handleClick(e, index, href)}>
             <motion.p
-              className='text-[32px] font-inter lg:text-[5vw] flex overflow-hidden pr-[30px] lg:pr-[2vw] pt-[10px] m-0'
+              className='text-[32px] font-clash-display lg:text-[5vw] flex overflow-hidden pr-[30px] lg:pr-[2vw] pt-[10px] m-0'
               onMouseOver={() => {
                 updateSelectedLink({ isActive: true, index });
               }}
