@@ -1,5 +1,6 @@
 import { Footer } from '@/components/global/footer';
 import { Header } from '@/components/global/header';
+import { HomeRegisterCard } from '@/components/global/register-card';
 import { About } from '@/components/pages/about';
 import { Contact, Location } from '@/components/pages/contact';
 import { Events } from '@/components/pages/events';
@@ -11,6 +12,7 @@ export default function Page() {
     <Fragment>
       <Header />
       <main>
+        <HomeRegisterCard />
         <HeroSection />
         <About />
         <Events />
