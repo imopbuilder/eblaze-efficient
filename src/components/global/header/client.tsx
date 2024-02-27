@@ -1,5 +1,6 @@
 'use client';
 
+import { useFooter } from '@/client/store/use-footer';
 import { useNav } from '@/client/store/use-nav';
 import { APP_LINKS, REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
@@ -37,11 +38,17 @@ export function NavMenuBtn() {
             animate={open ? 'min' : 'max'}
           />
           <motion.span
-            className='w-6 h-0.5 bg-background inline-block origin-center rounded-full data-[nav=true]:-rotate-[495deg] data-[nav=true]:delay-1000 duration-1000'
+            className='w-6 h-0.5 bg-background inline-block origin-center rounded-full data-[nav=true]:!-rotate-[495deg] data-[nav=true]:delay-1000 duration-1000'
+            variants={scale}
+            initial='initial'
+            animate={'max'}
             data-nav={open}
           />
           <motion.span
-            className='w-6 h-0.5 bg-background inline-block origin-center rounded-full absolute data-[nav=true]:-rotate-[405deg] data-[nav=true]:delay-1000 duration-1000'
+            className='w-6 h-0.5 bg-background inline-block origin-center rounded-full absolute data-[nav=true]:!-rotate-[405deg] data-[nav=true]:delay-1000 duration-1000'
+            variants={scale}
+            initial='initial'
+            animate='max'
             data-nav={open}
           />
           <motion.span
@@ -66,6 +73,17 @@ export function NavMenuBtn() {
 
 export function NavHelperBackgrounds() {
   const open = useNav((state) => state.open);
+  const setShowFooter = useFooter((state) => state.setShowFooter);
+
+  function handleAnimationStart() {
+    if (!open) return;
+    setShowFooter(false);
+  }
+
+  function handleAnimationComplete() {
+    if (open) return;
+    setShowFooter(true);
+  }
 
   return (
     <Fragment>
@@ -74,6 +92,8 @@ export function NavHelperBackgrounds() {
         initial='initial'
         animate={open ? 'open' : 'closed'}
         className='bg-background opacity-70 h-full w-full absolute left-0 top-full px-5'
+        onAnimationStart={handleAnimationStart}
+        onAnimationComplete={handleAnimationComplete}
       />
       <AnimatePresence mode='wait'>{open && <Nav />}</AnimatePresence>
     </Fragment>

@@ -4,11 +4,11 @@ import { APP_LINKS, PROFILE, REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
 import Link from 'next/link';
 import Arrow from '../icons/arrow';
-import { FooterIntro } from './client';
+import { FooterIntro, FooterSection } from './client';
 
 export function Footer() {
   return (
-    <footer className='relative z-20 sm:px-5 px-3 sm:pt-5 pt-3 overflow-hidden bg-background'>
+    <FooterSection>
       <div className='rounded-lg bg-primary-color'>
         <div className='pt-20'>
           <FooterIntro />
@@ -20,7 +20,7 @@ export function Footer() {
         </div>
       </div>
       <FooterOutro />
-    </footer>
+    </FooterSection>
   );
 }
 
