@@ -2,6 +2,7 @@ import Star from '@/components/global/icons/star';
 import { Button } from '@/components/ui/button';
 import { APP_LINKS, PROFILE, REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
+import Image from 'next/image';
 import Link from 'next/link';
 import Arrow from '../icons/arrow';
 import { FooterIntro, FooterSection } from './client';
@@ -110,7 +111,16 @@ function FooterOutro() {
             </span>
           </Link>
         </Button>
-        with ❤️
+        with{' '}
+        <Image
+          src={'/images/ui/profile/red-heart.png'}
+          className='size-6 inline-block relative -top-0.5 ml-0.5'
+          width={50}
+          height={50}
+          alt='love'
+          loading='lazy'
+          unoptimized
+        />
       </p>
       <p className='font-medium'>© 2024 ELAZE</p>
     </div>
