@@ -11,20 +11,22 @@ export type Event = {
 export const EVENTS: Event[] = [
   {
     id: 'e1',
-    title: 'Event 1',
+    title: 'Circuit Design',
     description: [
-      "To illustrate this animation, I'll go step by step, animating a paragraph on scroll first, then moving to a word by word animation and then doing a character by character animation. Depending on your taste (I like the word by word the best), you can choose whichever implementation you prefer.",
+      'Calling all problem solvers! Join our unique challenge hunt using real-world labs. Teams decipher tech-based challenges across various labs Answer correctly and explain clearly to unlock the next hint.',
+      'Calling all problem solvers! Join our unique challenge hunt using real-world labs. Teams decipher tech-based challenges across various labs Answer correctly and explain clearly to unlock the next hint.',
+      'Calling all problem solvers! Join our unique challenge hunt using real-world labs. Teams decipher tech-based challenges across various labs Answer correctly and explain clearly to unlock the next hint.',
     ],
     image: {
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
-    lead: 'Anil Kumar',
+    lead: 'Momidi Chakri',
     guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
   },
   {
     id: 'e2',
-    title: 'Event 2',
+    title: 'Project Expo',
     description: [
       "To illustrate this animation, I'll go step by step, animating a paragraph on scroll first, then moving to a word by word animation and then doing a character by character animation. Depending on your taste (I like the word by word the best), you can choose whichever implementation you prefer.",
     ],
@@ -32,40 +34,55 @@ export const EVENTS: Event[] = [
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
-    lead: 'Anil Kumar',
+    lead: 'P. Sai Ganesh Naik',
     guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
   },
   {
     id: 'e3',
-    title: 'Event 3',
+    title: 'Show Your Talent',
     description: [
-      "To illustrate this animation, I'll go step by step, animating a paragraph on scroll first, then moving to a word by word animation and then doing a character by character animation. Depending on your taste (I like the word by word the best), you can choose whichever implementation you prefer.",
+      `Calling all talented students! Are you ready to showcase your extraordinary skills and passions? Whether you excel in art, singing, dance, project development, paper crafts, or any other talent, this is your moment to shine! Join us at our upcoming "Show Your Talent" event, where you can unleash your creativity, captivate the audience, and inspire others with your unique abilities. Don't miss this chance to make your mark and celebrate the diversity of talent within our community!`,
     ],
     image: {
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
-    lead: 'Anil Kumar',
-    guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
+    lead: 'Hemanth Kumar',
+    guidelines: [
+      'Showcase your talent effectively within a video or photo lasting between 15 to 20 seconds. Make every moment count as you captivate the audience with your skills!',
+      "The deadline for submitting your entry is March 12. Don't miss this opportunity to share your talent with the world.",
+      "To cover event expenses and ensure its success, there's an entry fee of 50/- per participant.",
+      'Let your talent shine without crossing any boundaries. Ensure that your video or photo content does not include any depictions of violence, abuse, politics, or spirituality.',
+    ],
   },
   {
     id: 'e4',
-    title: 'Event 4',
+    title: 'Hunt the Components',
     description: [
-      "To illustrate this animation, I'll go step by step, animating a paragraph on scroll first, then moving to a word by word animation and then doing a character by character animation. Depending on your taste (I like the word by word the best), you can choose whichever implementation you prefer.",
+      'Embark on a journey of innovation with our Hunt the Components challenge! Calling all problem solvers and tech enthusiasts to participate in this exhilarating experience. Engage in a unique challenge hunt within real-world labs, where teams will decipher intricate tech-based challenges spanning various aspects of circuit design.',
     ],
     image: {
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
-    lead: 'Anil Kumar',
-    guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
+    lead: 'G. Jayasimha',
+    guidelines: [
+      'To ensure fair play and focus, the use of mobile phones is strictly prohibited during the challenge.',
+      'Once registration is completed, team members cannot be changed. This fosters team cohesion and ensures a level playing field for all participants.',
+      'Teams must consist of a minimum of 3 and a maximum of 5 members, encouraging collaboration and diversity of skills.',
+      'For added convenience and flexibility, spot registrations are available for teams looking to join the challenge on the day of the event.',
+      'Only 30 teams will be allowed to participate, so register early to avoid missing out on this thrilling adventure.',
+    ],
+    note: [
+      'Each correct solution not only unlocks the next challenge but also paves the way for deeper exploration.',
+      'The team with the most solved quest within the time limit wins the ultimate accolade!',
+    ],
   },
   {
     id: 'e5',
     title: 'Ideathon Inspire',
     description: [
-      "To illustrate this animation, I'll go step by step, animating a paragraph on scroll first, then moving to a word by word animation and then doing a character by character animation. Depending on your taste (I like the word by word the best), you can choose whichever implementation you prefer.",
+      "Ideathons are dynamic, intensive workshops that ignite creativity, innovation, and  problem-solving skills among students. These events provide a platform for aspiring developers, designers, and tech enthusiasts to collaborate, turning their ideas into tangible solutions. Participants pitch innovative ideas, form teams, prototype, and receive mentorship. It's an opportunity to apply classroom knowledge, gain hands-on experience, and network with like-minded individuals.",
     ],
     image: {
       src: 'event-pic.jpeg',
@@ -84,9 +101,28 @@ export const EVENTS: Event[] = [
   },
   {
     id: 'e6',
-    title: 'CodeCraft Fusion',
+    title: 'E-Quiz',
     description: [
       "To illustrate this animation, I'll go step by step, animating a paragraph on scroll first, then moving to a word by word animation and then doing a character by character animation. Depending on your taste (I like the word by word the best), you can choose whichever implementation you prefer.",
+    ],
+    image: {
+      src: 'event-pic.jpeg',
+      alt: 'event-name',
+    },
+    lead: 'Peesa Anvesh',
+    guidelines: [
+      'Teams must consist of 3 to 5 members. Form a diverse team to leverage a variety of skills and knowledge.',
+      'Each team should bring at least one laptop to access the quiz platform and participate effectively.',
+      'To maintain the integrity of the quiz, the use of mobile phones is strictly prohibited during the quiz session. Teams are expected to rely solely on their collective knowledge and resources.',
+      'Prepare to test your aptitude and delve into the basics of electrical and electronics engineering. Quiz questions will cover a wide range of topics within these domains,',
+    ],
+  },
+  {
+    id: 'e7',
+    title: 'CodeCraft Fusion',
+    description: [
+      "At CodeCraft Fusion, participants will face a series of challenging coding problems that will put their skills to the ultimate test. Whether you're a seasoned coder or just starting out, this event offers an exciting platform to hone your abilities and compete against fellow enthusiasts.",
+      'Solve coding challenges within a time limit, strategize your approach, and unleash your creativity to craft elegant solutions. From algorithmic puzzles to real-world programming tasks, CodeCraft Fusion will push you to think critically and innovate under pressure.',
     ],
     image: {
       src: 'event-pic.jpeg',
@@ -100,5 +136,19 @@ export const EVENTS: Event[] = [
       'Participants may seek hints twice and use Google for concept reference, limited to 10 minutes each time.',
       'Participants will engage in a 3-hour coding challenge where their scores are determined by the complexity and efficiency of their solutions.',
     ],
+  },
+  {
+    id: 'e8',
+    title: 'Know Your Branch',
+    description: [
+      'Welcome to one of the most anticipated events of the fest - "Know Your Branch"! This event is specifically curated for students in the Electrical and Electronics Engineering (EEE) branch. We are thrilled to invite esteemed alumni of SVU EEE who have established themselves in diverse domains. They will grace us with their presence and engage in insightful one-on-one interactions with students, offering invaluable knowledge and sharing their rich experiences.',
+      'Engage actively with the alumni to maximize your learning and networking opportunities and get ready to gain profound insights, network with industry experts, and explore the myriad opportunities awaiting you in the field of Electrical and Electronics Engineering!',
+    ],
+    image: {
+      src: 'event-pic.jpeg',
+      alt: 'event-name',
+    },
+    lead: 'K. Anil Kumar',
+    guidelines: ['To make the most of this event, come prepared with questions about career paths, industry trends, and personal experiences.'],
   },
 ];
