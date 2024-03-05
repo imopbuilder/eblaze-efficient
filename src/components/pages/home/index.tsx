@@ -17,8 +17,8 @@ export function HeroSection() {
             <Paragraph className='text-background xl:text-[7rem] font-clash-display lg:text-[6rem] md:text-[5rem] font-normal text-[3.5rem] mb-8 lg:pt-0 md:pt-3 sm:pt-4 pt-4'>
               Join Our{' '}
               <Image
-                src={'/images/ui/app/hero-section.png'}
-                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[70px] h-auto animate-move-ease'
+                src={'/images/ui/app/hero-section.svg'}
+                className='rounded-md inline-block bg-background relative -top-2 md:w-[100px] w-[70px] h-auto animate-move-ease'
                 width={100}
                 height={100}
                 alt='hero-rocket'
@@ -27,8 +27,8 @@ export function HeroSection() {
               />{' '}
               Electrifying Lineup of Events{' '}
               <Image
-                src={'/images/ui/app/hero-section-2.png'}
-                className='rounded-md inline-block relative -top-2 md:w-[100px] w-[70px] h-auto animate-move-ease'
+                src={'/images/ui/app/hero-section-2.svg'}
+                className='rounded-md inline-block bg-background relative -top-2 md:w-[100px] w-[70px] h-auto animate-move-ease'
                 width={100}
                 height={100}
                 alt='hero-rocket'
