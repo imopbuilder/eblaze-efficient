@@ -40,7 +40,7 @@ export function ResponsiveEventGuidelines({ title, lead, guidelines, note }: Eve
             <NotepadText size={16} />
           </Button>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className='md:max-w-2xl max-w-xl'>
           <DialogHeader>
             <DialogTitle className='text-primary-color font-clash-display font-normal tracking-wide'>{title}</DialogTitle>
             <DialogDescription className='pb-2'>
