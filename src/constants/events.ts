@@ -92,7 +92,7 @@ export const EVENTS: Event[] = [
       src: 'event-pic.jpeg',
       alt: 'event-name',
     },
-    lead: 'Rahul Palamarthi',
+    lead: 'Rahul Palamarthi 😜',
     guidelines: [
       'At CodeCraft Fusion, students have the opportunity to participate individually or in team of up to three members, fostering collaboration and creativity.',
       'To ensure smooth participation, every team must bring their own laptops equipped with necessary development tools and software.',
