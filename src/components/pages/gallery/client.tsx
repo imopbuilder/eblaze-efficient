@@ -1,15 +1,9 @@
 'use client';
 
+import { GALLERY } from '@/constants/gallery';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
-import Picture1 from '../../../../public/images/ui/gallery/1.jpeg';
-import Picture2 from '../../../../public/images/ui/gallery/2.jpeg';
-import Picture3 from '../../../../public/images/ui/gallery/3.jpg';
-import Picture4 from '../../../../public/images/ui/gallery/4.jpg';
-import Picture5 from '../../../../public/images/ui/gallery/5.jpg';
-import Picture6 from '../../../../public/images/ui/gallery/6.jpg';
-import Picture7 from '../../../../public/images/ui/gallery/7.jpeg';
 import styles from './styles.module.scss';
 
 export function GalleryParallax() {
@@ -27,31 +21,31 @@ export function GalleryParallax() {
 
   const pictures = [
     {
-      src: Picture1,
+      src: 'https://utfs.io/f/773cd064-f0c7-4534-b5b4-5eb4c44ef28e-5a920m.jpg',
       scale: scale4,
     },
     {
-      src: Picture2,
+      src: GALLERY[0].img.src,
       scale: scale5,
     },
     {
-      src: Picture3,
+      src: GALLERY[1].img.src,
       scale: scale6,
     },
     {
-      src: Picture4,
+      src: GALLERY[2].img.src,
       scale: scale5,
     },
     {
-      src: Picture5,
+      src: GALLERY[3].img.src,
       scale: scale6,
     },
     {
-      src: Picture6,
+      src: GALLERY[4].img.src,
       scale: scale8,
     },
     {
-      src: Picture7,
+      src: GALLERY[5].img.src,
       scale: scale9,
     },
   ];
@@ -64,7 +58,7 @@ export function GalleryParallax() {
             // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             <motion.div key={index} style={{ scale }} className={`w-full h-full absolute top-0 flex items-center justify-center ${styles.el}`}>
               <div className={`relative w-[25vw] h-[25vh] ${styles.imageContainer}`}>
-                <Image className='object-cover' src={src} fill alt='image' placeholder='blur' />
+                <Image className='object-cover' src={src} fill alt='image' placeholder='blur' blurDataURL='https://utfs.io' />
               </div>
             </motion.div>
           );

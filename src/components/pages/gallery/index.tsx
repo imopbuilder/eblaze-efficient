@@ -1,3 +1,4 @@
+import { GALLERY } from '@/constants/gallery';
 import Image from 'next/image';
 import { GalleryParallax } from './client';
 
@@ -25,8 +26,15 @@ export function Gallery() {
       </section>
       <GalleryParallax />
       <section>
-        <div className='mx-5 py-10'>
-          <p>Hello world</p>
+        <div className='mx-5 py-5'>
+          <div>
+            {GALLERY.map(({ img }, index) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+              <div key={index} className='pb-5'>
+                <Image className='w-full' src={img.src} width={100} height={100} alt={img.alt} loading='lazy' unoptimized />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </section>
