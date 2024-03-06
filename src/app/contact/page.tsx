@@ -7,6 +7,8 @@ import { Fragment } from 'react';
 
 export const metadata: Metadata = {
   title: 'Contact',
+  description:
+    'Need assistance or have a query? Contact Eblaze today! Our team is here to provide expert guidance and support for all your electrical and electronics engineering needs.',
 };
 
 export default function Page() {

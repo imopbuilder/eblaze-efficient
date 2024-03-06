@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: `${APP.template} - %s`,
     default: APP.default,
   },
-  description: APP.description,
+  description: 'Join Our Electrifying Lineup of Events and Gatherings.',
   metadataBase: process.env.NODE_ENV === 'production' ? new URL('https://eblaze.vercel.app/') : new URL('http://localhost:3000/'),
   openGraph: {
     type: 'website',

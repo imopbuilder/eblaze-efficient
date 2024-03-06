@@ -1,8 +1,6 @@
 export const APP = {
   default: 'Eblaze',
   template: 'Eblaze',
-  description: 'Join Our Electrifying Lineup of Events and Gatherings.',
-  url: 'https://eblaze.vercel.app',
 };
 
 export const REGISTRATION_ROUTE = {

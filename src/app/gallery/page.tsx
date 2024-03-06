@@ -7,6 +7,8 @@ import { Fragment } from 'react';
 
 export const metadata: Metadata = {
   title: 'Gallery',
+  description:
+    "Discover the visual journey of Eblaze's workshops and events through our gallery. Explore captivating images showcasing our hands-on learning experiences, expert instructors, and innovative projects.",
 };
 
 export default function Page() {
