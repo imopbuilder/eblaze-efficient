@@ -29,6 +29,20 @@ export const metadata: Metadata = {
     default: APP.default,
   },
   description: 'Join Our Electrifying Lineup of Events and Gatherings.',
+  openGraph: {
+    type: 'website',
+    url: 'https://eblaze.vercel.app',
+    title: 'Eblaze',
+    description: 'Join Our Electrifying Lineup of Events and Gatherings.',
+    images: 'https://eblaze.vercel.app/images/eblaze.png',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: 'https://eblaze.vercel.app',
+    title: 'Eblaze',
+    description: 'Join Our Electrifying Lineup of Events and Gatherings.',
+    images: 'https://metatags.io/images/meta-tags.png',
+  },
 };
 
 export default function RootLayout({
