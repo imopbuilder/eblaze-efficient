@@ -3,7 +3,6 @@ export const APP = {
   template: 'Eblaze',
   description: 'Join Our Electrifying Lineup of Events and Gatherings.',
   url: 'https://eblaze.vercel.app',
-  images: 'https://eblaze.vercel.app/images/eblaze.png',
 };
 
 export const REGISTRATION_ROUTE = {

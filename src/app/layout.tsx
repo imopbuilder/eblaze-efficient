@@ -31,17 +31,9 @@ export const metadata: Metadata = {
   description: APP.description,
   openGraph: {
     type: 'website',
-    url: APP.url,
-    title: APP.default,
-    description: APP.description,
-    images: APP.images,
   },
   twitter: {
     card: 'summary_large_image',
-    site: APP.url,
-    title: APP.default,
-    description: APP.description,
-    images: APP.images,
   },
 };
 
