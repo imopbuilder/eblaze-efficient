@@ -24,8 +24,8 @@ export const EVENTS: Event[] = [
       "Join us at Eblaze for the IoT Design Workshop! Our expert team will teach you the fundamentals of Arduino boards and multi-functional shields, empowering you to create innovative IoT projects. Whether you're a beginner or an enthusiast, this workshop offers a hands-on experience to explore the endless possibilities of IoT technology. Unlock new opportunity to learn, innovate, and unleash your creativity in the world of IoT design!",
     ],
     image: {
-      src: 'event-pic.jpeg',
-      alt: 'event-name',
+      src: 'circuit-design.jpeg',
+      alt: 'circuit-design-pic',
     },
     lead: 'Momidi Chakri',
     guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
@@ -50,8 +50,8 @@ export const EVENTS: Event[] = [
       `Calling all talented students! Are you ready to showcase your extraordinary skills and passions? Whether you excel in art, singing, dance, project development, paper crafts, or any other talent, this is your moment to shine! Join us at our upcoming "Show Your Talent" event, where you can unleash your creativity, captivate the audience, and inspire others with your unique abilities. Don't miss this chance to make your mark and celebrate the diversity of talent within our community!`,
     ],
     image: {
-      src: 'event-pic.jpeg',
-      alt: 'event-name',
+      src: 'show-your-talent.jpeg',
+      alt: 'show-your-talent-pic',
     },
     lead: 'Hemanth Kumar',
     guidelines: [
@@ -68,8 +68,8 @@ export const EVENTS: Event[] = [
       'Embark on a journey of innovation with our Hunt the Components challenge! Calling all problem solvers and tech enthusiasts to participate in this exhilarating experience. Engage in a unique challenge hunt within real-world labs, where teams will decipher intricate tech-based challenges spanning various aspects of circuit design.',
     ],
     image: {
-      src: 'event-pic.jpeg',
-      alt: 'event-name',
+      src: 'hunt-the-components.jpeg',
+      alt: 'hunt-the-components-pic',
     },
     lead: 'G. Jayasimha',
     guidelines: [
@@ -91,8 +91,8 @@ export const EVENTS: Event[] = [
       "Ideathons are dynamic, intensive workshops that ignite creativity, innovation, and  problem-solving skills among students. These events provide a platform for aspiring developers, designers, and tech enthusiasts to collaborate, turning their ideas into tangible solutions. Participants pitch innovative ideas, form teams, prototype, and receive mentorship. It's an opportunity to apply classroom knowledge, gain hands-on experience, and network with like-minded individuals.",
     ],
     image: {
-      src: 'event-pic.jpeg',
-      alt: 'event-name',
+      src: 'ideathon-inspire.jpeg',
+      alt: 'ideathon-inspire-pic',
     },
     lead: 'K. Anil Kumar',
     guidelines: [
@@ -112,8 +112,8 @@ export const EVENTS: Event[] = [
       "Welcome to E-Quiz: where aptitude meets electrical and electronics engineering! Get ready to test your mental agility and engineering knowledge in this dynamic quiz competition. From circuit analysis to digital electronics, every question is crafted to challenge your problem-solving skills and understanding of fundamental concepts. Whether you're a seasoned engineer or just starting your journey, E-Quiz offers an exciting opportunity to compete, learn, and emerge victorious.",
     ],
     image: {
-      src: 'event-pic.jpeg',
-      alt: 'event-name',
+      src: 'e-quiz.jpeg',
+      alt: 'e-quiz-pic',
     },
     lead: 'Peesa Anvesh',
     guidelines: [
@@ -131,8 +131,8 @@ export const EVENTS: Event[] = [
       'Solve coding challenges within a time limit, strategize your approach, and unleash your creativity to craft elegant solutions. From algorithmic puzzles to real-world programming tasks, CodeCraft Fusion will push you to think critically and innovate under pressure.',
     ],
     image: {
-      src: 'event-pic.jpeg',
-      alt: 'event-name',
+      src: 'codecraft-fusion.jpeg',
+      alt: 'codecraft-fusion-pic',
     },
     lead: 'Rahul Palamarthi 😜',
     guidelines: [
@@ -151,8 +151,8 @@ export const EVENTS: Event[] = [
       'Engage actively with the alumni to maximize your learning and networking opportunities and get ready to gain profound insights, network with industry experts, and explore the myriad opportunities awaiting you in the field of Electrical and Electronics Engineering!',
     ],
     image: {
-      src: 'event-pic.jpeg',
-      alt: 'event-name',
+      src: 'know-your-branch.jpeg',
+      alt: 'know-your-branch-pic',
     },
     lead: 'K. Anil Kumar',
     guidelines: ['To make the most of this event, come prepared with questions about career paths, industry trends, and personal experiences.'],
