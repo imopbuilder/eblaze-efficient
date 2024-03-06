@@ -107,13 +107,13 @@ export const EVENTS: Event[] = [
   },
   {
     id: 'e6',
-    title: 'E-Quiz',
+    title: 'Circuit Mania',
     description: [
-      "Welcome to E-Quiz: where aptitude meets electrical and electronics engineering! Get ready to test your mental agility and engineering knowledge in this dynamic quiz competition. From circuit analysis to digital electronics, every question is crafted to challenge your problem-solving skills and understanding of fundamental concepts. Whether you're a seasoned engineer or just starting your journey, E-Quiz offers an exciting opportunity to compete, learn, and emerge victorious.",
+      "Welcome to Circuit Mania: where aptitude meets electrical and electronics engineering! Get ready to test your mental agility and engineering knowledge in this dynamic quiz competition. From circuit analysis to digital electronics, every question is crafted to challenge your problem-solving skills and understanding of fundamental concepts. Whether you're a seasoned engineer or just starting your journey, E-Quiz offers an exciting opportunity to compete, learn, and emerge victorious.",
     ],
     image: {
-      src: 'e-quiz.jpeg',
-      alt: 'e-quiz-pic',
+      src: 'circuit-mania.jpeg',
+      alt: 'circuit-mania-pic',
     },
     lead: 'Peesa Anvesh',
     guidelines: [
