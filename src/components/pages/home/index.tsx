@@ -1,7 +1,10 @@
 import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
 import Arrow from '@/components/global/icons/arrow';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { REGISTRATION_ROUTE } from '@/constants/app';
+import { FAQS, type Faqs } from '@/constants/faqs';
+import { Plus } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -70,5 +73,62 @@ function ArrowLink() {
         <Arrow className=' lg:size-9 sm:size-7 size-6 lg:-translate-x-9 sm:-translate-x-7 -translate-x-6' />
       </div>
     </div>
+  );
+}
+
+export function HomeFaqs() {
+  return (
+    <section className='bg-background relative z-10 py-14 min-h-screen'>
+      <div className='mx-5'>
+        <div className='grid grid-cols-8'>
+          <h1 className='uppercase col-span-8'>
+            Solve ur{' '}
+            <Image
+              src={'/images/ui/app/faqs-heading.svg'}
+              className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto animate-move-ease'
+              alt='about'
+              width={100}
+              height={100}
+              loading='lazy'
+              unoptimized
+            />
+          </h1>
+          <h1 className='uppercase sm:col-span-5 col-span-7 sm:col-start-3 col-start-2'>Queries</h1>
+        </div>
+        <div>
+          <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3'>
+            <div className='md:col-span-2 col-span-8'>
+              <Paragraph className='pb-1 font-semibold text-sm text-primary-color'>FAQs</Paragraph>
+              <Line className='text-primary-color' />
+            </div>
+            <div className='md:col-span-4 col-span-8'>
+              <Accordion type='single' defaultValue='f1' collapsible>
+                {FAQS.slice(0, 5).map((faq) => (
+                  <FaqsCard key={faq.index} {...faq} />
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FaqsCard({ index, question, answer }: Faqs) {
+  return (
+    <AccordionItem
+      value={index}
+      className='border-none mb-5 duration-300 rounded-xl overflow-hidden hover:bg-primary-color bg-off-black text-background data-[state="open"]:bg-primary-color'
+    >
+      <AccordionTrigger
+        className='py-6 px-6 hover:no-underline relative z-50 focus:outline-0 focus-visible:bg-primary-color last:[&[data-state=open]>svg>path]:scale-0'
+        showIcon={false}
+      >
+        {question}
+        <Plus className='duration-200 origin-center text-background' strokeWidth={1.5} />
+      </AccordionTrigger>
+      <AccordionContent className='pb-10 mx-6 pt-8 border-t border-background text-muted'>{answer}</AccordionContent>
+    </AccordionItem>
   );
 }

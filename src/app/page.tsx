@@ -4,7 +4,7 @@ import { HomeRegisterCard } from '@/components/global/register-card';
 import { About } from '@/components/pages/about';
 import { Contact, Location } from '@/components/pages/contact';
 import { Events } from '@/components/pages/events';
-import { HeroSection } from '@/components/pages/home';
+import { HeroSection, HomeFaqs } from '@/components/pages/home';
 import { Fragment } from 'react';
 
 export default function Page() {
@@ -17,6 +17,7 @@ export default function Page() {
         <About />
         <Events />
         <Location />
+        <HomeFaqs />
         <Contact />
         <Footer />
       </main>
