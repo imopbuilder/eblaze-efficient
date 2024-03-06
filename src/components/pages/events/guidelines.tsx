@@ -30,3 +30,7 @@ export function GuidelinesContent({ guidelines, note }: Pick<Event, 'guidelines'
     </div>
   );
 }
+
+export const RpsDesignHeading = <span className='text-primary-color text-sm'>Regulated Power Supply</span>;
+export const TransformerDesignHeading = <span className='text-primary-color text-sm'>Transformer Design</span>;
+export const IoTDesignHeading = <span className='text-primary-color text-sm'>IoT Design</span>;

@@ -1,7 +1,10 @@
+import { IoTDesignHeading, RpsDesignHeading, TransformerDesignHeading } from '@/components/pages/events/guidelines';
+import { ReactNode } from 'react';
+
 export type Event = {
   id: string;
   title: string;
-  description: string[];
+  description: ReactNode[];
   image: { src: string; alt: string };
   lead: string;
   guidelines: string[];
@@ -13,9 +16,12 @@ export const EVENTS: Event[] = [
     id: 'e1',
     title: 'Circuit Design',
     description: [
-      'Calling all problem solvers! Join our unique challenge hunt using real-world labs. Teams decipher tech-based challenges across various labs Answer correctly and explain clearly to unlock the next hint.',
-      'Calling all problem solvers! Join our unique challenge hunt using real-world labs. Teams decipher tech-based challenges across various labs Answer correctly and explain clearly to unlock the next hint.',
-      'Calling all problem solvers! Join our unique challenge hunt using real-world labs. Teams decipher tech-based challenges across various labs Answer correctly and explain clearly to unlock the next hint.',
+      RpsDesignHeading,
+      "Join Eblaze for an immersive Regulated Power Supply (RPS) workshop where participants receive all essential components to construct their RPS circuit. Under the expert guidance of our RPS circuit designing team, you'll receive comprehensive support to ensure successful assembly of your RPS system. Unlock this opportunity to learn, create, and master the intricacies of regulated power supply with Eblaze!",
+      TransformerDesignHeading,
+      'Join Eblaze for a hands-on Transformer Design workshop where participants get expert guidance to practically design transformers. Engage in tasks like winding, soldering, and assembling laminations, gaining comprehensive experience in transformer design under expert supervision.',
+      IoTDesignHeading,
+      "Join us at Eblaze for the IoT Design Workshop! Our expert team will teach you the fundamentals of Arduino boards and multi-functional shields, empowering you to create innovative IoT projects. Whether you're a beginner or an enthusiast, this workshop offers a hands-on experience to explore the endless possibilities of IoT technology. Unlock new opportunity to learn, innovate, and unleash your creativity in the world of IoT design!",
     ],
     image: {
       src: 'event-pic.jpeg',
@@ -103,7 +109,7 @@ export const EVENTS: Event[] = [
     id: 'e6',
     title: 'E-Quiz',
     description: [
-      "To illustrate this animation, I'll go step by step, animating a paragraph on scroll first, then moving to a word by word animation and then doing a character by character animation. Depending on your taste (I like the word by word the best), you can choose whichever implementation you prefer.",
+      "Welcome to E-Quiz: where aptitude meets electrical and electronics engineering! Get ready to test your mental agility and engineering knowledge in this dynamic quiz competition. From circuit analysis to digital electronics, every question is crafted to challenge your problem-solving skills and understanding of fundamental concepts. Whether you're a seasoned engineer or just starting your journey, E-Quiz offers an exciting opportunity to compete, learn, and emerge victorious.",
     ],
     image: {
       src: 'event-pic.jpeg',
