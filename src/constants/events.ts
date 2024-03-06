@@ -34,14 +34,15 @@ export const EVENTS: Event[] = [
     id: 'e2',
     title: 'Project Expo',
     description: [
-      "To illustrate this animation, I'll go step by step, animating a paragraph on scroll first, then moving to a word by word animation and then doing a character by character animation. Depending on your taste (I like the word by word the best), you can choose whichever implementation you prefer.",
+      "Eblaze transcends the boundaries of a typical college fest, standing as a beacon of innovation, knowledge exchange, and collaborative spirit. This event aims to foster and showcase students' project-making skills, providing a platform for them to translate theoretical concepts into real-time projects.",
+      'Participants are encouraged to explore a diverse array of projects across various domains, offering a rich tapestry of innovation and creativity. Join us at Eblaze and witness the culmination of ingenuity, as students bring their projects to life, inspire, and educate through hands-on experiences.',
     ],
     image: {
-      src: 'event-pic.jpeg',
-      alt: 'event-name',
+      src: 'project-expo.png',
+      alt: 'project-expo-pic',
     },
     lead: 'P. Sai Ganesh Naik',
-    guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
+    guidelines: ['All candidates registered for the workshop are cordially invited to participate in this event.'],
   },
   {
     id: 'e3',
@@ -155,6 +156,9 @@ export const EVENTS: Event[] = [
       alt: 'know-your-branch-pic',
     },
     lead: 'K. Anil Kumar 👻',
-    guidelines: ['To make the most of this event, come prepared with questions about career paths, industry trends, and personal experiences.'],
+    guidelines: [
+      'To make the most of this event, come prepared with questions about career paths, industry trends, and personal experiences.',
+      'All candidates registered for the workshop are cordially invited to participate in this event.',
+    ],
   },
 ];
