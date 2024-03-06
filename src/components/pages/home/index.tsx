@@ -122,13 +122,13 @@ function FaqsCard({ index, question, answer }: Faqs) {
       className='border-none mb-5 duration-300 rounded-xl overflow-hidden hover:bg-primary-color bg-off-black text-background data-[state="open"]:bg-primary-color'
     >
       <AccordionTrigger
-        className='py-6 px-6 hover:no-underline relative z-50 focus:outline-0 focus-visible:bg-primary-color last:[&[data-state=open]>svg>path]:scale-0'
+        className='p-5 hover:no-underline relative z-50 focus:outline-0 sm:text-lg text-sm focus-visible:bg-primary-color last:[&[data-state=open]>svg>path]:scale-0'
         showIcon={false}
       >
         {question}
-        <Plus className='duration-200 origin-center text-background' strokeWidth={1.5} />
+        <Plus className='duration-200 origin-center text-background' strokeWidth={2} />
       </AccordionTrigger>
-      <AccordionContent className='pb-10 mx-6 pt-8 border-t border-background text-muted'>{answer}</AccordionContent>
+      <AccordionContent className='pb-10 mx-6 pt-8 border-t border-background sm:text-base text-sm text-muted'>{answer}</AccordionContent>
     </AccordionItem>
   );
 }
