@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     default: APP.default,
   },
   description: APP.description,
+  metadataBase: process.env.NODE_ENV === 'production' ? new URL('https://eblaze.vercel.app/') : new URL('http://localhost:3000/'),
   openGraph: {
     type: 'website',
   },
