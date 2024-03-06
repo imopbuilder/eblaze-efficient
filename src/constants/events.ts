@@ -94,7 +94,7 @@ export const EVENTS: Event[] = [
       src: 'ideathon-inspire.jpeg',
       alt: 'ideathon-inspire-pic',
     },
-    lead: 'K. Anil Kumar',
+    lead: 'K. Anil Kumar 👻',
     guidelines: [
       'Teams must consist of a minimum of 3 members and a maximum of 5 members, fostering collaboration and diverse perspectives.',
       'To ensure seamless participation, every team is required to bring their own laptops equipped with necessary development tools and software.',
@@ -154,7 +154,7 @@ export const EVENTS: Event[] = [
       src: 'know-your-branch.jpeg',
       alt: 'know-your-branch-pic',
     },
-    lead: 'K. Anil Kumar',
+    lead: 'K. Anil Kumar 👻',
     guidelines: ['To make the most of this event, come prepared with questions about career paths, industry trends, and personal experiences.'],
   },
 ];
