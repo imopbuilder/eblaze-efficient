@@ -38,7 +38,7 @@ export const EVENTS: Event[] = [
       'Participants are encouraged to explore a diverse array of projects across various domains, offering a rich tapestry of innovation and creativity. Join us at Eblaze and witness the culmination of ingenuity, as students bring their projects to life, inspire, and educate through hands-on experiences.',
     ],
     image: {
-      src: 'project-expo.png',
+      src: 'project-expo.jpeg',
       alt: 'project-expo-pic',
     },
     lead: 'P. Sai Ganesh Naik',
