@@ -103,7 +103,7 @@ export function HomeFaqs() {
             </div>
             <div className='md:col-span-4 col-span-8'>
               <Accordion type='single' defaultValue='f1' collapsible>
-                {FAQS.slice(0, 5).map((faq) => (
+                {FAQS.map((faq) => (
                   <FaqsCard key={faq.index} {...faq} />
                 ))}
               </Accordion>
