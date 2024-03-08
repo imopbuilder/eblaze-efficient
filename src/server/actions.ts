@@ -9,34 +9,46 @@ async function getActiveProducts() {
   return checkProducts.data.filter((product) => product.active === true);
 }
 
-export async function comboPackSession(product: { productId: string; name: string; description: string; price: number }) {
+export async function comboPackSession(products: { productId: string; name: string; description: string; price: number }[]) {
   let activeProducts = await getActiveProducts();
 
   try {
-    const stripeProduct = activeProducts.find((stripeProduct) => stripeProduct.metadata.product_id === product.productId);
+    for (const product of products) {
+      const stripeProduct = activeProducts.find((stripeProduct) => stripeProduct.metadata.product_id === product.productId);
 
-    if (stripeProduct === undefined) {
-      await stripe.products.create({
-        name: product.name,
-        default_price_data: {
-          unit_amount: product.price * 100,
-          currency: 'inr',
-        },
-        metadata: {
-          product_id: product.productId,
-        },
-      });
+      if (stripeProduct === undefined) {
+        await stripe.products.create({
+          name: product.name,
+          default_price_data: {
+            unit_amount: product.price * 100,
+            currency: 'inr',
+          },
+          metadata: {
+            product_id: product.productId,
+          },
+        });
+      }
     }
   } catch (error) {
     console.error('Error in creating a new product', error);
     throw error;
   }
   activeProducts = await getActiveProducts();
+  const stripeItems: Stripe.Checkout.SessionCreateParams.LineItem[] | undefined = [];
 
-  const stripeProduct = activeProducts.find((stripeProduct) => stripeProduct.metadata.product_id === product.productId);
+  for (const product of products) {
+    const stripeProduct = activeProducts.find((stripeProduct) => stripeProduct.metadata.product_id === product.productId);
+
+    if (stripeProduct) {
+      stripeItems.push({
+        price: stripeProduct?.default_price as string,
+        quantity: 1,
+      });
+    }
+  }
 
   const session = await stripe.checkout.sessions.create({
-    line_items: [{ price: stripeProduct?.default_price as string, quantity: 1 }],
+    line_items: stripeItems,
     mode: 'payment',
     phone_number_collection: {
       enabled: true,

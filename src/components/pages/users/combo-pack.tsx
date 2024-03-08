@@ -37,19 +37,19 @@ export function ComboPackRegistrationForm() {
 
     const price = calculateTotalPrice(checkoutEvent.price + checkoutKit.kits.map((val) => val.price).reduce((acc, val) => acc + val, 0));
 
-    comboPackSession({ productId: values.kit, name: checkoutEvent.name, description: checkoutKit.description, price }).then(({ url }) => {
+    comboPackSession([{ productId: values.kit, name: checkoutEvent.name, description: checkoutKit.description, price }]).then(({ url }) => {
       router.push(url ?? '/cancel');
     });
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
         <FormField
           control={form.control}
           name='event'
           render={({ field }) => (
-            <FormItem className='relative z-50'>
+            <FormItem className='relative z-10'>
               <FormLabel>Event</FormLabel>
               <Select
                 onValueChange={(val) => {
@@ -88,7 +88,7 @@ export function ComboPackRegistrationForm() {
           control={form.control}
           name='kit'
           render={({ field }) => (
-            <FormItem className='relative z-50'>
+            <FormItem className='relative z-10'>
               <FormLabel>Kit details</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value} value={field.value}>
                 <FormControl>
@@ -123,33 +123,37 @@ export function ComboPackRegistrationForm() {
           )}
         />
         {form.getValues('event') !== '' && (
-          <div className='bg-muted p-4 rounded-md'>
+          <div>
             <p className='text-sm font-medium'>Payment</p>
-            <div className='flex items-center justify-between text-muted-foreground text-sm pt-1'>
-              <span>{event?.name}</span>
-              <span>₹{event?.price}.00</span>
-            </div>
-            {category?.kits.map((val) => (
-              <div key={val.name} className='flex items-center justify-between text-muted-foreground text-sm pt-1'>
-                <span>{val.name}</span>
-                <span>₹{val.price}.00</span>
+            <div className='bg-muted p-4 rounded-md mt-2 space-y-1'>
+              <div className='flex items-center justify-between text-muted-foreground text-sm'>
+                <span>{event?.name}</span>
+                <span>₹{event?.price}.00</span>
               </div>
-            ))}
-            <div className='flex items-center justify-between text-muted-foreground text-sm pt-1'>
-              <span>Processing Fee</span>
-              <span>₹{calculateProcessingFee({ event, category })}</span>
-            </div>
-            <div className='flex items-center justify-between text-muted-foreground text-sm pt-2 mt-2 border-t'>
-              <span>Total</span>
-              <span>
-                ₹
-                {calculateTotalPrice((event?.price ?? 0) + (category ? category.kits.map((val) => val.price).reduce((acc, val) => acc + val, 0) : 0))}
-              </span>
+              {category?.kits.map((val) => (
+                <div key={val.name} className='flex items-center justify-between text-muted-foreground text-sm'>
+                  <span>{val.name}</span>
+                  <span>₹{val.price}.00</span>
+                </div>
+              ))}
+              <div className='flex items-center justify-between text-muted-foreground text-sm'>
+                <span>Processing Fee</span>
+                <span>₹{calculateProcessingFee({ event, category })}</span>
+              </div>
+              <div className='flex items-center justify-between text-muted-foreground text-sm pt-2 !mt-2 border-t'>
+                <span>Total</span>
+                <span>
+                  ₹
+                  {calculateTotalPrice(
+                    (event?.price ?? 0) + (category ? category.kits.map((val) => val.price).reduce((acc, val) => acc + val, 0) : 0),
+                  )}
+                </span>
+              </div>
             </div>
           </div>
         )}
-        <Button className='w-full md:text-sm text-xs relative z-50' size='lg'>
-          Register
+        <Button className='w-full md:text-sm text-xs relative z-10' size='lg' type='submit'>
+          Register to Workshop
         </Button>
       </form>
     </Form>

@@ -2,7 +2,8 @@ import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ComboPackRegistrationForm } from './client';
+import { ComboPackRegistrationForm } from './combo-pack';
+import { StandalonePackRegistrationForm } from './standalone-pack';
 
 export function Registrations() {
   return (
@@ -137,13 +138,24 @@ function RegistrationContent() {
       </div>
       <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-1'>
         <div className='md:col-span-2 col-span-8'>
-          <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>Combo Pack</Paragraph>
+          <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>Workshop</Paragraph>
           <Line className='text-primary-color' />
         </div>
         <div className='md:col-span-4 col-span-8'>
-          <h3 className=''>Combo Pack Registraton Form</h3>
-          <p className='text-sm text-muted-foreground pb-3'>Enter the details to register to Eblaze</p>
+          <h3>Workshop registraton</h3>
+          <p className='text-sm text-muted-foreground pb-6'>Enter the details to register to Eblaze combo pack events</p>
           <ComboPackRegistrationForm />
+        </div>
+      </div>
+      <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-1'>
+        <div className='md:col-span-2 col-span-8'>
+          <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>Standalone Event</Paragraph>
+          <Line className='text-primary-color' />
+        </div>
+        <div className='md:col-span-4 col-span-8'>
+          <h3>Standalone event registraton</h3>
+          <p className='text-sm text-muted-foreground pb-6'>Only for Candidates who are not registered for the Workshop</p>
+          <StandalonePackRegistrationForm />
         </div>
       </div>
     </div>

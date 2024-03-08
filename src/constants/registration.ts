@@ -7,7 +7,7 @@ export const REGISTRATION = {
 
 export type EventRegistration = {
   id: string;
-  pack: 'COMBO_PACK' | 'STANDALONE_PACK';
+  pack: 'COMBO_PACK';
   name: string;
   description: string;
   price: number;
@@ -181,6 +181,52 @@ export const COMBO_PACK_REGISTRATIONS: EventRegistration[] = [
         kits: [],
       },
     ],
+  },
+];
+
+export type StandalonePack = {
+  id: string;
+  pack: 'STANDALONE_PACK';
+  name: string;
+  description: string;
+  price: number;
+};
+
+export const STANDALONE_PACK_REGISTRATIONS: StandalonePack[] = [
+  {
+    id: 'spr-1',
+    pack: 'STANDALONE_PACK',
+    name: 'Hunt the Components',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, repudiandae.',
+    price: 200,
+  },
+  {
+    id: 'spr-2',
+    pack: 'STANDALONE_PACK',
+    name: 'Circuit Mania',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, repudiandae.',
+    price: 200,
+  },
+  {
+    id: 'spr-3',
+    pack: 'STANDALONE_PACK',
+    name: 'Ideathon Inspire',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, repudiandae.',
+    price: 100,
+  },
+  {
+    id: 'spr-4',
+    pack: 'STANDALONE_PACK',
+    name: 'CodeCraft Fusion',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, repudiandae.',
+    price: 100,
+  },
+  {
+    id: 'spr-5',
+    pack: 'STANDALONE_PACK',
+    name: 'Paper Presentation',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, repudiandae.',
+    price: 100,
   },
 ];
 
