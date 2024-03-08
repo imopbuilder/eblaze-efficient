@@ -114,6 +114,10 @@
 	h1 {
 		@apply md:text-[7rem] font-normal sm:text-[5rem] text-[4rem] font-clash-display;
 	}
+
+	h3 {
+		@apply scroll-m-20 text-2xl font-semibold tracking-tight;
+	}
 }
 
 // body:has(a:hover, button:hover) #cursor {

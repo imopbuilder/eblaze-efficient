@@ -1,14 +1,12 @@
 import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
-import Arrow from '@/components/global/icons/arrow';
-import { Button } from '@/components/ui/button';
-import { REGISTRATION } from '@/constants/registration';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ComboPackRegistrationForm } from './client';
 
 export function Registrations() {
   return (
-    <section className='sticky top-[56px] py-14'>
+    <section className='py-14'>
       <div className='md:px-5 px-3 min-h-screen'>
         <div className='grid grid-cols-8'>
           <h1 className='uppercase col-span-8'>
@@ -100,6 +98,7 @@ function RegistrationContent() {
       </div>
     );
 
+  // STATUS === 'OPEN'
   return (
     <div>
       <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3'>
@@ -120,32 +119,81 @@ function RegistrationContent() {
         </div>
         <div className='md:col-span-4 col-span-8'>
           <div>
-            {REGISTRATION.guidelines.map((val, index) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              <Paragraph key={index} className='mb-3.5 sm:text-lg font-medium text-sm'>
-                {val}
-              </Paragraph>
-            ))}
-            <Button className='group w-full items-end justify-between h-auto p-4 mt-2 bg-off-black' asChild>
-              <Link href={process.env.REGISTRATION_URL ?? '/not-found'}>
-                <span>Pay for Registration</span>
-                <ArrowLink />
-              </Link>
-            </Button>
+            <Paragraph className='mb-3.5 sm:text-lg font-medium text-sm'>
+              Registrations for the highly anticipated{' '}
+              <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
+                Eblaze
+              </Link>{' '}
+              workshop are now LIVE! Dive into the world of electronics and electrical engineering with us at Sri Venkateswara University College of
+              Engineering, Tirupati. Led by industry experts, Eblaze offers hands-on learning experiences, insightful sessions, and networking
+              opportunities.
+            </Paragraph>
+            <Paragraph className='mb-3.5 sm:text-lg font-medium text-sm'>
+              Seize this opportunity to expand your knowledge, connect with like-minded individuals, and unleash your creativity. Don't wait - secure
+              your spot today before seats fill up! Join us at Eblaze and let's ignite innovation together!
+            </Paragraph>
           </div>
+        </div>
+      </div>
+      <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-1'>
+        <div className='md:col-span-2 col-span-8'>
+          <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>Combo Pack</Paragraph>
+          <Line className='text-primary-color' />
+        </div>
+        <div className='md:col-span-4 col-span-8'>
+          <h3 className=''>Combo Pack Registraton Form</h3>
+          <p className='text-sm text-muted-foreground pb-3'>Enter the details to register to Eblaze</p>
+          <ComboPackRegistrationForm />
         </div>
       </div>
     </div>
   );
 }
 
-function ArrowLink() {
-  return (
-    <div className='relative ml-1 lg:size-9 sm:size-7 size-6 overflow-hidden'>
-      <div className='absolute transition-all duration-200 lg:group-hover:-translate-y-9 sm:group-hover:-translate-y-8 group-hover:-translate-y-6 lg:group-hover:translate-x-9 sm:group-hover:translate-x-7 group-hover:translate-x-6'>
-        <Arrow className='lg:size-9 sm:size-7 size-6' />
-        <Arrow className=' lg:size-9 sm:size-7 size-6 lg:-translate-x-9 sm:-translate-x-7 -translate-x-6' />
-      </div>
-    </div>
-  );
-}
+// function Pack() {
+//   return (
+//     <div className='grid grid-cols-2 md:gap-6 gap-3'>
+//       {COMBO_PACK_REGISTRATIONS.map((val) => (
+//         <PackCard key={val.id} {...val} />
+//       ))}
+//     </div>
+//   );
+// }
+
+// function PackCard({ id, eventName, description, price, image, kits }: EventRegistration) {
+//   return (
+//     <div className={`bg-muted md:p-5 p-3.5 rounded-xl ${id === 'cpr-logo' ? 'flex items-center justify-center' : ''}`}>
+//       <div>
+//         <Image src={image.src} className='w-full h-auto rounded-md' width={100} height={100} alt={image.alt} loading='lazy' unoptimized />
+//       </div>
+//       {id === 'cpr-logo' ? null : (
+//         <Fragment>
+//           <p className='md:text-lg text-base font-medium pt-3 pb-1 font-clash-display whitespace-pre-wrap'>{eventName}</p>
+//           <p className='md:text-sm text-xs text-muted-foreground'>{description}</p>
+//           <div className='border-t border-t-primary-color py-3 mt-3 space-y-2'>
+//             {kits.map((kit, index) => (
+//               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+//               <p key={index} className='flex items-center justify-start gap-2 text-xs font-semibold'>
+//                 {kit.status ? (
+//                   <span className='bg-primary-color rounded-full p-0.5 flex items-center justify-center'>
+//                     <Check className='text-muted' size={14} strokeWidth={3} />
+//                   </span>
+//                 ) : (
+//                   <span className='bg-off-black rounded-full p-0.5 flex items-center justify-center'>
+//                     <X className='text-muted relative top-[0.2px]' size={14} strokeWidth={3} />
+//                   </span>
+//                 )}
+//                 <span>{kit.name}</span>
+//               </p>
+//             ))}
+//           </div>
+
+//           <div className='flex items-center justify-between gap-4'>
+//             <p className='my-2 font-semibold text-sm'>₹{price}</p>
+//             <RegisterBtn />
+//           </div>
+//         </Fragment>
+//       )}
+//     </div>
+//   );
+// }
