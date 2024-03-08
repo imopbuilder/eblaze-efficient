@@ -74,7 +74,7 @@ export function Location() {
           </div>
           <div className='md:col-span-4 col-span-8'>
             <div>
-              <Paragraph className='mb-3.5 sm:text-lg font-medium text-sm relative z-50'>
+              <Paragraph className='sm:text-lg font-medium text-sm relative z-50'>
                 <Link
                   href={LOCATION.venue.href}
                   type='button'
@@ -98,7 +98,7 @@ export function Location() {
           </div>
           <div className='md:col-span-4 col-span-8'>
             <div>
-              <Paragraph className='mb-3.5 sm:text-lg font-medium text-sm relative z-50'>
+              <Paragraph className='sm:text-lg font-medium text-sm relative z-50'>
                 <Link
                   href={REGISTRATION_ROUTE.href}
                   type='button'

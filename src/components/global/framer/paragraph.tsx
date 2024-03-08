@@ -18,7 +18,7 @@ export default function Paragraph({ className, children, parentClassName, ...pro
   const inView = useInView(container, { once: true, amount: 0.75 });
 
   return (
-    <div ref={container} className={cn('overflow-hidden', parentClassName)}>
+    <div ref={container} className={cn('overflow-hidden mb-3.5', parentClassName)}>
       <motion.p variants={anim} initial='initial' animate={inView ? 'enter' : ''} className={cn('text-foreground text-sm', className)} {...props}>
         {children}
       </motion.p>
