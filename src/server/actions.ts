@@ -93,8 +93,9 @@ export async function comboPackSession(products: { productId: string; name: stri
     ],
     success_url: `${
       process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.NEXT_PUBLIC_BASE_URL
-    }/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/cancel' : `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,
+    }/users/registration/success?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url:
+      process.env.NODE_ENV === 'development' ? 'http://localhost:3000/cancel' : `${process.env.NEXT_PUBLIC_BASE_URL}/users/registration/cancel`,
   });
 
   console.log('Session: ', session);
