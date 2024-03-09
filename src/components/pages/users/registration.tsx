@@ -142,8 +142,22 @@ function RegistrationContent() {
           <Line className='text-primary-color' />
         </div>
         <div className='md:col-span-4 col-span-8'>
+          <div className='bg-primary-color rounded-md flex items-center justify-center gap-6 py-14 mb-7'>
+            <span className='rounded-full bg-background flex items-center justify-center md:size-20 size-14'>
+              <Image src={'/images/ui/app/logo.png'} className='md:size-16 size-12' width={100} height={100} alt='logo' loading='lazy' unoptimized />
+            </span>
+            <Image
+              src='/images/ui/app/eblaze-logo.jpg'
+              className='rounded-md md:size-20 size-14'
+              width='100'
+              height='100'
+              alt='Logo'
+              loading='lazy'
+              unoptimized
+            />
+          </div>
           <h3>Workshop registraton</h3>
-          <p className='text-sm text-muted-foreground pb-6'>Enter the details to register to Eblaze combo pack events</p>
+          <p className='text-sm text-muted-foreground pb-6'>Enter the details to register to Eblaze Workshop</p>
           <ComboPackRegistrationForm />
         </div>
       </div>
@@ -153,6 +167,20 @@ function RegistrationContent() {
           <Line className='text-primary-color' />
         </div>
         <div className='md:col-span-4 col-span-8'>
+          <div className='bg-muted rounded-md flex items-center justify-center gap-6 py-14 mb-7 border'>
+            <span className='rounded-full flex items-center justify-center md:size-20 size-14'>
+              <Image src={'/images/ui/app/logo.png'} className='md:size-20 size-14' width={100} height={100} alt='logo' loading='lazy' unoptimized />
+            </span>
+            <Image
+              src='/images/ui/app/eblaze-logo.jpg'
+              className='rounded-md md:size-20 size-14'
+              width='100'
+              height='100'
+              alt='Logo'
+              loading='lazy'
+              unoptimized
+            />
+          </div>
           <h3>Standalone event registraton</h3>
           <p className='text-sm text-muted-foreground pb-6'>Only for Candidates who are not registered for the Workshop</p>
           <StandalonePackRegistrationForm />
