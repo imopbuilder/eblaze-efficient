@@ -1,16 +1,61 @@
+import Line from '@/components/global/framer/line';
+import Paragraph from '@/components/global/framer/paragraph';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Fragment } from 'react';
 import Stripe from 'stripe';
 import { DownloadInvoicePdf } from './client';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-const sessionId = 'cs_test_b1Hd9n3hKBxk3fvM2OYPxLIB5hpVdtQE5iG30Y9gCDAFr7FJSoBx5C7Xj9';
-
-export async function StripeSuccess() {
+export async function SuccessInfo({ sessionId }: { sessionId: string }) {
   const session = await stripe.checkout.sessions.retrieve(sessionId, { expand: ['line_items'] });
 
   if (session.payment_status !== 'paid') return <p>Pay first</p>;
 
+  return (
+    <Fragment>
+      <div className='grid grid-cols-8'>
+        <h1 className='uppercase col-span-8'>Spot</h1>
+        <h1 className='uppercase sm:col-span-5 col-span-7 sm:col-start-3 col-start-2'>Secured</h1>
+      </div>
+      <div>
+        <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3'>
+          <div className='md:col-span-2 col-span-8'>
+            <Paragraph className='pb-1 font-semibold text-sm text-primary-color'>Registration Success</Paragraph>
+            <Line className='text-primary-color' />
+          </div>
+          <div className='md:col-span-4 col-span-8'>
+            <div>
+              <Paragraph className='sm:text-lg font-medium text-sm'>
+                Congratulations! Your registration for the{' '}
+                <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
+                  Eblaze
+                </Link>{' '}
+                workshop has been successfully confirmed. Get ready to embark on an exciting journey of learning and discovery in the world of
+                electronics and electrical engineering. We're thrilled to have you join us at SVUCE for an immersive experience filled with hands-on
+                learning, insightful sessions, and networking opportunities.
+              </Paragraph>
+              <Paragraph className='sm:text-lg font-medium text-sm'>
+                You will shortly receive an email from the Eblaze team with further details and important information about the workshop. Keep an eye
+                on your inbox! If you have any questions or need assistance, feel free to reach out to us at{' '}
+                <Link href={'/contact'} className='font-semibold hover:underline underline-offset-4'>
+                  Contact us
+                </Link>
+                . Thank you for choosing Eblaze - let's ignite innovation together!
+              </Paragraph>
+              <div>
+                <StripeSuccess session={session} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  );
+}
+
+function StripeSuccess({ session }: { session: Stripe.Response<Stripe.Checkout.Session> }) {
   return (
     <div className='p-5 bg-muted rounded-md'>
       <DownloadInvoicePdf
@@ -45,8 +90,9 @@ export async function StripeSuccess() {
             </div>
             <div className='border-t-2 pt-5 font-medium'>{session?.metadata?.pack} registration</div>
             <ul className='pt-3 text-sm list-disc list-inside space-y-1'>
-              {session.line_items?.data.map((val) => (
-                <li>{val.description}</li>
+              {session.line_items?.data.map((val, index) => (
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                <li key={index}>{val.description}</li>
               ))}
             </ul>
           </div>
