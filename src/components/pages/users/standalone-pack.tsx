@@ -5,7 +5,9 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { STANDALONE_PACK_REGISTRATIONS } from '@/constants/registration';
 import { calculateTotalPrice } from '@/lib/utils/calculate-processing-fee';
+import { comboPackSession } from '@/server/actions';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -22,6 +24,7 @@ function calculateProcessingFee(events: z.infer<typeof formSchema>['events']) {
 }
 
 export function StandalonePackRegistrationForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,6 +36,18 @@ export function StandalonePackRegistrationForm() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+
+    const products = STANDALONE_PACK_REGISTRATIONS.filter((val) => values.events.includes(val.id)).map((val) => ({
+      productId: val.id,
+      name: val.name,
+      description: val.description,
+      price: val.price,
+    }));
+    console.log(products);
+
+    comboPackSession(products, 'Standalone Event').then(({ url }) => {
+      router.push(url ?? '/cancel');
+    });
   }
 
   return (
@@ -65,7 +80,11 @@ export function StandalonePackRegistrationForm() {
                             }}
                           />
                         </FormControl>
-                        <FormLabel className='text-sm font-medium'>{item.name}</FormLabel>
+                        <FormLabel className='text-sm font-medium'>
+                          <span>{item.name}</span>
+                          <span className='px-3 inline-block text-muted-foreground'>-</span>
+                          <span className='text-xs text-muted-foreground'>₹{item.price}.00</span>
+                        </FormLabel>
                       </FormItem>
                     );
                   }}

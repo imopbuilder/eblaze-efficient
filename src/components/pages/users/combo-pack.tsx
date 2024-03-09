@@ -36,10 +36,13 @@ export function ComboPackRegistrationForm() {
     if (!checkoutEvent || !checkoutKit) return;
 
     const price = calculateTotalPrice(checkoutEvent.price + checkoutKit.kits.map((val) => val.price).reduce((acc, val) => acc + val, 0));
+    console.log(price);
 
-    comboPackSession([{ productId: values.kit, name: checkoutEvent.name, description: checkoutKit.description, price }]).then(({ url }) => {
-      router.push(url ?? '/cancel');
-    });
+    comboPackSession([{ productId: values.kit, name: checkoutEvent.name, description: checkoutKit.description, price }], 'Workshop').then(
+      ({ url }) => {
+        router.push(url ?? '/cancel');
+      },
+    );
   }
 
   return (
