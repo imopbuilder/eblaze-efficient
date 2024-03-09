@@ -8,6 +8,7 @@ import { calculateTotalPrice } from '@/lib/utils/calculate-processing-fee';
 import { comboPackSession } from '@/server/actions';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -25,6 +26,7 @@ function calculateProcessingFee(events: z.infer<typeof formSchema>['events']) {
 
 export function StandalonePackRegistrationForm() {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,6 +37,7 @@ export function StandalonePackRegistrationForm() {
   const events = form.watch('events');
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
     const products = STANDALONE_PACK_REGISTRATIONS.filter((val) => values.events.includes(val.id)).map((val) => ({
       productId: val.id,
       name: val.name,
@@ -118,8 +121,8 @@ export function StandalonePackRegistrationForm() {
             </div>
           </div>
         )}
-        <Button className='w-full relative z-10' type='submit'>
-          Register to Events
+        <Button className='w-full relative z-10' type='submit' disabled={loading}>
+          {loading ? 'Registering to Events...' : 'Register to Events'}
         </Button>
       </form>
     </Form>

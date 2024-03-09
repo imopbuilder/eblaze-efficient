@@ -4,12 +4,14 @@ import { Button } from '@/components/ui/button';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { Download } from 'lucide-react';
-import { Fragment, PropsWithChildren, useRef } from 'react';
+import { Fragment, PropsWithChildren, useRef, useState } from 'react';
 
 export function DownloadInvoicePdf({ children, name, email }: PropsWithChildren & { name: string | undefined; email: string }) {
   const invoice = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(false);
 
   async function handleClick() {
+    setLoading(true);
     const element = invoice.current;
     if (!element) return;
 
@@ -23,14 +25,15 @@ export function DownloadInvoicePdf({ children, name, email }: PropsWithChildren 
 
     pdf.addImage(data, 'PNG', 10, 10, pdfWidth - 20, pdfHeight - 20);
     pdf.save(`eblaze_${name}_${email}_invoice.pdf`);
+    setLoading(false);
   }
 
   return (
     <Fragment>
       <div ref={invoice}>{children}</div>
       <div className='pt-5'>
-        <Button type='button' className='gap-5 md:w-max w-full' size='lg' onClick={handleClick}>
-          Download Invoice <Download size={16} />
+        <Button type='button' className='gap-5 md:w-max w-full' onClick={handleClick} size='lg'>
+          {loading ? 'Generating Invoice...' : 'Download Invoice'} <Download size={16} />
         </Button>
       </div>
     </Fragment>

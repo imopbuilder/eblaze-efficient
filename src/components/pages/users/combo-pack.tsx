@@ -8,6 +8,7 @@ import { calculateProcessingFee, calculateTotalPrice } from '@/lib/utils/calcula
 import { comboPackSession } from '@/server/actions';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -18,6 +19,7 @@ const formSchema = z.object({
 
 export function ComboPackRegistrationForm() {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -30,6 +32,7 @@ export function ComboPackRegistrationForm() {
   const category = event?.categories.find((val) => val.id === form.watch('kit'));
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
     const checkoutEvent = COMBO_PACK_REGISTRATIONS.find((val) => val.id === values.event);
     const checkoutKit = checkoutEvent?.categories.find((val) => val.id === values.kit);
 
@@ -154,8 +157,8 @@ export function ComboPackRegistrationForm() {
             </div>
           </div>
         )}
-        <Button className='w-full md:text-sm text-xs relative z-10' size='lg' type='submit'>
-          Register to Workshop
+        <Button className='w-full md:text-sm text-xs relative z-10' size='lg' type='submit' disabled={loading}>
+          {loading ? 'Registering to Workshop...' : 'Register to Workshop'}
         </Button>
       </form>
     </Form>
