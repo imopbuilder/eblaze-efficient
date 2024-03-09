@@ -16,7 +16,18 @@ export async function SuccessInfo({ sessionId }: { sessionId: string }) {
   return (
     <Fragment>
       <div className='grid grid-cols-8'>
-        <h1 className='uppercase col-span-8'>Spot</h1>
+        <h1 className='uppercase col-span-8'>
+          Spot{' '}
+          <Image
+            src={'/images/ui/app/registration-success-heading.svg'}
+            className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto animate-move-ease relative -top-3'
+            alt='about'
+            width={100}
+            height={100}
+            loading='lazy'
+            unoptimized
+          />
+        </h1>
         <h1 className='uppercase sm:col-span-5 col-span-7 sm:col-start-3 col-start-2'>Secured</h1>
       </div>
       <div>
@@ -70,7 +81,7 @@ function StripeInvoice({ session }: { session: Stripe.Response<Stripe.Checkout.S
       >
         <div>
           <div className='bg-background border-t-8 border-primary-color mdp-8 p-5'>
-            <div className='mt-8 pb-2 flex items-center justify-center gap-7'>
+            <div className='mt-16 pb-2 flex items-center justify-center gap-7'>
               <Image src={'/images/ui/app/logo.png'} className='md:size-28 size-20' width={100} height={100} alt='logo' loading='lazy' unoptimized />
               <Image
                 src='/images/ui/app/eblaze-logo.jpg'
@@ -104,12 +115,18 @@ function StripeInvoice({ session }: { session: Stripe.Response<Stripe.Checkout.S
               </div>
             </div>
             <div className='border-t-2 pt-5 font-medium'>{session?.metadata?.pack} registration</div>
-            <ul className='pt-3 text-sm list-disc list-inside space-y-1'>
+            <div className='pt-3 text-sm list-none space-y-1'>
               {session.line_items?.data.map((val, index) => (
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                <li key={index}>{val.description}</li>
+                <p
+                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                  key={index}
+                  className='relative ml-3'
+                >
+                  <span className=''>{index + 1}. </span>
+                  {val.description}
+                </p>
               ))}
-            </ul>
+            </div>
           </div>
           <div className='bg-primary-color md:p-8 p-5 flex items-center justify-between text-background font-semibold rounded-b-lg'>
             <p className='md:text-lg text-base'>Thankyou</p>

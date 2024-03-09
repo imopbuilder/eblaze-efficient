@@ -1,6 +1,4 @@
 import { Body, Container, Head, Heading, Hr, Html, Img, Link, Preview, Section, Tailwind, Text } from '@react-email/components';
-import { Ol } from '@react-email/ol';
-import * as React from 'react';
 
 interface RegistrationSuccessProps {
   name: string;
@@ -71,20 +69,12 @@ export const RegistrationSuccess = ({
               workshop has been successfully processed. Congratulations on securing your spot!
             </Text>
             <Heading className='text-foreground text-base font-semibold text-left p-0 mt-2 mx-0'>Events details</Heading>
-            <Text className='text-foreground text-[14px] leading-[24px]'>
-              <Ol className='list-disc px-2 list-inside text-sm'>
-                {events.map((val, index) => (
-                  <React.Fragment>
-                    <li>
-                      <span className=''>{val.name}</span>
-                    </li>
-                    <li className='text-muted-foreground list-none'>
-                      <span className={`inline-block pl-5 ${index === events.length - 1 ? 'pb-0' : 'pb-2'}`}>{val.description}</span>
-                    </li>
-                  </React.Fragment>
-                ))}
-              </Ol>
-            </Text>
+            {events.map((val, index) => (
+              <Text className='text-muted-foreground list-none text-sm px-2'>
+                <span className=''>{val.name}</span>
+                <span className={`inline-block pl-5 ${index === events.length - 1 ? 'pb-0' : 'pb-2'}`}>{val.description}</span>
+              </Text>
+            ))}
             <Text className='text-foreground text-[14px] leading-[24px]'>
               Your participation promises to enrich our workshop with diverse perspectives and insights. We believe that your presence will contribute
               significantly to the learning experience.
