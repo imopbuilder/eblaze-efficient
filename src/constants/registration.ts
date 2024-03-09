@@ -210,7 +210,7 @@ export const STANDALONE_PACK_REGISTRATIONS: StandalonePack[] = [
   {
     id: 'spr-3',
     pack: 'STANDALONE_PACK',
-    name: 'Hunt the Components',
+    name: 'Tech Hunt',
     description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, repudiandae.',
     price: 100,
   },

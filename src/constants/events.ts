@@ -64,9 +64,9 @@ export const EVENTS: Event[] = [
   },
   {
     id: 'e4',
-    title: 'Hunt the Components',
+    title: 'Tech Hunt',
     description: [
-      'Embark on a journey of innovation with our Hunt the Components challenge! Calling all problem solvers and tech enthusiasts to participate in this exhilarating experience. Engage in a unique challenge hunt within real-world labs, where teams will decipher intricate tech-based challenges spanning various aspects of circuit design.',
+      'Embark on a journey of innovation with our Tech Hunt challenge! Calling all problem solvers and tech enthusiasts to participate in this exhilarating experience. Engage in a unique challenge hunt within real-world labs, where teams will decipher intricate tech-based challenges spanning various aspects of circuit design.',
     ],
     image: {
       src: 'hunt-the-components.jpeg',
