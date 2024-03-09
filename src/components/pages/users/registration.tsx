@@ -167,7 +167,7 @@ function RegistrationContent() {
           <Line className='text-primary-color' />
         </div>
         <div className='md:col-span-4 col-span-8'>
-          <div className='bg-muted rounded-md flex items-center justify-center gap-6 py-14 mb-7 border'>
+          <div className='bg-muted rounded-md flex items-center justify-center gap-6 py-14 mb-7'>
             <span className='rounded-full flex items-center justify-center md:size-20 size-14'>
               <Image src={'/images/ui/app/logo.png'} className='md:size-20 size-14' width={100} height={100} alt='logo' loading='lazy' unoptimized />
             </span>
