@@ -33,7 +33,7 @@ export function About() {
                 <div>
                   {description.map((val, index) => (
                     // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                    <Paragraph key={index} className='sm:text-lg font-medium text-sm'>
+                    <Paragraph key={index} className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
                       {val}
                     </Paragraph>
                   ))}

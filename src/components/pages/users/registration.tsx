@@ -53,7 +53,7 @@ function RegistrationContent() {
         </div>
         <div className='md:col-span-4 col-span-8'>
           <div>
-            <Paragraph className='sm:text-lg font-medium text-sm'>
+            <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
               We regret to inform you that the registrations for our{' '}
               <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
                 Eblaze
@@ -86,7 +86,7 @@ function RegistrationContent() {
         </div>
         <div className='md:col-span-4 col-span-8'>
           <div>
-            <Paragraph className='sm:text-lg font-medium text-sm'>
+            <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
               We are excited to announce that the registration for our{' '}
               <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
                 Eblaze
@@ -120,7 +120,7 @@ function RegistrationContent() {
         </div>
         <div className='md:col-span-4 col-span-8'>
           <div>
-            <Paragraph className='sm:text-lg font-medium text-sm'>
+            <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
               Registrations for the highly anticipated{' '}
               <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
                 Eblaze
@@ -129,7 +129,7 @@ function RegistrationContent() {
               Engineering, Tirupati. Led by industry experts, Eblaze offers hands-on learning experiences, insightful sessions, and networking
               opportunities.
             </Paragraph>
-            <Paragraph className='sm:text-lg font-medium text-sm'>
+            <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
               Seize this opportunity to expand your knowledge, connect with like-minded individuals, and unleash your creativity. Don't wait - secure
               your spot today before seats fill up! Join us at Eblaze and let's ignite innovation together!
             </Paragraph>

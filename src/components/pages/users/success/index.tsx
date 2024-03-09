@@ -27,7 +27,7 @@ export async function SuccessInfo({ sessionId }: { sessionId: string }) {
           </div>
           <div className='md:col-span-4 col-span-8'>
             <div>
-              <Paragraph className='sm:text-lg font-medium text-sm'>
+              <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
                 Congratulations! Your registration for the{' '}
                 <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
                   Eblaze
@@ -36,7 +36,7 @@ export async function SuccessInfo({ sessionId }: { sessionId: string }) {
                 electronics and electrical engineering. We're thrilled to have you join us at SVUCE for an immersive experience filled with hands-on
                 learning, insightful sessions, and networking opportunities.
               </Paragraph>
-              <Paragraph className='sm:text-lg font-medium text-sm'>
+              <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
                 You will shortly receive an email from the Eblaze team with further details and important information about the workshop. Keep an eye
                 on your inbox! If you have any questions or need assistance, feel free to reach out to us at{' '}
                 <Link href={'/contact'} className='font-semibold hover:underline underline-offset-4'>

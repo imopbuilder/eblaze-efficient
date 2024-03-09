@@ -48,7 +48,7 @@ function EventCard(event: Event) {
           <div className='sm:pt-0 pt-3'>
             {description.map((val, index) => (
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              <Paragraph key={index} className='sm:text-lg font-medium text-sm has-[span]:mb-1'>
+              <Paragraph key={index} className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5 has-[span]:mb-1'>
                 {val}
               </Paragraph>
             ))}
