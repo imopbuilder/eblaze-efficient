@@ -5,7 +5,7 @@ import { NextRequest } from 'next/server';
 import nodemailer from 'nodemailer';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2023-10-16' });
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_SERVER_HOST,
   port: Number(process.env.EMAIL_SERVER_PORT),
@@ -31,12 +31,23 @@ export async function POST(req: NextRequest) {
 
   try {
     switch (event.type) {
-      case 'payment_intent.succeeded': {
-        const customerEmail = 'lightlightening1@gmail.com';
+      case 'checkout.session.completed': {
+        const session = event.data.object;
+
+        const name = session.custom_fields.find((val) => val.key === 'student_name_48')?.text?.value as string;
+        const customerEmail = session.customer_details?.email as string;
+        const registrationId = session.payment_intent?.toString() as string;
+        const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+        const events = lineItems.data.map((val) => ({ name: val.description }));
 
         // email to customer
         const emailHtml = render(
-          RegistrationSuccess({ name: 'Op Candidate', events: [{ name: 'Eblaze', description: 'hello' }], registrationId: 'your_registered_id' }),
+          RegistrationSuccess({
+            name,
+            events,
+            registrationId,
+            sessionId: session.id,
+          }),
         );
 
         const options = {

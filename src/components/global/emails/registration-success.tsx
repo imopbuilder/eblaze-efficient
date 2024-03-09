@@ -2,17 +2,16 @@ import { Body, Container, Head, Heading, Hr, Html, Img, Link, Preview, Section, 
 
 interface RegistrationSuccessProps {
   name: string;
-  events: { name: string; description: string }[];
+  events: { name: string }[];
   registrationId: string;
+  sessionId?: string;
 }
 
 export const RegistrationSuccess = ({
   name = 'Op Candidate',
-  events = [
-    { name: 'Eblaze', description: 'Join Our Electrifying Lineup of Events and Gatherings.' },
-    { name: 'Eblaze', description: 'Join Our Electrifying Lineup of Events and Gatherings.' },
-  ],
+  events = [{ name: 'Eblaze' }, { name: 'Eblaze' }],
   registrationId = 'your_registration_id',
+  sessionId,
 }: RegistrationSuccessProps) => {
   const previewText = `Hello, ${name}, Join Eblaze at SVUCE`;
 
@@ -70,9 +69,10 @@ export const RegistrationSuccess = ({
             </Text>
             <Heading className='text-foreground text-base font-semibold text-left p-0 mt-2 mx-0'>Events details</Heading>
             {events.map((val, index) => (
-              <Text className='text-muted-foreground list-none text-sm px-2'>
-                <span className=''>{val.name}</span>
-                <span className={`inline-block pl-5 ${index === events.length - 1 ? 'pb-0' : 'pb-2'}`}>{val.description}</span>
+              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+              <Text key={index} className='text-muted-foreground list-none text-sm px-2'>
+                <span className=''>{index}. </span>
+                <span className={`inline-block pl-5 ${index === events.length - 1 ? 'pb-0' : 'pb-2'}`}>{val.name}</span>
               </Text>
             ))}
             <Text className='text-foreground text-[14px] leading-[24px]'>
