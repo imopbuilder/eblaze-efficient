@@ -44,9 +44,15 @@ export async function SuccessInfo({ sessionId }: { sessionId: string }) {
                 </Link>
                 . Thank you for choosing Eblaze - let's ignite innovation together!
               </Paragraph>
-              <div>
-                <StripeSuccess session={session} />
-              </div>
+            </div>
+          </div>
+          <div className='md:col-span-2 col-span-8 !col-start-1'>
+            <Paragraph className='pb-1 font-semibold text-sm text-primary-color'>Registration Invoice</Paragraph>
+            <Line className='text-primary-color' />
+          </div>
+          <div className='md:col-span-4 col-span-8'>
+            <div>
+              <StripeInvoice session={session} />
             </div>
           </div>
         </div>
@@ -55,7 +61,7 @@ export async function SuccessInfo({ sessionId }: { sessionId: string }) {
   );
 }
 
-function StripeSuccess({ session }: { session: Stripe.Response<Stripe.Checkout.Session> }) {
+function StripeInvoice({ session }: { session: Stripe.Response<Stripe.Checkout.Session> }) {
   return (
     <div className='p-5 bg-muted rounded-md'>
       <DownloadInvoicePdf
@@ -64,8 +70,17 @@ function StripeSuccess({ session }: { session: Stripe.Response<Stripe.Checkout.S
       >
         <div>
           <div className='bg-background border-t-8 border-primary-color mdp-8 p-5'>
-            <div className='mt-8'>
-              <Image src={'/images/ui/app/logo.png'} width={100} height={100} alt='logo' loading='lazy' unoptimized />
+            <div className='mt-8 pb-2 flex items-center justify-center gap-7'>
+              <Image src={'/images/ui/app/logo.png'} className='md:size-28 size-20' width={100} height={100} alt='logo' loading='lazy' unoptimized />
+              <Image
+                src='/images/ui/app/eblaze-logo.jpg'
+                className='rounded-md md:size-28 size-20'
+                width='100'
+                height='100'
+                alt='Logo'
+                loading='lazy'
+                unoptimized
+              />
             </div>
             <div className='flex items-center justify-between gap-3 my-6'>
               <span className='md:text-xl text-base font-semibold'>Eblaze Invoice</span>

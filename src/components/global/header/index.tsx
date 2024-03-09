@@ -9,8 +9,9 @@ export function Header() {
         <div className='w-full'>
           <Link href={'/'} className='inline-flex items-center justify-start font-medium gap-2.5'>
             <span className='size-8 inline-flex items-center justify-center bg-background rounded-full'>
-              <Image src='/images/ui/app/logo.png' className='' width='25' height='25' alt='Logo' loading='lazy' unoptimized />
+              <Image src='/images/ui/app/logo.png' width='25' height='25' alt='Logo' loading='lazy' unoptimized />
             </span>
+            <Image src='/images/ui/app/eblaze-logo.jpg' className='size-8 rounded-md' width='25' height='25' alt='Logo' loading='lazy' unoptimized />
             <span className='text-sm font-medium inline-block relative top-0.5'>Eblaze</span>
           </Link>
         </div>

@@ -38,15 +38,26 @@ export function RegisterCard() {
     >
       <Link href={REGISTRATION_ROUTE.href} className='flex items-center justify-center gap-16 px-4 py-3'>
         {REGISTRATION_ROUTE.label}
-        <Image
-          src='/images/ui/app/logo.png'
-          className='rotate-90 inline-block bg-background rounded-full p-1'
-          width='25'
-          height='25'
-          alt='Logo'
-          loading='lazy'
-          unoptimized
-        />
+        <span className='flex items-center justify-center gap-3'>
+          <Image
+            src='/images/ui/app/eblaze-logo.jpg'
+            className='size-6 rounded-md inline-block rotate-90'
+            width='25'
+            height='25'
+            alt='Logo'
+            loading='lazy'
+            unoptimized
+          />
+          <Image
+            src='/images/ui/app/logo.png'
+            className='rotate-90 inline-block bg-background rounded-full p-1'
+            width='25'
+            height='25'
+            alt='Logo'
+            loading='lazy'
+            unoptimized
+          />
+        </span>
       </Link>
     </motion.div>
   );

@@ -8,8 +8,6 @@ interface RegistrationSuccessProps {
   registrationId: string;
 }
 
-const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '';
-
 export const RegistrationSuccess = ({
   name = 'Op Candidate',
   events = [
@@ -45,8 +43,20 @@ export const RegistrationSuccess = ({
         <Body className='bg-background my-auto mx-auto font-sans p-5'>
           <Container className='border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-5 w-[465px]'>
             <Section className='mt-0 bg-primary-color rounded-sm py-14 flex items-center justify-center'>
-              <Img src={`${baseUrl}/static/vercel-logo.png`} width='40' height='37' alt='Vercel' className='my-0 mx-auto inline-block' />
-              <Img src={`${baseUrl}/static/vercel-logo.png`} width='40' height='37' alt='Vercel' className='my-0 mx-auto inline-block ml-5' />
+              <Img
+                src={'https://utfs.io/f/8b0bb9fa-32d3-4333-8ebc-eb500b57113b-1zbfv.png'}
+                width='40'
+                height='37'
+                alt='Vercel'
+                className='my-0 mx-auto inline-block'
+              />
+              <Img
+                src={'https://utfs.io/f/40c33658-aee9-4330-9669-b2d3a6a80ccf-4illvf.jpg'}
+                width='40'
+                height='37'
+                alt='Vercel'
+                className='my-0 mx-auto inline-block ml-5'
+              />
             </Section>
             <Heading className='text-foreground text-[24px] font-semibold text-center p-0 my-[30px] mx-0'>Eblaze invites you</Heading>
             <Text className='text-foreground text-[14px] leading-[24px]'>

@@ -23,7 +23,7 @@ export default function Page({ searchParams }: { searchParams: { session_id: str
       <main>
         <section>
           <div className='min-h-rvh px-5 md:py-14 py-10'>
-            <Suspense fallback={<Skeleton className='w-full h-10 rounded-md bg-muted'>Loading Invoice...</Skeleton>}>
+            <Suspense fallback={<Skeleton className='w-full h-10 flex items-center justify-center rounded-md bg-muted'>Loading Invoice...</Skeleton>}>
               <SuccessInfo sessionId={session_id} />
             </Suspense>
           </div>

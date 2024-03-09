@@ -53,7 +53,17 @@ export function HeroSection() {
                     alt='Logo'
                     loading='lazy'
                     unoptimized
-                  />{' '}
+                  />
+                  {''}
+                  <Image
+                    src='/images/ui/app/eblaze-logo.jpg'
+                    className='size-8 rounded-md inline-block ml-1.5'
+                    width='25'
+                    height='25'
+                    alt='Logo'
+                    loading='lazy'
+                    unoptimized
+                  />
                 </Paragraph>
               </span>
               <ArrowLink />
