@@ -1,20 +1,18 @@
 import { Body, Container, Head, Heading, Hr, Html, Img, Link, Preview, Section, Tailwind, Text } from '@react-email/components';
 import { Ol } from '@react-email/ol';
-import * as React from 'react';
 
 interface RegistrationSuccessProps {
   name: string;
-  events: { name: string; description: string }[];
+  events: { name: string }[];
   registrationId: string;
+  sessionId?: string;
 }
 
 export const RegistrationSuccess = ({
   name = 'Op Candidate',
-  events = [
-    { name: 'Eblaze', description: 'Join Our Electrifying Lineup of Events and Gatherings.' },
-    { name: 'Eblaze', description: 'Join Our Electrifying Lineup of Events and Gatherings.' },
-  ],
+  events = [{ name: 'Eblaze' }, { name: 'Eblaze' }],
   registrationId = 'your_registration_id',
+  sessionId,
 }: RegistrationSuccessProps) => {
   const previewText = `Hello, ${name}, Join Eblaze at SVUCE`;
 
@@ -74,14 +72,9 @@ export const RegistrationSuccess = ({
             <Text className='text-foreground text-[14px] leading-[24px]'>
               <Ol className='list-disc px-2 list-inside text-sm'>
                 {events.map((val, index) => (
-                  <React.Fragment>
-                    <li>
-                      <span className=''>{val.name}</span>
-                    </li>
-                    <li className='text-muted-foreground list-none'>
-                      <span className={`inline-block pl-5 ${index === events.length - 1 ? 'pb-0' : 'pb-2'}`}>{val.description}</span>
-                    </li>
-                  </React.Fragment>
+                  <li>
+                    <span className={`inline-block pl-5 ${index === events.length - 1 ? 'pb-0' : 'pb-2'}`}>{val.name}</span>
+                  </li>
                 ))}
               </Ol>
             </Text>
