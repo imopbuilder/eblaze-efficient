@@ -10,8 +10,6 @@ export function DownloadInvoicePdf({ children, name, email }: PropsWithChildren 
   const invoice = useRef<HTMLDivElement>(null);
 
   async function handleClick() {
-    console.log('downloading pdf...');
-
     const element = invoice.current;
     if (!element) return;
 

@@ -17,7 +17,6 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function POST(req: NextRequest) {
-  console.log('stripe webhook');
   const sig = headers().get('stripe-signature') as string;
   const body = await req.text();
 
@@ -33,7 +32,6 @@ export async function POST(req: NextRequest) {
   try {
     switch (event.type) {
       case 'payment_intent.succeeded': {
-        console.log('Payment Success');
         const customerEmail = 'lightlightening1@gmail.com';
 
         // email to customer

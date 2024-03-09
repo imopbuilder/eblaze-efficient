@@ -35,15 +35,12 @@ export function StandalonePackRegistrationForm() {
   const events = form.watch('events');
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-
     const products = STANDALONE_PACK_REGISTRATIONS.filter((val) => values.events.includes(val.id)).map((val) => ({
       productId: val.id,
       name: val.name,
       description: val.description,
       price: val.price,
     }));
-    console.log(products);
 
     comboPackSession(products, 'Standalone Event').then(({ url }) => {
       router.push(url ?? '/cancel');
