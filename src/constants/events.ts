@@ -27,7 +27,7 @@ export const EVENTS: Event[] = [
       src: 'circuit-design.jpeg',
       alt: 'circuit-design-pic',
     },
-    lead: 'Momidi Chakri',
+    lead: 'Momidi Chakri and Vikas',
     guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
   },
   {
@@ -41,8 +41,12 @@ export const EVENTS: Event[] = [
       src: 'project-expo.jpeg',
       alt: 'project-expo-pic',
     },
-    lead: 'P. Sai Ganesh Naik',
-    guidelines: ['All candidates registered for the workshop are cordially invited to participate in this event.'],
+    lead: 'Sai Ganesh and Jessica',
+    guidelines: ['Participants can also present their projects in their interested domain and rewards will be given for the best projects.'],
+    note: [
+      'Winners will receive cash prizes as follows, 1st place: Rs. 3000, 2nd place: Rs. 2000, 3nd place: Rs. 1000',
+      'Participants should make their projects precedently.',
+    ],
   },
   {
     id: 'e3',
@@ -56,11 +60,11 @@ export const EVENTS: Event[] = [
     },
     lead: 'Hemanth Kumar',
     guidelines: [
-      'Showcase your talent effectively within a video or photo lasting between 15 to 20 seconds. Make every moment count as you captivate the audience with your skills!',
-      "The deadline for submitting your entry is March 12. Don't miss this opportunity to share your talent with the world.",
-      "To cover event expenses and ensure its success, there's an entry fee of 50/- per participant.",
-      'Let your talent shine without crossing any boundaries. Ensure that your video or photo content does not include any depictions of violence, abuse, politics, or spirituality.',
+      'Video/Photo Duration: Your video or photo should be between 15 to 20 seconds.',
+      'Submission Deadline: Please submit your entry on or before March 12.',
+      'Content Restrictions: Ensure that your video does not include any content related to violence, abuse, politics, or spirituality.',
     ],
+    note: ['Winners will receive cash prizes as follows, 1st place: Rs. 1500, 2nd place: Rs. 1000'],
   },
   {
     id: 'e4',
@@ -80,10 +84,6 @@ export const EVENTS: Event[] = [
       'For added convenience and flexibility, spot registrations are available for teams looking to join the challenge on the day of the event.',
       'Only 30 teams will be allowed to participate, so register early to avoid missing out on this thrilling adventure.',
     ],
-    note: [
-      'Each correct solution not only unlocks the next challenge but also paves the way for deeper exploration.',
-      'The team with the most solved quest within the time limit wins the ultimate accolade!',
-    ],
   },
   {
     id: 'e5',
@@ -101,27 +101,33 @@ export const EVENTS: Event[] = [
       'To ensure seamless participation, every team is required to bring their own laptops equipped with necessary development tools and software.',
       'Once the problem statement is fixed, it remains unchanged throughout the event, allowing teams to be consistent and focus on solutions without interruptions.',
       'Teams will have 24 hours to brainstorm, develop, and present their solutions. Mentors will be available for guidance during this time.',
+      'At all times, without exception, at least one team member must be physically present at the ideathon venue (the designated location).',
     ],
     note: [
-      'The evaluation criteria are based on the approach taken to tackle the problem statement. Judges will assess the creativity, feasibility, and effectiveness of solutions developed during the event.',
+      'On March 18th, at 9:30Am, the problem statements will be released.',
+      'The evaluation criteria is based on how you actually approach the problem statement. Mentoring and jury will be done by startup CEOs',
+      'Spot registrations are not available.',
     ],
   },
   {
     id: 'e6',
     title: 'Circuit Mania',
     description: [
-      "Welcome to Circuit Mania: where aptitude meets electrical and electronics engineering! Get ready to test your mental agility and engineering knowledge in this dynamic quiz competition. From circuit analysis to digital electronics, every question is crafted to challenge your problem-solving skills and understanding of fundamental concepts. Whether you're a seasoned engineer or just starting your journey, E-Quiz offers an exciting opportunity to compete, learn, and emerge victorious.",
+      'Welcome to Circuit Mania: where logic intertwines with wires and currents! Prepare yourself for an electrifying journey through two rounds of network puzzles and breadboard design challenges. Engage your mind in this thrilling quiz competition, where every question is meticulously designed to push the boundaries of your electrical and electronics engineering knowledge.',
+      "Whether you're a seasoned engineer or a novice enthusiast, Circuit Mania offers an exhilarating platform to put your skills to the test, learn, and triumph over challenges. Join us and let the sparks fly as you navigate through the circuits of innovation and creativity!",
     ],
     image: {
       src: 'circuit-mania.jpeg',
       alt: 'circuit-mania-pic',
     },
-    lead: 'Peesa Anvesh',
+    lead: 'P. Hemanth and Haneesha',
     guidelines: [
-      'Teams must consist of 3 to 5 members. Form a diverse team to leverage a variety of skills and knowledge.',
-      'Each team should bring at least one laptop to access the quiz platform and participate effectively.',
-      'To maintain the integrity of the quiz, the use of mobile phones is strictly prohibited during the quiz session. Teams are expected to rely solely on their collective knowledge and resources.',
-      'Prepare to test your aptitude and delve into the basics of electrical and electronics engineering. Quiz questions will cover a wide range of topics within these domains,',
+      'Candidates should participate individually.',
+      'Quiz: Participants will be provided with paper-based quiz sheets for both rounds.',
+      'Round 1 presents Paper-Pen Network Puzzles, Solve network puzzles with pen and paper, Utilize critical thinking skills',
+      'Round 2 presents Breadboard Design along with Design of simple circuits.',
+      'Knowledge Base: Prepare across electrical and electronics engineering domains.',
+      'Uphold honesty and fairness, cheating leads to disqualification.',
     ],
   },
   {
@@ -137,12 +143,14 @@ export const EVENTS: Event[] = [
     },
     lead: 'Rahul Palamarthi 😜',
     guidelines: [
-      'At CodeCraft Fusion, students have the opportunity to participate individually or in team of up to three members, fostering collaboration and creativity.',
-      'To ensure smooth participation, every team must bring their own laptops equipped with necessary development tools and software.',
-      'In the spirit of fair competition, the use of AI chatbots is strictly prohibited during the event.',
-      'Participants may seek hints twice and use Google for concept reference, limited to 10 minutes each time.',
-      'Participants will engage in a 3-hour coding challenge where their scores are determined by the complexity and efficiency of their solutions.',
+      'Participants can compete individually or in teams, allowing for both collaborative and individual problem-solving approaches.',
+      'Teams can consist of a minimum of 1 member and a maximum of 3 members, promoting teamwork while accommodating individual participation.',
+      'The event encompasses three main tracks: Data Structures and Algorithms (DSA), Web Development, and UI/UX Design with Figma. This diverse range of tracks ensures that participants with different skill sets and interests can find a suitable challenge.',
+      'For DSA, participants will tackle 2 intermediate-level problems and 1 easy-level problem.',
+      'Web development tasks include creating a Hero section and a functional task.',
+      'UI/UX Design tasks involve crafting a landing page along with a project statement.',
     ],
+    note: ['The top performer in each track will receive a cash prize of Rs. 2000 during the CodeCraft Fusion event.'],
   },
   {
     id: 'e8',
@@ -160,5 +168,40 @@ export const EVENTS: Event[] = [
       'To make the most of this event, come prepared with questions about career paths, industry trends, and personal experiences.',
       'All candidates registered for the workshop are cordially invited to participate in this event.',
     ],
+  },
+  {
+    id: 'e9',
+    title: 'Paper Presentation',
+    description: [
+      'Welcome to one of the most anticipated events of the fest - "Know Your Branch"! This event is specifically curated for students in the Electrical and Electronics Engineering (EEE) branch. We are thrilled to invite esteemed alumni of SVU EEE who have established themselves in diverse domains. They will grace us with their presence and engage in insightful one-on-one interactions with students, offering invaluable knowledge and sharing their rich experiences.',
+      'Engage actively with the alumni to maximize your learning and networking opportunities and get ready to gain profound insights, network with industry experts, and explore the myriad opportunities awaiting you in the field of Electrical and Electronics Engineering!',
+    ],
+    image: {
+      src: 'paper-presentation.jpeg',
+      alt: 'paper-presentation-pic',
+    },
+    lead: 'Shiva Kumar',
+    guidelines: [
+      'To make the most of this event, come prepared with questions about career paths, industry trends, and personal experiences.',
+      'All candidates registered for the workshop are cordially invited to participate in this event.',
+    ],
+  },
+  {
+    id: 'e10',
+    title: 'Fun Activities',
+    description: [
+      "Gather your friends for an eve of excitement and laughter! Challenge each other with different activities. Whether you're racing against the clock in quick challenges or showcasing your creativity with drawing and guessing games, there's boundless fun to be had. So, rally your team, unleash your competitive spirit, and let the good times roll!",
+    ],
+    image: {
+      src: 'fun-activities.jpeg',
+      alt: 'fun-activities-pic',
+    },
+    lead: 'Sruthi',
+    guidelines: [
+      'Fun events are accessible through out the entire event for 2 days.',
+      'Different kinds of games are available and the candidates can participate based on their interest.',
+      'This is completely free of cost and is only for fun.',
+    ],
+    note: ['Winners will be awarded with exciting gifts.'],
   },
 ];
