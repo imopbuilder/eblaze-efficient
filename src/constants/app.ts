@@ -54,3 +54,14 @@ export const PROFILE = {
   label: 'Rahul Palamarthi',
   social: 'https://www.linkedin.com/in/rahul-palamarthi',
 };
+
+export const OTHER_LINKS = [
+  {
+    label: 'Terms of Service',
+    href: '/terms-of-service',
+  },
+  {
+    label: 'Privacy Policy',
+    href: '/privacy-policy',
+  },
+];

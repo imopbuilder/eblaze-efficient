@@ -2,7 +2,7 @@
 
 import { useFooter } from '@/client/store/use-footer';
 import { useNav } from '@/client/store/use-nav';
-import { APP_LINKS, REGISTRATION_ROUTE } from '@/constants/app';
+import { APP_LINKS, OTHER_LINKS, REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import Image from 'next/image';
@@ -167,9 +167,28 @@ function NavBody() {
 }
 
 function NavFooter() {
+  const router = useRouter();
+  const setOpen = useNav((state) => state.setOpen);
+
+  function handleClick(e: MouseEvent<HTMLAnchorElement>, href: string) {
+    e.preventDefault();
+    setOpen();
+    setTimeout(() => {
+      router.push(href);
+    }, 1000);
+  }
+
   return (
-    <div className='flex flex-end flex-wrap lg:justify-between sm:text-lg text-sm mt-10 pb-5 sm:px-2 font-medium'>
-      <ul className='mt-2.5 overflow-hidden p-0 flex sm:flex-row flex-col sm:items-center items-start justify-start gap-10'>
+    <div className='flex flex-wrap lg:justify-between sm:text-lg text-sm mt-10 pb-5 sm:px-2 font-medium'>
+      <ul className='mt-2.5 overflow-hidden p-0 grid grid-cols-2 items-start gap-x-10 gap-y-4'>
+        {OTHER_LINKS.map(({ href, label }, index) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          <motion.li key={index} custom={[0.3, 0]} variants={translate} initial='initial' animate='enter' exit='exit'>
+            <Link href={href} onClick={(e) => handleClick(e, href)}>
+              {label}
+            </Link>
+          </motion.li>
+        ))}
         {CONTACT.map(({ id, href, social, label }) => (
           <motion.li key={id} custom={[0.3, 0]} variants={translate} initial='initial' animate='enter' exit='exit'>
             <Link href={href} target='_blank' rel='noreferrer'>

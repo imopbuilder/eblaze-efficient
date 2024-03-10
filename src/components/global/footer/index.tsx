@@ -1,6 +1,6 @@
 import Star from '@/components/global/icons/star';
 import { Button } from '@/components/ui/button';
-import { APP_LINKS, PROFILE, REGISTRATION_ROUTE } from '@/constants/app';
+import { APP_LINKS, OTHER_LINKS, PROFILE, REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT } from '@/constants/contact';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -82,6 +82,23 @@ function Sitemap() {
       <ul className='group/ul'>
         {APP_LINKS.map(({ id, label, href }) => (
           <li key={id} className='border-t-2 group-hover/ul:blur-[6px] font-clash-display group-hover/ul:hover:blur-0 duration-500 last:rounded-b-md'>
+            <Link
+              href={href}
+              className='group inline-flex items-center justify-between text-muted p-5 w-full lg:text-6xl text-4xl font-normal capitalize'
+            >
+              {label}
+              <span className='rotate-0 group-hover:rotate-[360deg] duration-1000 origin-center h-10 flex items-center justify-center'>
+                <Star className='lg:size-9 sm:size-7 size-6' />
+              </span>
+            </Link>
+          </li>
+        ))}
+        {OTHER_LINKS.map(({ href, label }, index) => (
+          <li
+            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+            key={index}
+            className='border-t-2 group-hover/ul:blur-[6px] font-clash-display group-hover/ul:hover:blur-0 duration-500 last:rounded-b-md'
+          >
             <Link
               href={href}
               className='group inline-flex items-center justify-between text-muted p-5 w-full lg:text-6xl text-4xl font-normal capitalize'
