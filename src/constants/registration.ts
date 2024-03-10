@@ -37,6 +37,17 @@ export const COMBO_PACK_REGISTRATIONS: EventRegistration[] = [
         kits: [
           {
             name: 'RPS Design kit',
+            price: 100,
+          },
+        ],
+      },
+      {
+        id: 'cpr-1-b',
+        name: 'RPS Design kit',
+        description: 'Without RPS Design kit',
+        kits: [
+          {
+            name: 'RPS Design kit',
             price: 0,
           },
         ],
