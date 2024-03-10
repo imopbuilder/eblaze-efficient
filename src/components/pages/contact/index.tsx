@@ -5,7 +5,6 @@ import { REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT, LOCATION } from '@/constants/contact';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Collaborators } from './client';
 
 export function Contact() {
   return (
@@ -117,7 +116,7 @@ export function Location() {
           </div>
 
           {/* Collaboration */}
-          <div className='md:col-span-2 col-span-8 !col-start-1 md:pt-0 pt-8'>
+          {/* <div className='md:col-span-2 col-span-8 !col-start-1 md:pt-0 pt-8'>
             <Paragraph className='pb-1 font-semibold text-sm text-primary-color'>Collaboration with</Paragraph>
             <Line className='text-primary-color' />
           </div>
@@ -125,7 +124,7 @@ export function Location() {
             <div>
               <Collaborators />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
