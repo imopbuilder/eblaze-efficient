@@ -44,8 +44,8 @@ export async function POST(req: NextRequest) {
         const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
         const events = lineItems.data.map((val) => ({ name: val.description }));
         const pack = session?.metadata?.pack as string;
-        const eventId = session?.metadata?.id as string;
-        const eventName = session?.metadata?.name as string;
+        const eventId = session?.metadata?.eventId as string;
+        const eventName = session?.metadata?.eventName as string;
         const eventDescription = session?.metadata?.description;
 
         // email to customer
