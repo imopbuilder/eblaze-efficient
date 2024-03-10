@@ -5,6 +5,7 @@ import { REGISTRATION_ROUTE } from '@/constants/app';
 import { CONTACT, LOCATION } from '@/constants/contact';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Collaborators } from './client';
 
 export function Contact() {
   return (
@@ -66,7 +67,7 @@ export function Location() {
           </h1>
           <h1 className='uppercase sm:col-span-5 col-span-7 sm:col-start-3 col-start-2'>Space</h1>
         </div>
-        <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3 md:grid-rows-3'>
+        <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3'>
           {/* Venue */}
           <div className='md:col-span-2 col-span-8'>
             <Paragraph className='pb-1 font-semibold text-sm text-primary-color'>Venue</Paragraph>
@@ -92,7 +93,7 @@ export function Location() {
           </div>
 
           {/* Register */}
-          <div className='md:col-span-2 col-span-8 md:row-start-2 row-start-3 md:pt-0 pt-8'>
+          <div className='md:col-span-2 col-span-8 !col-start-1 md:pt-0 pt-8'>
             <Paragraph className='pb-1 font-semibold text-sm text-primary-color'>Register</Paragraph>
             <Line className='text-primary-color' />
           </div>
@@ -112,6 +113,17 @@ export function Location() {
                   <ArrowLink />
                 </Link>
               </Paragraph>
+            </div>
+          </div>
+
+          {/* Collaboration */}
+          <div className='md:col-span-2 col-span-8 !col-start-1 md:pt-0 pt-8'>
+            <Paragraph className='pb-1 font-semibold text-sm text-primary-color'>Collaboration with</Paragraph>
+            <Line className='text-primary-color' />
+          </div>
+          <div className='md:col-span-4 col-span-8'>
+            <div>
+              <Collaborators />
             </div>
           </div>
         </div>
