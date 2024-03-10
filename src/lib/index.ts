@@ -8,6 +8,7 @@ declare global {
       NEXT_PUBLIC_BASE_URL: string;
       STRIPE_SECRET_KEY: string;
       STRIPE_WEB_HOOK_SECRET: string;
+      DATABASE_URL: string;
     }
   }
 }
