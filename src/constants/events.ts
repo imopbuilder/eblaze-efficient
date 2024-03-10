@@ -175,8 +175,8 @@ export const EVENTS: Event[] = [
     id: 'e9',
     title: 'Paper Presentation',
     description: [
-      'Welcome to one of the most anticipated events of the fest - "Know Your Branch"! This event is specifically curated for students in the Electrical and Electronics Engineering (EEE) branch. We are thrilled to invite esteemed alumni of SVU EEE who have established themselves in diverse domains. They will grace us with their presence and engage in insightful one-on-one interactions with students, offering invaluable knowledge and sharing their rich experiences.',
-      'Engage actively with the alumni to maximize your learning and networking opportunities and get ready to gain profound insights, network with industry experts, and explore the myriad opportunities awaiting you in the field of Electrical and Electronics Engineering!',
+      'Eblaze presents an exciting opportunity for researchers, scholars, and enthusiasts to showcase their innovative ideas and cutting-edge research in the field of electronics and electrical engineering through the Paper Presentation event. Participants are invited to present their papers on topics ranging from emerging technologies to novel research findings, providing a platform for sharing knowledge and fostering intellectual discourse.',
+      "Whether you're a seasoned researcher or a budding scholar, Paper Presentation at Eblaze is your chance to shine and contribute to the advancement of the field.",
     ],
     image: {
       src: 'paper-presentation.jpeg',
@@ -184,8 +184,12 @@ export const EVENTS: Event[] = [
     },
     lead: 'Shiva Kumar',
     guidelines: [
-      'To make the most of this event, come prepared with questions about career paths, industry trends, and personal experiences.',
-      'All candidates registered for the workshop are cordially invited to participate in this event.',
+      'Participants can choose to present their research in either of the two tracks: Paper (Chart) or PPT Presentation, allowing flexibility in presentation format.',
+      'Participation in the Paper Presentation event is open to individuals, providing a platform for researchers and scholars to showcase their work independently.',
+      'Topics: EV technology, solar panels, AI applications, nanotechnology in electronics, and microgrid-based power system reliability enhancement.',
+    ],
+    note: [
+      'Cash prizes and certificates will be awarded to the top presenters in each track, with the amount varying depending on the contest. The prize distribution will be announced during the event.',
     ],
   },
   {
