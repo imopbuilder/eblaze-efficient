@@ -70,27 +70,31 @@ export async function POST(req: NextRequest) {
           html: emailHtml,
         };
         await transporter.sendMail(options);
-        await db.insert(students).values({
-          payment_id: registrationId,
-          student_name: name,
-          student_id: studentId,
-          student_college: studentCollege,
-          email: customerEmail,
-          phone_number: session.customer_details?.phone?.toString() as string,
-          pack,
-          event_id: eventId,
-          event_name: eventName,
-          event_description: eventDescription,
-          price: session.amount_total?.toString() as string,
-          checkout_session_id: session.id,
-        });
+        try {
+          await db.insert(students).values({
+            payment_id: registrationId,
+            student_name: name,
+            student_id: studentId,
+            student_college: studentCollege,
+            email: customerEmail,
+            phone_number: session.customer_details?.phone?.toString() as string,
+            pack,
+            event_id: eventId,
+            event_name: eventName,
+            event_description: eventDescription,
+            price: session.amount_total?.toString() as string,
+            checkout_session_id: session.id,
+          });
+        } catch (err) {
+          console.log('Pg Error: ', err);
+        }
         break;
       }
       default:
         throw new Error('Unhandled relevant event!');
     }
   } catch (error) {
-    error;
+    console.log(error);
     return new Response('Stripe Webhook handler failed. View logs.', {
       status: 400,
     });
