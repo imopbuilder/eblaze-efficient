@@ -94,6 +94,8 @@ export async function comboPackSession(products: { productId: string; name: stri
     ],
     metadata: {
       pack,
+      eventId: products.map((val) => val.productId).join(' | '),
+      eventName: products.map((val) => val.name).join(' | '),
       description: products.map((val) => val.description).join(''),
     },
     success_url: `${

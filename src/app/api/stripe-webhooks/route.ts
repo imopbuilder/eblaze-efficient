@@ -1,4 +1,6 @@
 import { RegistrationSuccess } from '@/components/global/emails/registration-success';
+import { db } from '@/server/db';
+import { students } from '@/server/db/schema/students';
 import { render } from '@react-email/render';
 import { headers } from 'next/headers';
 import { NextRequest } from 'next/server';
@@ -35,10 +37,16 @@ export async function POST(req: NextRequest) {
         const session = event.data.object;
 
         const name = session.custom_fields.find((val) => val.key === 'student_name_48')?.text?.value as string;
+        const studentId = session.custom_fields.find((val) => val.key === 'student_id_36')?.text?.value as string;
+        const studentCollege = session.custom_fields.find((val) => val.key === 'college_name_29')?.text?.value as string;
         const customerEmail = session.customer_details?.email as string;
         const registrationId = session.payment_intent?.toString() as string;
         const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
         const events = lineItems.data.map((val) => ({ name: val.description }));
+        const pack = session?.metadata?.pack as string;
+        const eventId = session?.metadata?.id as string;
+        const eventName = session?.metadata?.name as string;
+        const eventDescription = session?.metadata?.description;
 
         // email to customer
         const emailHtml = render(
@@ -47,8 +55,8 @@ export async function POST(req: NextRequest) {
             events,
             registrationId,
             sessionId: session.id,
-            pack: session?.metadata?.pack as string,
-            description: session?.metadata?.description,
+            pack,
+            description: eventDescription,
           }),
         );
 
@@ -62,13 +70,27 @@ export async function POST(req: NextRequest) {
           html: emailHtml,
         };
         await transporter.sendMail(options);
+        await db.insert(students).values({
+          payment_id: registrationId,
+          student_name: name,
+          student_id: studentId,
+          student_college: studentCollege,
+          email: customerEmail,
+          phone_number: session.customer_details?.phone?.toString() as string,
+          pack,
+          event_id: eventId,
+          event_name: eventName,
+          event_description: eventDescription,
+          price: session.amount_total?.toString() as string,
+          checkout_session_id: session.id,
+        });
         break;
       }
       default:
         throw new Error('Unhandled relevant event!');
     }
   } catch (error) {
-    console.log(error);
+    error;
     return new Response('Stripe Webhook handler failed. View logs.', {
       status: 400,
     });
