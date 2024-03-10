@@ -9,7 +9,7 @@ async function getActiveProducts() {
   return checkProducts.data.filter((product) => product.active === true);
 }
 
-export async function comboPackSession(products: { productId: string; name: string; description: string; price: number }[], pack: string) {
+export async function comboPackSession(products: { productId: string; name: string; description?: string; price: number }[], pack: string) {
   let activeProducts = await getActiveProducts();
 
   try {
@@ -19,6 +19,7 @@ export async function comboPackSession(products: { productId: string; name: stri
       if (stripeProduct === undefined) {
         await stripe.products.create({
           name: product.name,
+          description: product.description,
           default_price_data: {
             unit_amount: Math.round(product.price * 100),
             currency: 'inr',
@@ -93,6 +94,7 @@ export async function comboPackSession(products: { productId: string; name: stri
     ],
     metadata: {
       pack,
+      description: products.map((val) => val.description).join(''),
     },
     success_url: `${
       process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.NEXT_PUBLIC_BASE_URL

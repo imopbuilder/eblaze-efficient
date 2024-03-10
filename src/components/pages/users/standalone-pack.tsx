@@ -41,7 +41,6 @@ export function StandalonePackRegistrationForm() {
     const products = STANDALONE_PACK_REGISTRATIONS.filter((val) => values.events.includes(val.id)).map((val) => ({
       productId: val.id,
       name: val.name,
-      description: val.description,
       price: val.price,
     }));
 

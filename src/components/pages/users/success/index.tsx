@@ -115,16 +115,25 @@ function StripeInvoice({ session }: { session: Stripe.Response<Stripe.Checkout.S
               </div>
             </div>
             <div className='border-t-2 pt-5 font-medium'>{session?.metadata?.pack} registration</div>
-            <div className='pt-3 text-sm list-none space-y-1'>
+            <div className='pt-3 text-sm list-none space-y-1 mb-4'>
               {session.line_items?.data.map((val, index) => (
-                <p
+                <div
                   // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                   key={index}
                   className='relative ml-3'
                 >
-                  <span className=''>{index + 1}. </span>
-                  {val.description}
-                </p>
+                  <p>
+                    <span className=''>{index + 1}. </span> {val.description}{' '}
+                    {session?.metadata?.description ? (
+                      <span className='text-muted-foreground text-xs'>
+                        <span className='inline-block px-3 text-muted-foreground text-sm'>-</span>
+                        {session.metadata.description}
+                      </span>
+                    ) : (
+                      ''
+                    )}
+                  </p>
+                </div>
               ))}
             </div>
           </div>

@@ -47,6 +47,8 @@ export async function POST(req: NextRequest) {
             events,
             registrationId,
             sessionId: session.id,
+            pack: session?.metadata?.pack as string,
+            description: session?.metadata?.description,
           }),
         );
 
