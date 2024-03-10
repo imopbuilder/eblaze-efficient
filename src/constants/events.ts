@@ -36,6 +36,8 @@ export const EVENTS: Event[] = [
     description: [
       "Eblaze transcends the boundaries of a typical college fest, standing as a beacon of innovation, knowledge exchange, and collaborative spirit. This event aims to foster and showcase students' project-making skills, providing a platform for them to translate theoretical concepts into real-time projects.",
       'Participants are encouraged to explore a diverse array of projects across various domains, offering a rich tapestry of innovation and creativity. Join us at Eblaze and witness the culmination of ingenuity, as students bring their projects to life, inspire, and educate through hands-on experiences.',
+      'The event will span over two days, providing ample time for participants to explore and engage with the projects.',
+      'The projects will be accessible to students at any point during the event. Feel free to explore and interact with the projects at your convenience throughout the duration of the event.',
     ],
     image: {
       src: 'project-expo.jpeg',
