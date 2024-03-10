@@ -12,7 +12,7 @@ export function PrivacyPolicy() {
           <h1 className='uppercase col-span-8'>
             Privacy{' '}
             <Image
-              src={'/images/ui/app/about-heading.svg'}
+              src={'/images/ui/app/privacy-policy-heading.svg'}
               className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto animate-move-ease'
               alt='about'
               width={100}

@@ -12,7 +12,7 @@ export function TermsOfService() {
           <h1 className='uppercase col-span-8'>
             Terms &{' '}
             <Image
-              src={'/images/ui/app/about-heading.svg'}
+              src={'/images/ui/app/terms-and-service-heading.svg'}
               className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto animate-move-ease'
               alt='about'
               width={100}
