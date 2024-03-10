@@ -39,7 +39,7 @@ function EventCard(event: Event) {
 
   return (
     <div className='min-h-screen'>
-      <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3 grid-row'>
+      <div className='grid grid-cols-8 pt-12 md:gap-6 gap-y-3 grid-row'>
         <div className='md:col-span-2 col-span-8'>
           <Paragraph className='pb-1 font-semibold text-sm text-primary-color'>{title}</Paragraph>
           <Line className='text-primary-color' />

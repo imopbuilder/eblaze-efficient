@@ -132,7 +132,7 @@ function FaqsCard({ index, question, answer }: Faqs) {
       className='border-none mb-5 duration-300 rounded-xl overflow-hidden hover:bg-primary-color bg-off-black text-background data-[state="open"]:bg-primary-color'
     >
       <AccordionTrigger
-        className='p-5 hover:no-underline relative z-50 focus:outline-0 sm:text-lg text-sm focus-visible:bg-primary-color last:[&[data-state=open]>svg>path]:scale-0'
+        className='p-5 hover:no-underline relative z-50 focus:outline-0 sm:text-lg text-sm text-left focus-visible:bg-primary-color last:[&[data-state=open]>svg>path]:scale-0'
         showIcon={false}
       >
         {question}

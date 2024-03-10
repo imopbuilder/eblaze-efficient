@@ -92,7 +92,7 @@ export function Location() {
           </div>
 
           {/* Register */}
-          <div className='md:col-span-2 col-span-8 md:row-start-2 row-start-3'>
+          <div className='md:col-span-2 col-span-8 md:row-start-2 row-start-3 md:pt-0 pt-8'>
             <Paragraph className='pb-1 font-semibold text-sm text-primary-color'>Register</Paragraph>
             <Line className='text-primary-color' />
           </div>
