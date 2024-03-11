@@ -158,7 +158,7 @@ function RegistrationContent() {
           <ComboPackRegistrationForm />
         </div>
       </div>
-      <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-1'>
+      <div className='grid grid-cols-8 md:pt-24 pt-16 md:gap-6 gap-y-1'>
         <div className='md:col-span-2 col-span-8'>
           <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>Standalone Event</Paragraph>
           <Line className='text-primary-color' />

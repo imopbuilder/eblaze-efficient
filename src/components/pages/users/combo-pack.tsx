@@ -8,6 +8,7 @@ import { COMBO_PACK_REGISTRATIONS } from '@/constants/registration';
 import { calculateTotalPrice } from '@/lib/utils/calculate-processing-fee';
 import { comboPackSession } from '@/server/actions';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Check, Copy } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -226,7 +227,7 @@ export function ComboPackRegistrationForm() {
           </div>
         )}
 
-        <div className='grid md:grid-cols-2 grid-cols-1 gap-6 place-items-center'>
+        <div className='grid md:grid-cols-2 grid-cols-1 gap-6 place-items-center bg-muted rounded-md p-5'>
           <Image
             className='w-full h-auto rounded-md'
             src='/images/ui/registration/phone-pe-registration-pic.jpg'
@@ -236,8 +237,10 @@ export function ComboPackRegistrationForm() {
             loading='lazy'
             unoptimized
           />
-          <p>
-            OR Pay using the phone number: <span className='font-semibold'>+918688633619</span>
+          <p className='text-center text-sm text-muted-foreground'>
+            OR Pay using the phone number:
+            <br />
+            <span className='font-semibold text-base text-foreground inline-block pt-1'>+918688633619</span> <CopyPhone />
           </p>
         </div>
 
@@ -260,5 +263,25 @@ export function ComboPackRegistrationForm() {
         </Button>
       </form>
     </Form>
+  );
+}
+
+export function CopyPhone() {
+  const [showCopy, setShowCopy] = useState(true);
+
+  async function handleCopy(text: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      setShowCopy(false);
+      setTimeout(() => setShowCopy(true), 900);
+    } catch (err) {
+      console.log('failed to copy!');
+    }
+  }
+
+  return (
+    <Button type='button' className='bg-background hover:bg-muted p-0 ml-3 size-6' size='icon' onClick={() => handleCopy('918688633619')}>
+      {showCopy ? <Copy className='text-muted-foreground' size={12} /> : <Check className='text-muted-foreground' size={12} />}
+    </Button>
   );
 }
