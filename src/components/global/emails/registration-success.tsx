@@ -86,7 +86,7 @@ export function RegistrationSuccess({ name, events, registrationId, sessionId, p
               <Text key={index} className='text-sm px-3 m-0'>
                 <span className=''>{index + 1}. </span>
                 <span className={`inline-block ${index === events.length - 1 ? 'pb-0' : 'pb-2'}`}>{val.name}</span>
-                {description ? (
+                {description !== undefined && description.replaceAll(' | ', '').length > 5 ? (
                   <Fragment>
                     <span className='text-muted-foreground text-xs'>
                       <span className='inline-block px-3 text-muted-foreground text-sm'>-</span>

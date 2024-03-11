@@ -2,20 +2,18 @@
 
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { COMBO_PACK_REGISTRATIONS } from '@/constants/registration';
-import { calculateProcessingFee, calculateTotalPrice } from '@/lib/utils/calculate-processing-fee';
+import { calculateTotalPrice } from '@/lib/utils/calculate-processing-fee';
 import { comboPackSession } from '@/server/actions';
 import { zodResolver } from '@hookform/resolvers/zod';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-
-const formSchema = z.object({
-  event: z.string().min(1, { message: 'Please Select an event to display' }),
-  kit: z.string().min(1, { message: 'Please Select a kit to display' }),
-});
+import { formSchema } from './schema';
 
 export function ComboPackRegistrationForm() {
   const router = useRouter();
@@ -23,8 +21,14 @@ export function ComboPackRegistrationForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      studentName: '',
+      collegeName: '',
+      studentId: '',
+      studentEmail: '',
+      studentPhone: '+91',
       event: '',
       kit: '',
+      paymentId: '',
     },
   });
 
@@ -40,16 +44,87 @@ export function ComboPackRegistrationForm() {
 
     const price = calculateTotalPrice(checkoutEvent.price + checkoutKit.kits.map((val) => val.price).reduce((acc, val) => acc + val, 0));
 
-    comboPackSession([{ productId: values.kit, name: checkoutEvent.name, description: checkoutKit.description, price }], 'Workshop').then(
-      ({ url }) => {
-        router.push(url ?? '/cancel');
-      },
-    );
+    comboPackSession({
+      values,
+      products: [{ id: values.kit, name: checkoutEvent.name, description: checkoutKit.description, price }],
+      pack: 'Workshop',
+    })
+      .then(({ url }) => {
+        router.push(url);
+      })
+      .catch(() => {
+        router.push('/cancel');
+      });
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='md:space-y-6 space-y-8'>
+        <FormField
+          control={form.control}
+          name='studentName'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Student Name</FormLabel>
+              <FormControl>
+                <Input placeholder='Your cool name' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='collegeName'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>College Name</FormLabel>
+              <FormControl>
+                <Input placeholder='Your college name' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='studentId'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Student Id</FormLabel>
+              <FormControl>
+                <Input placeholder='Your student Id' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='studentEmail'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Student Email</FormLabel>
+              <FormControl>
+                <Input placeholder='Your email' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='studentPhone'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Student Phone Number</FormLabel>
+              <FormControl>
+                <Input placeholder='Your phone number' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name='event'
@@ -141,22 +216,45 @@ export function ComboPackRegistrationForm() {
                   <span>₹{val.price}.00</span>
                 </div>
               ))}
-              <div className='flex items-center justify-between text-muted-foreground text-sm'>
-                <span>Processing Fee</span>
-                <span>₹{calculateProcessingFee({ event, category })}</span>
-              </div>
               <div className='flex items-center justify-between text-muted-foreground text-sm pt-2 !mt-2 border-t'>
                 <span>Total</span>
                 <span>
-                  ₹
-                  {calculateTotalPrice(
-                    (event?.price ?? 0) + (category ? category.kits.map((val) => val.price).reduce((acc, val) => acc + val, 0) : 0),
-                  )}
+                  ₹{((event?.price ?? 0) + (category ? category.kits.map((val) => val.price).reduce((acc, val) => acc + val, 0) : 0)).toFixed(2)}
                 </span>
               </div>
             </div>
           </div>
         )}
+
+        <div className='grid md:grid-cols-2 grid-cols-1 gap-6 place-items-center'>
+          <Image
+            className='w-full h-auto rounded-md'
+            src='/images/ui/registration/phone-pe-registration-pic.jpg'
+            width={100}
+            height={100}
+            alt='phone-pe-link'
+            loading='lazy'
+            unoptimized
+          />
+          <p>
+            OR Pay using the phone number: <span className='font-semibold'>+918688633619</span>
+          </p>
+        </div>
+
+        <FormField
+          control={form.control}
+          name='paymentId'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Payment Id or Transaction Id</FormLabel>
+              <FormControl>
+                <Input placeholder='After Payment Id or Transation Id' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <Button className='w-full md:text-sm text-xs relative z-10' size='lg' type='submit' disabled={loading}>
           {loading ? 'Registering to Workshop...' : 'Register to Workshop'}
         </Button>

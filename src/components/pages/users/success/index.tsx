@@ -1,17 +1,15 @@
 import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
+import { db } from '@/server/db';
+import { Student, students } from '@/server/db/schema/students';
+import { eq } from 'drizzle-orm';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
-import Stripe from 'stripe';
 import { DownloadInvoicePdf } from './client';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
 export async function SuccessInfo({ sessionId }: { sessionId: string }) {
-  const session = await stripe.checkout.sessions.retrieve(sessionId, { expand: ['line_items'] });
-
-  if (session.payment_status !== 'paid') return <p>Pay first</p>;
+  const session = await db.select().from(students).where(eq(students.session_id, sessionId));
 
   return (
     <Fragment>
@@ -63,7 +61,7 @@ export async function SuccessInfo({ sessionId }: { sessionId: string }) {
           </div>
           <div className='md:col-span-4 col-span-8'>
             <div>
-              <StripeInvoice session={session} />
+              <StripeInvoice session={session[0]} />
             </div>
           </div>
         </div>
@@ -72,13 +70,13 @@ export async function SuccessInfo({ sessionId }: { sessionId: string }) {
   );
 }
 
-function StripeInvoice({ session }: { session: Stripe.Response<Stripe.Checkout.Session> }) {
+function StripeInvoice({ session }: { session: Student }) {
+  const name = session.student_name;
+  const collegeName = session.student_college;
+
   return (
     <div className='p-5 bg-muted rounded-md'>
-      <DownloadInvoicePdf
-        name={session.custom_fields.find((val) => val.key === 'student_name_48')?.text?.value as string}
-        email={session.custom_fields.find((val) => val.key === 'college_name_29')?.text?.value as string}
-      >
+      <DownloadInvoicePdf name={name} email={session.email}>
         <div>
           <div className='bg-background border-t-8 border-primary-color mdp-8 p-5'>
             <div className='mt-16 pb-2 flex items-center justify-center gap-7'>
@@ -95,17 +93,15 @@ function StripeInvoice({ session }: { session: Stripe.Response<Stripe.Checkout.S
             </div>
             <div className='flex items-center justify-between gap-3 my-6'>
               <span className='md:text-xl text-base font-semibold'>Eblaze Invoice</span>
-              <p className='md:text-sm text-xs text-muted-foreground'>{session.payment_intent?.toString()}</p>
+              <p className='md:text-sm text-xs text-muted-foreground'>{session.payment_id}</p>
             </div>
             <div className='flex items-start justify-between gap-3 pt-5 pb-12 border-t-2'>
               <div>
                 <p className='text-primary-color font-medium'>From:</p>
-                <p className='font-bold md:text-lg text-base'>{session.custom_fields.find((val) => val.key === 'student_name_48')?.text?.value}</p>
-                <p className='md:text-sm text-xs font-medium'>{session.custom_fields.find((val) => val.key === 'college_name_29')?.text?.value}</p>
-                <p className='md:text-sm text-xs font-medium text-muted-foreground mt-5'>{session.customer_details?.email}</p>
-                <p className='md:text-sm text-xs font-medium text-muted-foreground'>
-                  {session.custom_fields.find((val) => val.key === 'student_id_36')?.text?.value}
-                </p>
+                <p className='font-bold md:text-lg text-base'>{name}</p>
+                <p className='md:text-sm text-xs font-medium'>{collegeName}</p>
+                <p className='md:text-sm text-xs font-medium text-muted-foreground mt-5'>{session.email}</p>
+                <p className='md:text-sm text-xs font-medium text-muted-foreground'>{session.student_id}</p>
               </div>
               <div className='text-end'>
                 <p className='text-primary-color font-medium'>To:</p>
@@ -114,20 +110,20 @@ function StripeInvoice({ session }: { session: Stripe.Response<Stripe.Checkout.S
                 <p className='md:text-sm text-xs font-medium text-muted-foreground mt-5'>eblaze2k24@gmail.com</p>
               </div>
             </div>
-            <div className='border-t-2 pt-5 font-medium'>{session?.metadata?.pack} registration</div>
+            <div className='border-t-2 pt-5 font-medium'>{session.pack} registration</div>
             <div className='pt-3 text-sm list-none space-y-1 mb-4'>
-              {session.line_items?.data.map((val, index) => (
+              {session.event_name.split(' | ').map((val, index) => (
                 <div
                   // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                   key={index}
                   className='relative ml-3'
                 >
                   <p>
-                    <span className=''>{index + 1}. </span> {val.description}{' '}
-                    {session?.metadata?.description ? (
+                    <span className=''>{index + 1}. </span> {val}{' '}
+                    {session.event_description && session.event_description.replaceAll(' | ', '').length > 5 ? (
                       <span className='text-muted-foreground text-xs'>
                         <span className='inline-block px-3 text-muted-foreground text-sm'>-</span>
-                        {session.metadata.description}
+                        {session.event_description.split(' | ')[index]}
                       </span>
                     ) : (
                       ''

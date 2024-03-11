@@ -1,6 +1,4 @@
 import { RegistrationSuccess } from '@/components/global/emails/registration-success';
-import { db } from '@/server/db';
-import { students } from '@/server/db/schema/students';
 import { render } from '@react-email/render';
 import { headers } from 'next/headers';
 import { NextRequest } from 'next/server';
@@ -70,24 +68,23 @@ export async function POST(req: NextRequest) {
           html: emailHtml,
         };
         await transporter.sendMail(options);
-        try {
-          await db.insert(students).values({
-            payment_id: registrationId,
-            student_name: name,
-            student_id: studentId,
-            student_college: studentCollege,
-            email: customerEmail,
-            phone_number: session.customer_details?.phone?.toString() as string,
-            pack,
-            event_id: eventId,
-            event_name: eventName,
-            event_description: eventDescription,
-            price: session.amount_total?.toString() as string,
-            checkout_session_id: session.id,
-          });
-        } catch (err) {
-          console.log('Pg Error: ', err);
-        }
+        // try {
+        //   await db.insert(students).values({
+        //     payment_id: registrationId,
+        //     student_name: name,
+        //     student_id: studentId,
+        //     student_college: studentCollege,
+        //     email: customerEmail,
+        //     phone_number: session.customer_details?.phone?.toString() as string,
+        //     pack,
+        //     event_id: eventId,
+        //     event_name: eventName,
+        //     event_description: eventDescription,
+        //     price: session.amount_total?.toString() as string,
+        //   });
+        // } catch (err) {
+        //   console.log('Pg Error: ', err);
+        // }
         break;
       }
       default:
