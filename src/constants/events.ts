@@ -131,7 +131,7 @@ export const EVENTS: Event[] = [
       "Whether you're a seasoned engineer or a novice enthusiast, Circuit Mania offers an exhilarating platform to put your skills to the test, learn, and triumph over challenges. Join us and let the sparks fly as you navigate through the circuits of innovation and creativity!",
     ],
     image: {
-      src: 'circuit-mania.jpeg',
+      src: 'circuit-mania.png',
       alt: 'circuit-mania-pic',
     },
     lead: 'P. Hemanth and Haneesha',
