@@ -31,8 +31,6 @@ const test = formSchema.omit({ event: true, kit: true });
 export async function comboPackSession({ values, products, pack }: { values: z.infer<typeof test>; products: Products[]; pack: string }) {
   const sessionId = uuidv4();
 
-  console.log(products.map((val) => val.description).join(''));
-
   // email to customer
   const emailHtml = render(
     RegistrationSuccess({
@@ -48,7 +46,7 @@ export async function comboPackSession({ values, products, pack }: { values: z.i
   const options = {
     from: {
       name: 'Eblaze Team',
-      address: 'rahulpalamarthi@gmail.com',
+      address: 'eblaze2k24@gmail.com',
     },
     to: values.studentEmail,
     subject: 'Confirmation of Registration to Eblaze Workshop',
