@@ -5,7 +5,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { COMBO_PACK_REGISTRATIONS } from '@/constants/registration';
-import { calculateTotalPrice } from '@/lib/utils/calculate-processing-fee';
 import { comboPackSession } from '@/server/actions';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Check, Copy } from 'lucide-react';
@@ -43,7 +42,7 @@ export function ComboPackRegistrationForm() {
 
     if (!checkoutEvent || !checkoutKit) return;
 
-    const price = calculateTotalPrice(checkoutEvent.price + checkoutKit.kits.map((val) => val.price).reduce((acc, val) => acc + val, 0));
+    const price = checkoutEvent.price + checkoutKit.kits.map((val) => val.price).reduce((acc, val) => acc + val, 0);
 
     comboPackSession({
       values,
