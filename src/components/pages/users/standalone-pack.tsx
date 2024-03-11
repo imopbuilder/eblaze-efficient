@@ -5,7 +5,6 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { STANDALONE_PACK_REGISTRATIONS } from '@/constants/registration';
-import { calculateTotalPrice } from '@/lib/utils/calculate-processing-fee';
 import { comboPackSession } from '@/server/actions';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Image from 'next/image';
@@ -55,13 +54,8 @@ const formSchema = z.object({
     .max(100, {
       message: 'Payment Id must be at most 100 characters.',
     }),
+  honeypot: z.string().optional(),
 });
-
-function calculateProcessingFee(events: z.infer<typeof formSchema>['events']) {
-  const price = STANDALONE_PACK_REGISTRATIONS.filter((val) => events.includes(val.id)).reduce((acc, val) => acc + val.price, 0);
-
-  return (calculateTotalPrice(price) - price).toFixed(2);
-}
 
 export function StandalonePackRegistrationForm() {
   const router = useRouter();
@@ -76,12 +70,17 @@ export function StandalonePackRegistrationForm() {
       studentPhone: '+91',
       events: [],
       paymentId: '',
+      honeypot: '',
     },
   });
 
   const events = form.watch('events');
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    const { honeypot, ...values } = data;
+
+    if (honeypot !== '') return;
+
     setLoading(true);
     const products = STANDALONE_PACK_REGISTRATIONS.filter((val) => values.events.includes(val.id)).map((val) => ({
       id: val.id,
@@ -230,7 +229,6 @@ export function StandalonePackRegistrationForm() {
             </div>
           </div>
         )}
-
         <div className='grid md:grid-cols-2 grid-cols-1 gap-6 place-items-center bg-muted rounded-md p-5'>
           <Image
             className='w-full h-auto rounded-md'
@@ -247,7 +245,6 @@ export function StandalonePackRegistrationForm() {
             <span className='font-semibold text-base text-foreground inline-block pt-1'>+918688633619</span> <CopyPhone />
           </p>
         </div>
-
         <FormField
           control={form.control}
           name='paymentId'
@@ -261,7 +258,19 @@ export function StandalonePackRegistrationForm() {
             </FormItem>
           )}
         />
-
+        <FormField
+          control={form.control}
+          name='honeypot'
+          render={({ field }) => (
+            <FormItem className='hidden'>
+              <FormLabel>Honeypot</FormLabel>
+              <FormControl>
+                <Input placeholder='Enter honeypot' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <Button className='w-full relative z-10' type='submit' disabled={loading}>
           {loading ? 'Registering to Events...' : 'Register to Events'}
         </Button>

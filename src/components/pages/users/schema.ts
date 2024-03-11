@@ -39,4 +39,5 @@ export const formSchema = z.object({
     .max(100, {
       message: 'Payment Id must be at most 100 characters.',
     }),
+  honeypot: z.string().optional(),
 });

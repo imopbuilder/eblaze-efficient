@@ -29,13 +29,18 @@ export function ComboPackRegistrationForm() {
       event: '',
       kit: '',
       paymentId: '',
+      honeypot: '',
     },
   });
 
   const event = COMBO_PACK_REGISTRATIONS.find((val) => val.id === form.watch('event'));
   const category = event?.categories.find((val) => val.id === form.watch('kit'));
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    const { honeypot, ...values } = data;
+
+    if (honeypot !== '') return;
+
     setLoading(true);
     const checkoutEvent = COMBO_PACK_REGISTRATIONS.find((val) => val.id === values.event);
     const checkoutKit = checkoutEvent?.categories.find((val) => val.id === values.kit);
@@ -225,7 +230,6 @@ export function ComboPackRegistrationForm() {
             </div>
           </div>
         )}
-
         <div className='grid md:grid-cols-2 grid-cols-1 gap-6 place-items-center bg-muted rounded-md p-5'>
           <Image
             className='w-full h-auto rounded-md'
@@ -242,7 +246,6 @@ export function ComboPackRegistrationForm() {
             <span className='font-semibold text-base text-foreground inline-block pt-1'>+918688633619</span> <CopyPhone />
           </p>
         </div>
-
         <FormField
           control={form.control}
           name='paymentId'
@@ -256,7 +259,19 @@ export function ComboPackRegistrationForm() {
             </FormItem>
           )}
         />
-
+        <FormField
+          control={form.control}
+          name='honeypot'
+          render={({ field }) => (
+            <FormItem className='hidden'>
+              <FormLabel>Honeypot</FormLabel>
+              <FormControl>
+                <Input placeholder='Enter honeypot' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <Button className='w-full md:text-sm text-xs relative z-10' size='lg' type='submit' disabled={loading}>
           {loading ? 'Registering to Workshop...' : 'Register to Workshop'}
         </Button>
