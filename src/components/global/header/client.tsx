@@ -171,6 +171,7 @@ function NavFooter() {
   const router = useRouter();
   const setOpen = useNav((state) => state.setOpen);
   const updateSelectedLink = useNav((state) => state.updateSelectedLink);
+  const otherLinkRelativeIndex = [...APP_LINKS, REGISTRATION_ROUTE].length;
 
   function handleClick(e: MouseEvent<HTMLAnchorElement>, index: number, href: string) {
     e.preventDefault();
@@ -185,16 +186,23 @@ function NavFooter() {
     <div className='flex flex-wrap lg:justify-between sm:text-lg text-sm mt-10 pb-5 sm:px-2 font-medium'>
       <ul className='mt-2.5 overflow-hidden p-0 grid grid-cols-2 items-start gap-x-10 gap-y-4'>
         {OTHER_LINKS.map(({ id, href, label }, index) => (
-          <motion.li key={id} custom={[0.3, 0]} variants={translate} initial='initial' animate='enter' exit='exit'>
+          <motion.li
+            key={id}
+            custom={[0.3, 0]}
+            variants={{ ...blur, ...translate }}
+            initial='initial'
+            animate={[selectedLink.isActive && selectedLink.index !== otherLinkRelativeIndex + index ? 'open' : 'closed', 'enter']}
+            exit='exit'
+          >
             <Link
               href={href}
               className='inline-block'
-              onClick={(e) => handleClick(e, [...APP_LINKS, REGISTRATION_ROUTE].length + index, href)}
+              onClick={(e) => handleClick(e, otherLinkRelativeIndex + index, href)}
               onMouseOver={() => {
-                updateSelectedLink({ isActive: true, index: [...APP_LINKS, REGISTRATION_ROUTE].length + index });
+                updateSelectedLink({ isActive: true, index: otherLinkRelativeIndex + index });
               }}
               onMouseLeave={() => {
-                updateSelectedLink({ isActive: false, index: [...APP_LINKS, REGISTRATION_ROUTE].length + index });
+                updateSelectedLink({ isActive: false, index: otherLinkRelativeIndex + index });
               }}
             >
               {label}
