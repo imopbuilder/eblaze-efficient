@@ -72,7 +72,7 @@ export const EVENTS: Event[] = [
     lead: 'Hemanth Kumar',
     guidelines: [
       'Video/Photo Duration: Your video or photo should be between 15 to 20 seconds.',
-      'Submission Deadline: Please submit your entry on or before March 12.',
+      'Submission Deadline: Please submit your entry on or before March 16.',
       'Content Restrictions: Ensure that your video does not include any content related to violence, abuse, politics, or spirituality.',
     ],
     note: ['Winners will receive cash prizes as follows, 1st place: Rs. 1500, 2nd place: Rs. 1000'],
@@ -114,12 +114,11 @@ export const EVENTS: Event[] = [
       'Once the problem statement is fixed, it remains unchanged throughout the event, allowing teams to be consistent and focus on solutions without interruptions.',
       'Teams will have 24 hours to brainstorm, develop, and present their solutions. Mentors will be available for guidance during this time.',
       'At all times, without exception, at least one team member must be physically present at the ideathon venue (the designated location).',
-      'Spot registrations are available at the venue for Ideathon Inspire.',
+      'Spot registrations are available at the venue for for a nominal fee of ₹100 per participant.',
     ],
     note: [
       'On March 18th, at 9:30Am, the problem statements will be released.',
       'The evaluation criteria is based on how you actually approach the problem statement. Mentoring and jury will be done by startup CEOs',
-      'Spot registrations are not available.',
     ],
   },
   {
@@ -163,7 +162,7 @@ export const EVENTS: Event[] = [
       'For DSA, participants will tackle 2 intermediate-level problems and 1 easy-level problem.',
       'Web development tasks include creating a Hero section and a functional task.',
       'UI/UX Design tasks involve crafting a landing page along with a project statement.',
-      'Spot registrations are available at the venue for a nominal fee of ₹100 per participant.',
+      'Spot registrations are available at the venue for a nominal fee of ₹200 per participant.',
     ],
     note: ['The top performer in each track will receive a cash prize of Rs. 2000 during the CodeCraft Fusion event.'],
   },

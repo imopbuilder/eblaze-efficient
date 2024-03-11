@@ -55,13 +55,17 @@ export const PROFILE = {
   social: 'https://www.linkedin.com/in/rahul-palamarthi',
 };
 
-export const OTHER_LINKS = [
+export const OTHER_LINKS: AppLink[] = [
   {
+    id: 'ol1',
     label: 'Terms of Service',
     href: '/terms-of-service',
+    src: 'terms-and-service-heading.svg',
   },
   {
+    id: 'ol2',
     label: 'Privacy Policy',
     href: '/privacy-policy',
+    src: 'privacy-policy-heading.svg',
   },
 ];

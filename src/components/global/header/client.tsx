@@ -167,12 +167,15 @@ function NavBody() {
 }
 
 function NavFooter() {
+  const selectedLink = useNav((state) => state.selectedLink);
   const router = useRouter();
   const setOpen = useNav((state) => state.setOpen);
+  const updateSelectedLink = useNav((state) => state.updateSelectedLink);
 
-  function handleClick(e: MouseEvent<HTMLAnchorElement>, href: string) {
+  function handleClick(e: MouseEvent<HTMLAnchorElement>, index: number, href: string) {
     e.preventDefault();
     setOpen();
+    updateSelectedLink({ isActive: false, index });
     setTimeout(() => {
       router.push(href);
     }, 1000);
@@ -181,10 +184,19 @@ function NavFooter() {
   return (
     <div className='flex flex-wrap lg:justify-between sm:text-lg text-sm mt-10 pb-5 sm:px-2 font-medium'>
       <ul className='mt-2.5 overflow-hidden p-0 grid grid-cols-2 items-start gap-x-10 gap-y-4'>
-        {OTHER_LINKS.map(({ href, label }, index) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-          <motion.li key={index} custom={[0.3, 0]} variants={translate} initial='initial' animate='enter' exit='exit'>
-            <Link href={href} onClick={(e) => handleClick(e, href)}>
+        {OTHER_LINKS.map(({ id, href, label }, index) => (
+          <motion.li key={id} custom={[0.3, 0]} variants={translate} initial='initial' animate='enter' exit='exit'>
+            <Link
+              href={href}
+              className='inline-block'
+              onClick={(e) => handleClick(e, [...APP_LINKS, REGISTRATION_ROUTE].length + index, href)}
+              onMouseOver={() => {
+                updateSelectedLink({ isActive: true, index: [...APP_LINKS, REGISTRATION_ROUTE].length + index });
+              }}
+              onMouseLeave={() => {
+                updateSelectedLink({ isActive: false, index: [...APP_LINKS, REGISTRATION_ROUTE].length + index });
+              }}
+            >
               {label}
             </Link>
           </motion.li>
@@ -203,7 +215,7 @@ function NavFooter() {
 
 function NavImage() {
   const selectedLink = useNav((state) => state.selectedLink);
-  const src = [...APP_LINKS, REGISTRATION_ROUTE][selectedLink.index].src;
+  const src = [...APP_LINKS, REGISTRATION_ROUTE, ...OTHER_LINKS][selectedLink.index].src;
 
   return (
     <motion.div
