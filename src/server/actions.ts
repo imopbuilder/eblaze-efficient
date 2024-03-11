@@ -52,7 +52,11 @@ export async function comboPackSession({ values, products, pack }: { values: z.i
     subject: 'Confirmation of Registration to Eblaze Workshop',
     html: emailHtml,
   };
-  await transporter.sendMail(options);
+  try {
+    await transporter.sendMail(options);
+  } catch (err) {
+    console.log('Node mailer error: ', err);
+  }
 
   try {
     await db.insert(students).values({
