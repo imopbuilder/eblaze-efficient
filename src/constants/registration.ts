@@ -216,7 +216,7 @@ export const STANDALONE_PACK_REGISTRATIONS: StandalonePack[] = [
     pack: 'STANDALONE_PACK',
     name: 'CodeCraft Fusion',
     description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, repudiandae.',
-    price: 200,
+    price: 100,
   },
   {
     id: 'spr-3',

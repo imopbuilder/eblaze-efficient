@@ -158,7 +158,20 @@ function RegistrationContent() {
           <ComboPackRegistrationForm />
         </div>
       </div>
-      <div className='grid grid-cols-8 md:pt-24 pt-16 md:gap-6 gap-y-1'>
+      <div className='my-16 p-5 rounded-md bg-muted'>
+        <p className='font-semibold text-lg'>Note:</p>
+        <ul className='list-disc list-outside pl-6 sm:text-base text-sm'>
+          <li>
+            Participants registered for the above mentioned <span className='font-medium'>Workshop</span> will enjoy full access to all standalone
+            events listed below.
+          </li>
+          <li>
+            Individuals who are not registered for the above mentioned workshop yet desire to partake in specific events can enroll directly for the
+            Standalone events listed below.
+          </li>
+        </ul>
+      </div>
+      <div className='grid grid-cols-8 md:gap-6 gap-y-1'>
         <div className='md:col-span-2 col-span-8'>
           <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>Standalone Event</Paragraph>
           <Line className='text-primary-color' />

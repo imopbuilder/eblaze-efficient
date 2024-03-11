@@ -164,7 +164,7 @@ export const EVENTS: Event[] = [
       'For DSA, participants will tackle 2 intermediate-level problems and 1 easy-level problem.',
       'Web development tasks include creating a Hero section and a functional task.',
       'UI/UX Design tasks involve crafting a landing page along with a project statement.',
-      'Spot registrations are available at the venue for a nominal fee of ₹200 per participant.',
+      'Spot registrations are available at the venue for a nominal fee of ₹100 per participant.',
     ],
     note: ['The top performer in each track will receive a cash prize of Rs. 2000 during the CodeCraft Fusion event.'],
   },
