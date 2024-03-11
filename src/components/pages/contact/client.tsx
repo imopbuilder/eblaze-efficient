@@ -6,20 +6,16 @@ import './styles.scss';
 
 const LOGOS = [
   {
-    src: '/images/ui/app/logo.png',
-    alt: 'logo',
+    src: '/images/ui/collaborators/it-profound-logo.png',
+    alt: 'it-profound-logo',
   },
   {
-    src: '/images/ui/app/logo.png',
-    alt: 'logo',
+    src: '/images/ui/collaborators/june-electric-logo.png',
+    alt: 'june-electric-logo',
   },
   {
-    src: '/images/ui/app/logo.png',
-    alt: 'logo',
-  },
-  {
-    src: '/images/ui/app/logo.png',
-    alt: 'logo',
+    src: '/images/ui/collaborators/svuce-rusa-logo.jpg',
+    alt: 'svuce-rusa-logo',
   },
 ];
 
@@ -67,7 +63,7 @@ export function Collaborators() {
               <div key={index} style={{ '--index': index } as CSSProperties} />
             ))}
           </div>
-          <ul className='flex gap-4 h-full w-fit items-center pointer-events-none p-0 list-none'>
+          <ul className='flex gap-10 h-full w-fit items-center pointer-events-none p-0 list-none'>
             {LOGOS.map((val, index) => {
               return (
                 <li
@@ -76,7 +72,7 @@ export function Collaborators() {
                   style={{ '--index': index } as CSSProperties}
                   className='grid place-items-center h-full aspect-video'
                 >
-                  <Image src={val.src} alt={val.alt} width={100} height={100} loading='lazy' unoptimized />
+                  <Image src={val.src} className='w-full' alt={val.alt} width={100} height={100} loading='lazy' unoptimized />
                 </li>
               );
             })}
