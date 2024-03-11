@@ -74,6 +74,7 @@ export const EVENTS: Event[] = [
       'Video/Photo Duration: Your video or photo should be between 15 to 20 seconds.',
       'Submission Deadline: Please submit your entry on or before March 16.',
       'Content Restrictions: Ensure that your video does not include any content related to violence, abuse, politics, or spirituality.',
+      'Participants are required to submit their full name, college/university name, branch of study, contact phone number, and a brief description of their talent via direct message (DM) to our official Eblaze Instagram page.',
     ],
     note: ['Winners will receive cash prizes as follows, 1st place: Rs. 1500, 2nd place: Rs. 1000'],
   },
