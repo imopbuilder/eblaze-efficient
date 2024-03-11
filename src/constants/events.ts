@@ -28,7 +28,14 @@ export const EVENTS: Event[] = [
       alt: 'circuit-design-pic',
     },
     lead: 'Momidi Chakri and Vikas',
-    guidelines: ['Each team should have min of 3 members max of 5 members', 'Each team should have min of 3 members max of 5 members'],
+    guidelines: [
+      'The event comprises five distinct tracks, each focusing on different aspects of technology: RPS design, Transformer design, IoT design, RPS and IoT design, and Transformer and IoT design.',
+      'Participants have the flexibility to choose between tracks with or without design kits, catering to varying preferences and levels of expertise.',
+      'Please note that spot registrations will not be accepted. Be sure to register in advance to secure your spot in the event.',
+    ],
+    note: [
+      'Participants with the best designs in each track stand a chance to win exciting cash prizes. So bring your A-game and showcase your creativity and skills for a chance to be rewarded!',
+    ],
   },
   {
     id: 'e2',
@@ -86,6 +93,7 @@ export const EVENTS: Event[] = [
       'Once registration is completed, team members cannot be changed. This fosters team cohesion and ensures a level playing field for all participants.',
       'Teams must consist of a minimum of 3 and a maximum of 5 members, encouraging collaboration and diversity of skills.',
       'For added convenience and flexibility, spot registrations are available for teams looking to join the challenge on the day of the event.',
+      'Spot registrations are available at the venue for a nominal fee of ₹100 per participant.',
       'Only 30 teams will be allowed to participate, so register early to avoid missing out on this thrilling adventure.',
     ],
   },
@@ -106,6 +114,7 @@ export const EVENTS: Event[] = [
       'Once the problem statement is fixed, it remains unchanged throughout the event, allowing teams to be consistent and focus on solutions without interruptions.',
       'Teams will have 24 hours to brainstorm, develop, and present their solutions. Mentors will be available for guidance during this time.',
       'At all times, without exception, at least one team member must be physically present at the ideathon venue (the designated location).',
+      'Spot registrations are available at the venue for Ideathon Inspire.',
     ],
     note: [
       'On March 18th, at 9:30Am, the problem statements will be released.',
@@ -131,6 +140,7 @@ export const EVENTS: Event[] = [
       'Round 1 presents Paper-Pen Network Puzzles, Solve network puzzles with pen and paper, Utilize critical thinking skills',
       'Round 2 presents Breadboard Design along with Design of simple circuits.',
       'Knowledge Base: Prepare across electrical and electronics engineering domains.',
+      'Spot registrations are available at the venue for a nominal fee of ₹100 per participant.',
       'Uphold honesty and fairness, cheating leads to disqualification.',
     ],
   },
@@ -153,6 +163,7 @@ export const EVENTS: Event[] = [
       'For DSA, participants will tackle 2 intermediate-level problems and 1 easy-level problem.',
       'Web development tasks include creating a Hero section and a functional task.',
       'UI/UX Design tasks involve crafting a landing page along with a project statement.',
+      'Spot registrations are available at the venue for a nominal fee of ₹100 per participant.',
     ],
     note: ['The top performer in each track will receive a cash prize of Rs. 2000 during the CodeCraft Fusion event.'],
   },
