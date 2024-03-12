@@ -245,6 +245,22 @@ export function StandalonePackRegistrationForm() {
             <span className='font-semibold text-base text-foreground inline-block pt-1'>+918688633619</span> <CopyPhone />
           </p>
         </div>
+        <div className='py-2'>
+          <div className='text-muted-foreground text-sm border-t-4 border-t-off-black/20 border-dotted relative'>
+            <p className='absolute -top-0.5 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-background px-8'>After Payment Success</p>
+          </div>
+        </div>
+        <div className='bg-muted rounded-md p-5'>
+          <Image
+            src={'/images/ui/registration/transaction-id-demo.png'}
+            className='w-full h-auto rounded-md'
+            width={100}
+            height={100}
+            alt='transaction-id-demo'
+            loading='lazy'
+            unoptimized
+          />
+        </div>
         <FormField
           control={form.control}
           name='paymentId'
