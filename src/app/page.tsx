@@ -3,7 +3,7 @@ import { Header } from '@/components/global/header';
 import { HomeRegisterCard } from '@/components/global/register-card';
 import { About } from '@/components/pages/about';
 import { Contact, Location } from '@/components/pages/contact';
-import { Events } from '@/components/pages/events';
+import { EventSchedule, Events } from '@/components/pages/events';
 import { HeroSection, HomeFaqs } from '@/components/pages/home';
 import { Fragment } from 'react';
 
@@ -16,6 +16,7 @@ export default function Page() {
         <HeroSection />
         <About />
         <Events />
+        <EventSchedule />
         <Location />
         <HomeFaqs />
         <Contact />

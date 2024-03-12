@@ -225,3 +225,119 @@ export const EVENTS: Event[] = [
     note: ['Winners will be awarded with exciting gifts.'],
   },
 ];
+
+export type EventSchedule = {
+  name: string;
+  date: number;
+  month: string;
+  day: string;
+  time: string;
+};
+
+export const EVENT_SCHEDULE: EventSchedule[] = [
+  {
+    name: 'Inauguration',
+    date: 18,
+    month: 'March',
+    day: 'Monday',
+    time: '9:00 AM to 10:00 AM',
+  },
+  {
+    name: 'Circuit Designing',
+    date: 18,
+    month: 'March',
+    day: 'Monday',
+    time: '10:00 AM to 1:00 PM',
+  },
+  {
+    name: 'Ideathon Inspire',
+    date: 18,
+    month: 'March',
+    day: 'Monday',
+    time: '10:00 AM to 5:00 PM',
+  },
+  {
+    name: 'Lunch Break',
+    date: 18,
+    month: 'March',
+    day: 'Monday',
+    time: '1:00 PM to 2:00 PM',
+  },
+  {
+    name: 'Project Expo',
+    date: 18,
+    month: 'March',
+    day: 'Monday',
+    time: '2:00 PM to 3:00 PM',
+  },
+  {
+    name: 'Circuit Mania',
+    date: 18,
+    month: 'March',
+    day: 'Monday',
+    time: '3:00 PM to 4:00 PM',
+  },
+  {
+    name: 'Tech Hunt',
+    date: 18,
+    month: 'March',
+    day: 'Monday',
+    time: '4:00 PM to 5:30 PM',
+  },
+  {
+    name: 'Ideathon Inspire',
+    date: 19,
+    month: 'March',
+    day: 'Tuesday',
+    time: '9:00 AM to 10:00 AM',
+  },
+  {
+    name: 'Circuit Designing',
+    date: 19,
+    month: 'March',
+    day: 'Tuesday',
+    time: '9:00 AM to 12:00 PM',
+  },
+  {
+    name: 'Lunch Break',
+    date: 19,
+    month: 'March',
+    day: 'Tuesday',
+    time: '12:00 PM to 1:00 PM',
+  },
+  {
+    name: 'Fun Activities',
+    date: 19,
+    month: 'March',
+    day: 'Tuesday',
+    time: '1:00 PM to 2:00 PM',
+  },
+  {
+    name: 'CodeCraft Fusion',
+    date: 19,
+    month: 'March',
+    day: 'Tuesday',
+    time: '1:00 PM to 4:00 PM',
+  },
+  {
+    name: 'Paper presentation',
+    date: 19,
+    month: 'March',
+    day: 'Tuesday',
+    time: '2:00 PM to 4:00 PM',
+  },
+  {
+    name: 'Show Your talent',
+    date: 19,
+    month: 'March',
+    day: 'Tuesday',
+    time: '4:00 PM to 4:30 PM',
+  },
+  {
+    name: 'Valedictory',
+    date: 19,
+    month: 'March',
+    day: 'Tuesday',
+    time: '4:30 PM to 5:30 PM',
+  },
+];

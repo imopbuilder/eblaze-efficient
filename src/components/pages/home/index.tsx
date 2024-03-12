@@ -92,7 +92,7 @@ export function HomeFaqs() {
       <div className='mx-5'>
         <div className='grid grid-cols-8'>
           <h1 className='uppercase col-span-8'>
-            Solve ur{' '}
+            Sort ur{' '}
             <Image
               src={'/images/ui/app/faqs-heading.svg'}
               className='inline-block md:w-[9rem] sm:w-[6rem] w-[5rem] h-auto animate-move-ease'

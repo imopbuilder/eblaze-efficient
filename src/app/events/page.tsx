@@ -1,7 +1,7 @@
 import { Footer } from '@/components/global/footer';
 import { Header } from '@/components/global/header';
 import { RegisterCard } from '@/components/global/register-card';
-import { Events } from '@/components/pages/events';
+import { EventSchedule, Events } from '@/components/pages/events';
 import { Metadata } from 'next';
 import { Fragment } from 'react';
 
@@ -18,6 +18,7 @@ export default function Page() {
       <main>
         <RegisterCard />
         <Events />
+        <EventSchedule />
         <Footer />
       </main>
     </Fragment>
