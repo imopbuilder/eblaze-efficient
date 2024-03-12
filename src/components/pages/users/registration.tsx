@@ -1,5 +1,6 @@
 import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
+import { ParallaxText } from '@/components/global/framer/parallax-text';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ComboPackRegistrationForm } from './combo-pack';
@@ -119,6 +120,12 @@ function RegistrationContent() {
           <Line className='text-primary-color' />
         </div>
         <div className='md:col-span-4 col-span-8'>
+          <div className='bg-primary-color px-5 py-2 rounded-md mb-3.5'>
+            <ParallaxText baseVelocity={-1} className='md:text-lg text-sm'>
+              The first 50 registrations for the event will receive a special offer with a reduced registration fee of Rs. 100 exclusively for
+              Workshop.
+            </ParallaxText>
+          </div>
           <div>
             <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
               Registrations for the highly anticipated{' '}

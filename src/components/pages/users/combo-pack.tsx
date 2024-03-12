@@ -213,7 +213,7 @@ export function ComboPackRegistrationForm() {
             <div className='bg-muted p-4 rounded-md mt-2 space-y-1'>
               <div className='flex items-center justify-between text-muted-foreground text-sm'>
                 <span>{event?.name}</span>
-                <span>₹{event?.price}.00</span>
+                <span>₹{(event?.price as number) + 100}.00</span>
               </div>
               {category?.kits.map((val) => (
                 <div key={val.name} className='flex items-center justify-between text-muted-foreground text-sm'>
@@ -221,6 +221,10 @@ export function ComboPackRegistrationForm() {
                   <span>₹{val.price}.00</span>
                 </div>
               ))}
+              <div className='flex items-center justify-between text-muted-foreground text-sm'>
+                <span>Combo pack special offer</span>
+                <span>- ₹100.00</span>
+              </div>
               <div className='flex items-center justify-between text-muted-foreground text-sm pt-2 !mt-2 border-t'>
                 <span>Total</span>
                 <span>
