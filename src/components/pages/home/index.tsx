@@ -1,5 +1,6 @@
 import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
+import { ParallaxText } from '@/components/global/framer/parallax-text';
 import Arrow from '@/components/global/icons/arrow';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { REGISTRATION_ROUTE } from '@/constants/app';
@@ -10,7 +11,7 @@ import Link from 'next/link';
 
 export function HeroSection() {
   return (
-    <section className='bg-primary-color text-background sticky top-[56px]'>
+    <section className='bg-primary-color text-background  top-[-100px]'>
       <div className='mx-5 min-h-[120vh]'>
         <div className='sm:py-24 py-[84px]'>
           <div className='min-h-rvh'>
@@ -41,33 +42,45 @@ export function HeroSection() {
               and Gatherings
             </Paragraph>
             <Line className='text-background stroke-2' />
-            <Link href={REGISTRATION_ROUTE.href} className='group inline-flex w-full py-5 px-3 items-center justify-between relative z-50'>
-              <span>
-                <Paragraph className='text-background font-bold text-lg flex items-center justify-start gap-1'>
-                  {REGISTRATION_ROUTE.label} to Eblaze{' '}
-                  <Image
-                    src='/images/ui/app/logo.png'
-                    className='bg-background inline-block rounded-full p-1 size-8 ml-1'
-                    width='25'
-                    height='25'
-                    alt='Logo'
-                    loading='lazy'
-                    unoptimized
-                  />
-                  {''}
-                  <Image
-                    src='/images/ui/app/eblaze-logo.jpg'
-                    className='size-8 rounded-md inline-block ml-1.5'
-                    width='25'
-                    height='25'
-                    alt='Logo'
-                    loading='lazy'
-                    unoptimized
-                  />
-                </Paragraph>
-              </span>
-              <ArrowLink />
-            </Link>
+            <div className='py-3'>
+              <Link
+                href={REGISTRATION_ROUTE.href}
+                className='group inline-flex w-full py-5 px-5 items-center justify-between relative z-50 bg-muted text-foreground rounded-xl'
+              >
+                <span>
+                  <Paragraph className='font-bold text-lg flex items-center justify-start gap-1'>
+                    {REGISTRATION_ROUTE.label} to Eblaze{' '}
+                    <Image
+                      src='/images/ui/app/logo.png'
+                      className='bg-background inline-block rounded-full p-1 size-8 ml-1'
+                      width='25'
+                      height='25'
+                      alt='Logo'
+                      loading='lazy'
+                      unoptimized
+                    />
+                    {''}
+                    <Image
+                      src='/images/ui/app/eblaze-logo.jpg'
+                      className='size-8 rounded-md inline-block ml-1.5'
+                      width='25'
+                      height='25'
+                      alt='Logo'
+                      loading='lazy'
+                      unoptimized
+                    />
+                  </Paragraph>
+                </span>
+                <ArrowLink />
+              </Link>
+            </div>
+
+            <div className='bg-muted px-3 py-2 rounded-xl mt-5'>
+              <ParallaxText baseVelocity={-1} className='md:text-lg text-sm text-foreground'>
+                The first 50 registrations for the event will receive a special offer with a reduced registration fee of Rs. 100 exclusively for
+                Workshop.
+              </ParallaxText>
+            </div>
           </div>
         </div>
       </div>
