@@ -123,8 +123,8 @@ export function EventSchedule() {
                 </div>
               ))}
               <div className='py-3'>
-                <div className='text-muted-foreground text-sm border-t-4 border-t-off-black/20 border-dotted relative'>
-                  <p className='absolute -top-px left-0 -translate-y-1/2 bg-background px-8'>End of Day 1</p>
+                <div className='text-muted-foreground text-xs border-t-4 border-t-off-black/20 border-dotted relative'>
+                  <p className='absolute -top-px left-0 -translate-y-1/2 bg-background px-8'>Day 1 wrap-up</p>
                 </div>
               </div>
             </div>
@@ -155,8 +155,8 @@ export function EventSchedule() {
                 </div>
               ))}
               <div className='py-5'>
-                <div className='text-muted-foreground text-sm border-t-4 border-t-off-black/20 border-dotted relative'>
-                  <p className='absolute -top-px left-0 -translate-y-1/2 bg-background px-8'>End of Day 2</p>
+                <div className='text-muted-foreground text-xs border-t-4 border-t-off-black/20 border-dotted relative'>
+                  <p className='absolute -top-px left-0 -translate-y-1/2 bg-background px-8'>Day 2 wrap-up</p>
                 </div>
               </div>
             </div>
