@@ -70,7 +70,10 @@ export async function comboPackSession({ values, products, pack }: { values: z.i
       event_id: products.map((val) => val.id).join(' | '),
       event_name: products.map((val) => val.name).join(' | '),
       event_description: products.map((val) => val.description).join(' | '),
-      price: products.map((val) => val.price).reduce((acc, val) => acc + val, 0),
+      price: products
+        .map((val) => val.price)
+        .reduce((acc, val) => acc + val, 0)
+        .toString(),
       session_id: sessionId,
     });
   } catch (err) {

@@ -1,6 +1,6 @@
 // id, payment_id, student_id, student_name, student_college, email, phone_number, pack, event-id, event_name, event_description, price, checkout_session_id
 
-import { index, pgTableCreator, serial, smallint, varchar } from 'drizzle-orm/pg-core';
+import { boolean, index, pgTableCreator, serial, varchar } from 'drizzle-orm/pg-core';
 
 const pgTable = pgTableCreator((name) => `eblaze_${name}`);
 
@@ -18,8 +18,9 @@ export const students = pgTable(
     event_id: varchar('event_id', { length: 100 }).notNull(),
     event_name: varchar('event_name', { length: 255 }).notNull(),
     event_description: varchar('event_description', { length: 255 }),
-    price: smallint('price').notNull(),
+    price: varchar('price', { length: 15 }).notNull(),
     session_id: varchar('session_id', { length: 255 }).notNull(),
+    is_verified: boolean('is_verified').default(false),
   },
   (table) => {
     return {
