@@ -1,4 +1,13 @@
-import { IoTDesignHeading, RpsDesignHeading, ShowYourTalentWhatsappLink, TransformerDesignHeading } from '@/components/pages/events/guidelines';
+import {
+  FunActivityFour,
+  FunActivityOne,
+  FunActivityThree,
+  FunActivityTwo,
+  IoTDesignHeading,
+  RpsDesignHeading,
+  ShowYourTalentWhatsappLink,
+  TransformerDesignHeading,
+} from '@/components/pages/events/guidelines';
 import { ReactNode } from 'react';
 
 export type Event = {
@@ -211,6 +220,10 @@ export const EVENTS: Event[] = [
     title: 'Fun Activities',
     description: [
       "Gather your friends for an eve of excitement and laughter! Challenge each other with different activities. Whether you're racing against the clock in quick challenges or showcasing your creativity with drawing and guessing games, there's boundless fun to be had. So, rally your team, unleash your competitive spirit, and let the good times roll!",
+      FunActivityOne,
+      FunActivityTwo,
+      FunActivityThree,
+      FunActivityFour,
     ],
     image: {
       src: 'fun-activities.jpeg',

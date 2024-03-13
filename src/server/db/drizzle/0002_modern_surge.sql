@@ -1,0 +1,1 @@
+ALTER TABLE "eblaze_students" ALTER COLUMN "price" SET DATA TYPE varchar(15);

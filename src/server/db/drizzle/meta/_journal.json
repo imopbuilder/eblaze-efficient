@@ -15,6 +15,13 @@
       "when": 1710302892534,
       "tag": "0001_skinny_robin_chapel",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710307869393,
+      "tag": "0002_modern_surge",
+      "breakpoints": true
     }
   ]
 }
