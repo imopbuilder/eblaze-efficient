@@ -13,7 +13,7 @@ import { CountdownClient, CountdownSectionClient } from './client';
 export function HeroSection() {
   return (
     <section className='bg-primary-color text-background'>
-      <div className='mx-5 min-h-dvh'>
+      <div className='mx-5 min-h-screen'>
         <div className='sm:py-24 py-20'>
           <div className=''>
             <Paragraph className='text-sm sm:text-lg font-semibold text-background sm:pb-0 pb-4' parentClassName='relative md:top-3 sm:top-1 top-3'>
@@ -114,8 +114,8 @@ export function CountdownSection() {
           <h1 className='uppercase sm:col-span-5 col-span-7 sm:col-start-3 col-start-2'>Begins In</h1>
         </div>
         <div>
-          <div className='grid grid-cols-8 pt-4 md:gap-6 gap-y-3'>
-            <div className='md:col-span-2 col-span-8'>
+          <div className='grid grid-cols-8 pt-4 md:gap-6 md:!gap-y-10'>
+            <div className='md:col-span-2 col-span-8 md:pt-0 pt-8'>
               <Paragraph className='pb-1 font-semibold text-sm'>Join Us for Eblaze Workshop</Paragraph>
               <Line className='text-foreground' />
             </div>
@@ -133,7 +133,7 @@ export function CountdownSection() {
                 </Paragraph>
               </div>
             </div>
-            <div className='md:col-span-2 col-span-8 !col-start-1'>
+            <div className='md:col-span-2 col-span-8 !col-start-1 md:pt-0 pt-8'>
               <Paragraph className='pb-1 font-semibold text-sm'>Last date for Registration</Paragraph>
               <Line className='text-foreground' />
             </div>
@@ -150,7 +150,7 @@ export function CountdownSection() {
                 </Paragraph>
               </div>
             </div>
-            <div className='md:col-span-2 col-span-8  !col-start-1'>
+            <div className='md:col-span-2 col-span-8 !col-start-1 md:pt-0 pt-8'>
               <Paragraph className='pb-1 font-semibold text-sm'>Days, Hours, Minutes, Seconds</Paragraph>
               <Line className='text-foreground' />
             </div>
