@@ -212,6 +212,13 @@ export const STANDALONE_PACK_REGISTRATIONS: StandalonePack[] = [
     price: 200,
   },
   {
+    id: 'spr-6',
+    pack: 'STANDALONE_PACK',
+    name: 'Project Expo',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, repudiandae.',
+    price: 200,
+  },
+  {
     id: 'spr-2',
     pack: 'STANDALONE_PACK',
     name: 'CodeCraft Fusion',
