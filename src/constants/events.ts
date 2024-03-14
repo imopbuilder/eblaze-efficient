@@ -44,6 +44,7 @@ export const EVENTS: Event[] = [
     ],
     note: [
       'Participants with the best designs in each track stand a chance to win exciting cash prizes. So bring your A-game and showcase your creativity and skills for a chance to be rewarded!',
+      'For IoT Design, kindly bring your personal laptop to the workshop',
     ],
   },
   {
@@ -175,7 +176,10 @@ export const EVENTS: Event[] = [
       'UI/UX Design tasks involve crafting a landing page along with a project statement.',
       'Spot registrations are available at the venue for a nominal fee of ₹100 per participant.',
     ],
-    note: ['The top performer in each track will receive a cash prize of Rs. 2000 during the CodeCraft Fusion event.'],
+    note: [
+      'The top performer in each track will receive a cash prize of Rs. 2000 during the CodeCraft Fusion event.',
+      'Kindly bring your personal laptop to the workshop',
+    ],
   },
   {
     id: 'e8',
