@@ -193,6 +193,45 @@ export const COMBO_PACK_REGISTRATIONS: EventRegistration[] = [
       },
     ],
   },
+  {
+    id: 'cpr-6',
+    pack: 'COMBO_PACK',
+    name: 'RPS and Transformer Design',
+    description: 'Access to all workshop events, RPS and Transformer design',
+    price: 400,
+    categories: [
+      {
+        id: 'cpr-6-a',
+        name: 'RPS and Transformer kit',
+        description: 'With RPS and Transformer Design kit',
+        kits: [
+          {
+            name: 'RPS Design kit',
+            price: 0,
+          },
+          {
+            name: 'Transformer Design kit',
+            price: 200,
+          },
+        ],
+      },
+      {
+        id: 'cpr-6-b',
+        name: 'RPS and Transformer kit',
+        description: 'With RPS and without Transformer Design kit',
+        kits: [
+          {
+            name: 'RPS Design kit',
+            price: 0,
+          },
+          {
+            name: 'Transformer Design kit',
+            price: 0,
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export type StandalonePack = {

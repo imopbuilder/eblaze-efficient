@@ -122,7 +122,7 @@ function RegistrationContent() {
         <div className='md:col-span-4 col-span-8'>
           <div className='bg-primary-color px-5 py-2 rounded-md mb-3.5'>
             <ParallaxText baseVelocity={-1} className='md:text-lg text-sm'>
-              The first 50 registrations for the event will receive a special offer with a reduced registration fee of Rs. 100 exclusively for
+              The first 100 registrations for the event will receive a special offer with a reduced registration fee of Rs. 100 exclusively for
               Workshop.
             </ParallaxText>
           </div>
