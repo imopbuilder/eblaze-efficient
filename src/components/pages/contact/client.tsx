@@ -17,6 +17,10 @@ const LOGOS = [
     src: '/images/ui/collaborators/svuce-rusa-logo.jpg',
     alt: 'svuce-rusa-logo',
   },
+  {
+    src: '/images/ui/collaborators/dreems-logo.jpg',
+    alt: 'dreems-logo',
+  },
 ];
 
 const BLURS = 8;
