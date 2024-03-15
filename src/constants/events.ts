@@ -27,6 +27,7 @@ export const EVENTS: Event[] = [
     description: [
       RpsDesignHeading,
       "Join Eblaze for an immersive Regulated Power Supply (RPS) workshop where participants receive all essential components to construct their RPS circuit. Under the expert guidance of our RPS circuit designing team, you'll receive comprehensive support to ensure successful assembly of your RPS system. Unlock this opportunity to learn, create, and master the intricacies of regulated power supply with Eblaze!",
+      'Introducing our latest innovation: the cost-effective RPS (Regulated Power Supply) circuit board with voltage ratings ranging from 0 to 25 volts. Experience reliable power control without breaking the bank!',
       TransformerDesignHeading,
       'Join Eblaze for a hands-on Transformer Design workshop where participants get expert guidance to practically design transformers. Engage in tasks like winding, soldering, and assembling laminations, gaining comprehensive experience in transformer design under expert supervision.',
       IoTDesignHeading,
