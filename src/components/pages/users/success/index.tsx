@@ -78,12 +78,12 @@ function StripeInvoice({ session }: { session: Student }) {
     <div className='p-5 bg-muted rounded-md'>
       <DownloadInvoicePdf name={name} email={session.email}>
         <div>
-          <div className='bg-background border-t-8 border-primary-color mdp-8 p-5'>
-            <div className='mt-16 pb-2 flex items-center justify-center gap-7'>
-              <Image src={'/images/ui/app/logo.png'} className='md:size-28 size-20' width={100} height={100} alt='logo' loading='lazy' unoptimized />
+          <div className='bg-background border-t-8 border-primary-color md:p-8 p-5'>
+            <div className='md:mt-16 mt-6 pb-2 flex items-center justify-center gap-7'>
+              <Image src={'/images/ui/app/logo.png'} className='md:size-28 size-10' width={100} height={100} alt='logo' loading='lazy' unoptimized />
               <Image
                 src='/images/ui/app/eblaze-logo.jpg'
-                className='rounded-md md:size-28 size-20'
+                className='rounded-md md:size-28 size-10'
                 width='100'
                 height='100'
                 alt='Logo'
@@ -91,11 +91,11 @@ function StripeInvoice({ session }: { session: Student }) {
                 unoptimized
               />
             </div>
-            <div className='flex items-center justify-between gap-3 my-6'>
+            <div className='flex md:flex-row flex-col md:items-center items-start justify-between gap-3 my-6'>
               <span className='md:text-xl text-base font-semibold'>Eblaze Invoice</span>
               <p className='md:text-sm text-xs text-muted-foreground'>{session.payment_id}</p>
             </div>
-            <div className='flex items-start justify-between gap-3 pt-5 pb-12 border-t-2'>
+            <div className='flex md:flex-row flex-col items-start justify-between gap-3 gap-y-5 pt-5 md:pb-12 pb-6 border-t-2'>
               <div>
                 <p className='text-primary-color font-medium'>From:</p>
                 <p className='font-bold md:text-lg text-base'>{name}</p>
@@ -103,7 +103,7 @@ function StripeInvoice({ session }: { session: Student }) {
                 <p className='md:text-sm text-xs font-medium text-muted-foreground mt-5'>{session.email}</p>
                 <p className='md:text-sm text-xs font-medium text-muted-foreground'>{session.student_id}</p>
               </div>
-              <div className='text-end'>
+              <div className='md:text-end text-start'>
                 <p className='text-primary-color font-medium'>To:</p>
                 <p className='font-bold md:text-lg text-base'>Eblaze</p>
                 <p className='md:text-sm text-xs font-medium'>SVUCE</p>

@@ -19,11 +19,10 @@ export function DownloadInvoicePdf({ children, name, email }: PropsWithChildren 
     const data = canvas.toDataURL('image/png');
 
     const pdf = new jsPDF();
-    const imgProperties = pdf.getImageProperties(data);
     const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+    const pdfHeight = pdf.internal.pageSize.getHeight();
 
-    pdf.addImage(data, 'PNG', 10, 10, pdfWidth - 20, pdfHeight - 20);
+    pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
     pdf.save(`eblaze_${name}_${email}_invoice.pdf`);
     setLoading(false);
   }
