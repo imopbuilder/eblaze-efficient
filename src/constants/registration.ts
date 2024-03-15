@@ -80,119 +80,119 @@ export const COMBO_PACK_REGISTRATIONS: EventRegistration[] = [
       },
     ],
   },
-  {
-    id: 'cpr-3',
-    pack: 'COMBO_PACK',
-    name: 'IoT Design',
-    description: 'Access to all workshop events and IoT design',
-    price: 300,
-    categories: [
-      {
-        id: 'cpr-3-a',
-        name: 'IoT Design kit',
-        description: 'With IoT Design kit',
-        kits: [
-          {
-            name: 'IoT Design kit',
-            price: 500,
-          },
-        ],
-      },
-      {
-        id: 'cpr-3-b',
-        name: 'IoT Design kit',
-        description: 'Without IoT Design kit',
-        kits: [],
-      },
-    ],
-  },
-  {
-    id: 'cpr-4',
-    pack: 'COMBO_PACK',
-    name: 'RPS and IoT Design',
-    description: 'Access to all workshop events, RPS and IoT design',
-    price: 400,
-    categories: [
-      {
-        id: 'cpr-4-a',
-        name: 'RPS and IoT Design',
-        description: 'With RPS and IoT Design kit',
-        kits: [
-          {
-            name: 'RPS Design kit',
-            price: 0,
-          },
-          {
-            name: 'IoT Design kit',
-            price: 500,
-          },
-        ],
-      },
-      {
-        id: 'cpr-4-b',
-        name: 'RPS and IoT Design',
-        description: 'With RPS and without IoT Design kit',
-        kits: [
-          {
-            name: 'RPS Design kit',
-            price: 0,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'cpr-5',
-    pack: 'COMBO_PACK',
-    name: 'Transformer and IoT Design',
-    description: 'Access to all workshop events, Transformer and IoT design',
-    price: 400,
-    categories: [
-      {
-        id: 'cpr-5-a',
-        name: 'Transformer and IoT Design kit',
-        description: 'With Transformer and IoT Design kit',
-        kits: [
-          {
-            name: 'Transformer Design kit',
-            price: 200,
-          },
-          {
-            name: 'IoT Design kit',
-            price: 500,
-          },
-        ],
-      },
-      {
-        id: 'cpr-5-b',
-        name: 'Transformer and IoT Design kit',
-        description: 'With Transformer and without IoT Design kit',
-        kits: [
-          {
-            name: 'Transformer Design kit',
-            price: 200,
-          },
-        ],
-      },
-      {
-        id: 'cpr-5-c',
-        name: 'Transformer and IoT Design kit',
-        description: 'Without Transformer and with IoT Design kit',
-        kits: [
-          {
-            name: 'IoT Design kit',
-            price: 500,
-          },
-        ],
-      },
-      {
-        id: 'cpr-5-d',
-        name: 'Transformer and IoT Design kit',
-        description: 'Without Transformer and IoT Design kit',
-        kits: [],
-      },
-    ],
-  },
+  // {
+  //   id: 'cpr-3',
+  //   pack: 'COMBO_PACK',
+  //   name: 'IoT Design',
+  //   description: 'Access to all workshop events and IoT design',
+  //   price: 300,
+  //   categories: [
+  //     {
+  //       id: 'cpr-3-a',
+  //       name: 'IoT Design kit',
+  //       description: 'With IoT Design kit',
+  //       kits: [
+  //         {
+  //           name: 'IoT Design kit',
+  //           price: 500,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: 'cpr-3-b',
+  //       name: 'IoT Design kit',
+  //       description: 'Without IoT Design kit',
+  //       kits: [],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 'cpr-4',
+  //   pack: 'COMBO_PACK',
+  //   name: 'RPS and IoT Design',
+  //   description: 'Access to all workshop events, RPS and IoT design',
+  //   price: 400,
+  //   categories: [
+  //     {
+  //       id: 'cpr-4-a',
+  //       name: 'RPS and IoT Design',
+  //       description: 'With RPS and IoT Design kit',
+  //       kits: [
+  //         {
+  //           name: 'RPS Design kit',
+  //           price: 0,
+  //         },
+  //         {
+  //           name: 'IoT Design kit',
+  //           price: 500,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: 'cpr-4-b',
+  //       name: 'RPS and IoT Design',
+  //       description: 'With RPS and without IoT Design kit',
+  //       kits: [
+  //         {
+  //           name: 'RPS Design kit',
+  //           price: 0,
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 'cpr-5',
+  //   pack: 'COMBO_PACK',
+  //   name: 'Transformer and IoT Design',
+  //   description: 'Access to all workshop events, Transformer and IoT design',
+  //   price: 400,
+  //   categories: [
+  //     {
+  //       id: 'cpr-5-a',
+  //       name: 'Transformer and IoT Design kit',
+  //       description: 'With Transformer and IoT Design kit',
+  //       kits: [
+  //         {
+  //           name: 'Transformer Design kit',
+  //           price: 200,
+  //         },
+  //         {
+  //           name: 'IoT Design kit',
+  //           price: 500,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: 'cpr-5-b',
+  //       name: 'Transformer and IoT Design kit',
+  //       description: 'With Transformer and without IoT Design kit',
+  //       kits: [
+  //         {
+  //           name: 'Transformer Design kit',
+  //           price: 200,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: 'cpr-5-c',
+  //       name: 'Transformer and IoT Design kit',
+  //       description: 'Without Transformer and with IoT Design kit',
+  //       kits: [
+  //         {
+  //           name: 'IoT Design kit',
+  //           price: 500,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: 'cpr-5-d',
+  //       name: 'Transformer and IoT Design kit',
+  //       description: 'Without Transformer and IoT Design kit',
+  //       kits: [],
+  //     },
+  //   ],
+  // },
   {
     id: 'cpr-6',
     pack: 'COMBO_PACK',
