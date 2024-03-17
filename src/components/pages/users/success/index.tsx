@@ -92,7 +92,7 @@ function StripeInvoice({ session }: { session: Student }) {
               />
             </div>
             <div className='flex md:flex-row flex-col md:items-center items-start justify-between gap-3 my-6'>
-              <span className='md:text-xl text-base font-semibold'>Eblaze Invoice</span>
+              <span className='md:text-xl text-base font-semibold'>Eblaze Invoice 🚀</span>
               <p className='md:text-sm text-xs text-muted-foreground'>{session.payment_id}</p>
             </div>
             <div className='flex md:flex-row flex-col items-start justify-between gap-3 gap-y-5 pt-5 md:pb-12 pb-6 border-t-2'>
