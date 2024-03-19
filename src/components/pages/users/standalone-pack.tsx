@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { CopyPhone } from './combo-pack';
+import { RegistrationPhoneNumber } from './combo-pack';
 
 const phoneRegex = new RegExp(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/);
 
@@ -239,11 +239,7 @@ export function StandalonePackRegistrationForm() {
             loading='lazy'
             unoptimized
           />
-          <p className='text-center text-sm text-muted-foreground'>
-            OR Pay using the phone number:
-            <br />
-            <span className='font-semibold text-base text-foreground inline-block pt-1'>+918688633619</span> <CopyPhone />
-          </p>
+          <RegistrationPhoneNumber />
         </div>
         <div className='py-2'>
           <div className='text-muted-foreground sm:text-sm text-xs border-t-4 border-t-off-black/20 border-dotted relative'>

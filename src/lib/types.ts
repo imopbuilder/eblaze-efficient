@@ -6,6 +6,7 @@ declare global {
     interface ProcessEnv {
       // Registration
       REGISTRATION_STATUS: 'OPEN' | 'CLOSED' | 'OPENS_SOON';
+      NEXT_PUBLIC_REGISTRATION_PHONE_NUMBER: string;
       EMAIL_SERVER_HOST: string;
       EMAIL_SERVER_PORT: string;
       EMAIL_SERVER_USER: string;

@@ -244,11 +244,7 @@ export function ComboPackRegistrationForm() {
             loading='lazy'
             unoptimized
           />
-          <p className='text-center text-sm text-muted-foreground'>
-            OR Pay using the phone number:
-            <br />
-            <span className='font-semibold text-base text-foreground inline-block pt-1'>+918688633619</span> <CopyPhone />
-          </p>
+          <RegistrationPhoneNumber />
         </div>
         <div className='py-2'>
           <div className='text-muted-foreground sm:text-sm text-xs border-t-4 border-t-off-black/20 border-dotted relative'>
@@ -291,6 +287,17 @@ export function ComboPackRegistrationForm() {
   );
 }
 
+export function RegistrationPhoneNumber() {
+  return (
+    <p className='text-center text-sm text-muted-foreground'>
+      OR Pay using the phone number:
+      <br />
+      <span className='font-semibold text-base text-foreground inline-block pt-1'>+{process.env.NEXT_PUBLIC_REGISTRATION_PHONE_NUMBER}</span>{' '}
+      <CopyPhone />
+    </p>
+  );
+}
+
 export function CopyPhone() {
   const [showCopy, setShowCopy] = useState(true);
 
@@ -305,7 +312,12 @@ export function CopyPhone() {
   }
 
   return (
-    <Button type='button' className='bg-background hover:bg-muted p-0 ml-3 size-6' size='icon' onClick={() => handleCopy('918688633619')}>
+    <Button
+      type='button'
+      className='bg-background hover:bg-muted p-0 ml-3 size-6'
+      size='icon'
+      onClick={() => handleCopy(process.env.NEXT_PUBLIC_REGISTRATION_PHONE_NUMBER)}
+    >
       {showCopy ? <Copy className='text-muted-foreground' size={12} /> : <Check className='text-muted-foreground' size={12} />}
     </Button>
   );
