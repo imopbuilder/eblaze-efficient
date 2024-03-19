@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Page({ searchParams }: { searchParams: { session_id: string | undefined } }) {
   const { session_id } = searchParams;
 
-  if (!session_id) return notFound();
+  if (!session_id || process.env.REGISTRATION_STATUS !== 'OPEN') return notFound();
 
   return (
     <Fragment>

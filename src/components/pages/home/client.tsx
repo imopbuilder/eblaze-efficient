@@ -54,14 +54,23 @@ export function CountdownClient({ date }: { date: Date }) {
   }
 
   useEffect(() => {
+    if (diffSeconds < 0) return;
     const interval = setInterval(() => {
       setCurrentDate(new Date());
     });
 
     return () => {
-      clearInterval(interval);
+      if (interval) clearInterval(interval);
     };
-  }, []);
+  }, [diffSeconds]);
+
+  if (diffSeconds < 0) {
+    return (
+      <div className='inline-block'>
+        <p className='font-clash-display tabular-nums font-medium'>0 Days, 0 Hours, 0 Minutes, 0 Seconds</p>
+      </div>
+    );
+  }
 
   return (
     <div className='inline-block'>

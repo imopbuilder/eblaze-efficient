@@ -34,73 +34,93 @@ export function Registrations() {
 function RegistrationContent() {
   const STATUS = process.env.REGISTRATION_STATUS;
 
-  if (STATUS === 'CLOSED')
-    return (
-      <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3'>
-        <div className='md:col-span-2 col-span-8'>
-          <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>
-            Registrations Closed{' '}
-            <Image
-              src='/images/ui/registration/heart-on-fire.png'
-              className='inline-block w-6 h-auto ml-px'
-              width='25'
-              height='25'
-              alt='Logo'
-              loading='lazy'
-              unoptimized
-            />
-          </Paragraph>
-          <Line className='text-primary-color' />
-        </div>
-        <div className='md:col-span-4 col-span-8'>
-          <div>
-            <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
-              We regret to inform you that the registrations for our{' '}
-              <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
-                Eblaze
-              </Link>{' '}
-              event have been closed as of this year prior to the event date. We appreciate your interest and encourage you to stay tuned for future
-              events and opportunities. Thank you for your understanding.
-            </Paragraph>
-          </div>
-        </div>
-      </div>
-    );
+  if (STATUS === 'CLOSED') return <RegistrationClosed />;
 
-  if (STATUS === 'OPENS_SOON')
-    return (
-      <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3'>
-        <div className='md:col-span-2 col-span-8'>
-          <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>
-            Registrations Opens Soon{' '}
-            <Image
-              src='/images/ui/registration/rocket.png'
-              className='inline-block w-6 h-auto ml-px'
-              width='25'
-              height='25'
-              alt='Logo'
-              loading='lazy'
-              unoptimized
-            />
-          </Paragraph>
-          <Line className='text-primary-color' />
-        </div>
-        <div className='md:col-span-4 col-span-8'>
-          <div>
-            <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
-              We are excited to announce that the registration for our{' '}
-              <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
-                Eblaze
-              </Link>{' '}
-              event will be opening soon. Stay tuned for updates on dates and how to secure your spot. We look forward to welcoming you to our
-              upcoming event!
-            </Paragraph>
-          </div>
-        </div>
-      </div>
-    );
+  if (STATUS === 'OPENS_SOON') return <RegistrationsOpensSoon />;
 
   // STATUS === 'OPEN'
+  return <RegistrationsOpen />;
+}
+
+function RegistrationClosed() {
+  return (
+    <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3'>
+      <div className='md:col-span-2 col-span-8'>
+        <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>
+          Registrations Closed{' '}
+          <Image
+            src='/images/ui/registration/heart-on-fire.png'
+            className='inline-block w-6 h-auto ml-px'
+            width='25'
+            height='25'
+            alt='Logo'
+            loading='lazy'
+            unoptimized
+          />
+        </Paragraph>
+        <Line className='text-primary-color' />
+      </div>
+      <div className='md:col-span-4 col-span-8'>
+        <div>
+          <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
+            We regret to inform you that the registrations for our{' '}
+            <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
+              Eblaze
+            </Link>{' '}
+            event have been closed as of this year prior to the event date. We appreciate your interest and encourage you to stay tuned for future
+            events and opportunities. Thank you for your understanding.
+          </Paragraph>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RegistrationsOpensSoon() {
+  return (
+    <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3'>
+      <div className='md:col-span-2 col-span-8'>
+        <Paragraph className='pb-1 font-semibold text-sm text-primary-color '>
+          Registrations Opens Soon{' '}
+          <Image
+            src='/images/ui/registration/rocket.png'
+            className='inline-block w-6 h-auto ml-px'
+            width='25'
+            height='25'
+            alt='Logo'
+            loading='lazy'
+            unoptimized
+          />
+        </Paragraph>
+        <Line className='text-primary-color' />
+      </div>
+      <div className='md:col-span-4 col-span-8'>
+        <div>
+          <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
+            We are excited to announce that the registration for our{' '}
+            <Link href={'/'} className='text-primary-color font-semibold hover:underline underline-offset-4'>
+              Eblaze
+            </Link>{' '}
+            event will be opening soon. Stay tuned for updates on dates and how to secure your spot. We look forward to welcoming you to our upcoming
+            event!
+          </Paragraph>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RegistrationsOpen() {
+  function RegistrationOffer() {
+    return (
+      <div className='bg-primary-color px-5 py-2 rounded-md mb-3.5'>
+        <ParallaxText baseVelocity={-1} className='md:text-lg text-sm'>
+          The first 100 registrations for the event will receive a special offer with a reduced registration fee of Rs. 100 exclusively for Workshop.
+        </ParallaxText>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className='grid grid-cols-8 pt-8 md:gap-6 gap-y-3'>
@@ -120,12 +140,7 @@ function RegistrationContent() {
           <Line className='text-primary-color' />
         </div>
         <div className='md:col-span-4 col-span-8'>
-          <div className='bg-primary-color px-5 py-2 rounded-md mb-3.5'>
-            <ParallaxText baseVelocity={-1} className='md:text-lg text-sm'>
-              The first 100 registrations for the event will receive a special offer with a reduced registration fee of Rs. 100 exclusively for
-              Workshop.
-            </ParallaxText>
-          </div>
+          {/* <RegistrationParallaxText /> */}
           <div>
             <Paragraph className='sm:text-lg font-medium text-sm' parentClassName='mb-3.5'>
               Registrations for the highly anticipated{' '}
@@ -203,51 +218,3 @@ function RegistrationContent() {
     </div>
   );
 }
-
-// function Pack() {
-//   return (
-//     <div className='grid grid-cols-2 md:gap-6 gap-3'>
-//       {COMBO_PACK_REGISTRATIONS.map((val) => (
-//         <PackCard key={val.id} {...val} />
-//       ))}
-//     </div>
-//   );
-// }
-
-// function PackCard({ id, eventName, description, price, image, kits }: EventRegistration) {
-//   return (
-//     <div className={`bg-muted md:p-5 p-3.5 rounded-xl ${id === 'cpr-logo' ? 'flex items-center justify-center' : ''}`}>
-//       <div>
-//         <Image src={image.src} className='w-full h-auto rounded-md' width={100} height={100} alt={image.alt} loading='lazy' unoptimized />
-//       </div>
-//       {id === 'cpr-logo' ? null : (
-//         <Fragment>
-//           <p className='md:text-lg text-base font-medium pt-3 pb-1 font-clash-display whitespace-pre-wrap'>{eventName}</p>
-//           <p className='md:text-sm text-xs text-muted-foreground'>{description}</p>
-//           <div className='border-t border-t-primary-color py-3 mt-3 space-y-2'>
-//             {kits.map((kit, index) => (
-//               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-//               <p key={index} className='flex items-center justify-start gap-2 text-xs font-semibold'>
-//                 {kit.status ? (
-//                   <span className='bg-primary-color rounded-full p-0.5 flex items-center justify-center'>
-//                     <Check className='text-muted' size={14} strokeWidth={3} />
-//                   </span>
-//                 ) : (
-//                   <span className='bg-off-black rounded-full p-0.5 flex items-center justify-center'>
-//                     <X className='text-muted relative top-[0.2px]' size={14} strokeWidth={3} />
-//                   </span>
-//                 )}
-//                 <span>{kit.name}</span>
-//               </p>
-//             ))}
-//           </div>
-
-//           <div className='flex items-center justify-between gap-4'>
-//             <p className='my-2 font-semibold text-sm'>₹{price}</p>
-//             <RegisterBtn />
-//           </div>
-//         </Fragment>
-//       )}
-//     </div>
-//   );
-// }

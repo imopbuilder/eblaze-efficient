@@ -229,10 +229,10 @@ export function StandalonePackRegistrationForm() {
             </div>
           </div>
         )}
-        <div className='grid md:grid-cols-2 grid-cols-1 gap-6 place-items-center bg-muted rounded-md p-5'>
+        <div className='grid md:grid-cols-2 grid-cols-1 md:gap-0 gap-6 place-items-center bg-muted rounded-md p-5'>
           <Image
-            className='w-full h-auto rounded-md'
-            src='/images/ui/registration/phone-pe-registration-pic.jpg'
+            className='w-full h-auto border-r border-r-foreground/30 border-dashed'
+            src='/images/ui/registration/phone-pe-registration-pic.svg'
             width={100}
             height={100}
             alt='phone-pe-link'

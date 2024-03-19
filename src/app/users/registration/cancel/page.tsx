@@ -3,6 +3,7 @@ import { Header } from '@/components/global/header';
 import { Button } from '@/components/ui/button';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { Fragment } from 'react';
 
 export const metadata: Metadata = {
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  if (process.env.REGISTRATION_STATUS !== 'OPEN') return notFound();
+
   return (
     <Fragment>
       <Header />
