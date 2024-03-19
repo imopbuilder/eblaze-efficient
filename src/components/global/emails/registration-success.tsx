@@ -12,9 +12,7 @@ interface RegistrationSuccessProps {
 
 export function RegistrationSuccess({ name, events, registrationId, sessionId, pack, description }: RegistrationSuccessProps) {
   const previewText = `Hello, ${name}, Join Eblaze at SVUCE`;
-  const invoice = `${
-    process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.NEXT_PUBLIC_BASE_URL
-  }/users/registration/success?session_id=${sessionId}`;
+  const invoice = `${process.env.NEXT_PUBLIC_BASE_URL}/users/registration/success?session_id=${sessionId}`;
 
   return (
     <Html>

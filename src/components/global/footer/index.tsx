@@ -30,7 +30,7 @@ function Workspace() {
     <div className='pt-20'>
       <p className='text-xs p-5 text-background font-bold'>Workshop</p>
       <ul className='group/ul'>
-        <li className='border-t-2 group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500'>
+        <li className='border-t-2 border-t-background group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500'>
           <Link
             href={REGISTRATION_ROUTE.href}
             className={
@@ -54,7 +54,10 @@ function SocialLinks() {
       <p className='text-xs p-5 text-background font-bold'>Socials</p>
       <ul className='group/ul'>
         {CONTACT.map(({ id, social, href }) => (
-          <li key={id} className='border-t-2 group-hover/ul:blur-[6px] font-clash-display group-hover/ul:hover:blur-0 duration-500'>
+          <li
+            key={id}
+            className='border-t-2 border-t-background group-hover/ul:blur-[6px] font-clash-display group-hover/ul:hover:blur-0 duration-500'
+          >
             <Link
               href={href}
               className={
@@ -81,7 +84,10 @@ function Sitemap() {
       <p className='text-xs px-5 pb-5 pt-80 text-background font-bold'>Site map</p>
       <ul className='group/ul'>
         {APP_LINKS.map(({ id, label, href }) => (
-          <li key={id} className='border-t-2 group-hover/ul:blur-[6px] font-clash-display group-hover/ul:hover:blur-0 duration-500 last:rounded-b-md'>
+          <li
+            key={id}
+            className='border-t-2 border-t-background group-hover/ul:blur-[6px] font-clash-display group-hover/ul:hover:blur-0 duration-500 last:rounded-b-md'
+          >
             <Link
               href={href}
               className='group inline-flex items-center justify-between text-muted p-5 w-full lg:text-6xl text-4xl font-normal capitalize'
@@ -97,7 +103,7 @@ function Sitemap() {
           <li
             // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             key={index}
-            className='border-t-2 group-hover/ul:blur-[6px] font-clash-display group-hover/ul:hover:blur-0 duration-500 last:rounded-b-md'
+            className='border-t-2 border-t-background group-hover/ul:blur-[6px] font-clash-display group-hover/ul:hover:blur-0 duration-500 last:rounded-b-md'
           >
             <Link
               href={href}

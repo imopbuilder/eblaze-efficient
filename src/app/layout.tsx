@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     default: APP.default,
   },
   description: 'Join Our Electrifying Lineup of Events and Gatherings.',
-  metadataBase: process.env.NODE_ENV === 'production' ? new URL(process.env.NEXT_PUBLIC_BASE_URL) : new URL('http://localhost:3000/'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
   openGraph: {
     type: 'website',
   },

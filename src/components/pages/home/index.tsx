@@ -1,6 +1,5 @@
 import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
-import { ParallaxText } from '@/components/global/framer/parallax-text';
 import Arrow from '@/components/global/icons/arrow';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { REGISTRATION_ROUTE } from '@/constants/app';
@@ -64,12 +63,6 @@ export function HeroSection() {
                 </span>
                 <ArrowLink />
               </Link>
-            </div>
-            <div className='bg-muted px-3 py-2 rounded-xl mt-5'>
-              <ParallaxText baseVelocity={-1} className='md:text-lg text-sm text-foreground'>
-                The first 100 registrations for the event will receive a special offer with a reduced registration fee of Rs. 100 exclusively for
-                Workshop.
-              </ParallaxText>
             </div>
           </div>
         </div>
